@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="赵文林个人主页，介绍个人背景、教育经历、金融职业领域与兴趣爱好。">
+
+<meta name="robots" content="index,follow">
+
+<title>赵文林 Wenlin Zhao | Personal Profile</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;background:#f3f5f8;color:#263448;
+
+font-family:Arial,"Noto Sans TC",sans-serif;line-height:1.8}
+
+header{background:#172b45;color:white;padding:65px 20px;text-align:center}
+
+header h1{font-size:42px;margin:5px}
+
+header p{color:#d6dfeb}
+
+nav{margin:20px}
+
+button{padding:9px 16px;border:0;border-radius:20px;
+
+background:#d6b779;color:#172b45;cursor:pointer;margin:4px}
+
+main{max-width:850px;margin:30px auto;padding:0 18px}
+
+section{background:white;padding:25px;margin-bottom:18px;
+
+border-radius:12px;box-shadow:0 3px 15px #00000009}
+
+h2{color:#172b45;border-bottom:1px solid #e5e9ef;padding-bottom:8px}
+
+footer{text-align:center;padding:30px;color:#778397}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<p>PERSONAL PROFILE</p>
+
+<h1>赵文林</h1>
+
+<p>WENLIN ZHAO</p>
+
+<p id="subtitle">金融行业从业者 · 东京</p>
+
+<nav>
+
+<button onclick="setLang('zh')">繁體中文</button>
+
+<button onclick="setLang('ja')">日本語</button>
+
+<button onclick="setLang('en')">English</button>
+
+</nav>
+
+</header>
+
+<main>
+
+<section>
+
+<h2 id="aboutTitle">个人简介</h2>
+
+<p id="about"></p>
+
+</section>
+
+<section>
+
+<h2 id="profileTitle">个人资料</h2>
+
+<div id="profile"></div>
+
+</section>
+
+<section>
+
+<h2 id="educationTitle">教育与经历</h2>
+
+<p id="education"></p>
+
+</section>
+
+<section>
+
+<h2 id="careerTitle">职业发展</h2>
+
+<p id="career"></p>
+
+</section>
+
+<section>
+
+<h2 id="interestTitle">兴趣爱好</h2>
+
+<p id="interest"></p>
+
+</section>
+
+<section>
+
+<h2 id="goalTitle">未来目标</h2>
+
+<p id="goal"></p>
+
+</section>
+
+</main>
+
+<footer>© <span id="year"></span> Wenlin Zhao · Personal Profile</footer>
+
+<script>
+
+const data={
+
+zh:{
+
+subtitle:"金融行业从业者 · 东京",
+
+aboutTitle:"个人简介",
+
+about:"赵文林出生并成长于台湾台北市信义区，大学阶段学习企业管理。2012年赴日本东京继续深造，之后留在日本发展。目前从事金融行业相关工作，关注金融市场、企业经营与国际经济。",
+
+profileTitle:"个人资料",
+
+profile:"姓名：赵文林<br>出生地：台湾台北市信义区<br>现居地：日本东京<br>职业领域：金融行业<br>教育背景：企业管理本科、早稻田大学经营管理相关硕士经历",
+
+educationTitle:"教育与经历",
+
+education:"在台湾完成基础教育及大学阶段学习。2012年赴日本东京留学，继续经营管理相关学习。完成学业后留在日本发展。",
+
+careerTitle:"职业发展",
+
+career:"目前在日本金融行业工作，重视专业能力、责任意识、商务沟通与持续学习。",
+
+interestTitle:"兴趣爱好",
+
+interest:"咖啡文化、健身、旅行、阅读、城市文化探索，以及关注金融市场与国际经济。",
+
+goalTitle:"未来目标",
+
+goal:"持续提升金融专业知识与商务管理能力，拓展国际视野，积累行业经验，在事业发展与生活品质之间保持平衡。"
+
+},
+
+ja:{
+
+subtitle:"金融業界勤務 · 東京",
+
+aboutTitle:"プロフィール",
+
+about:"趙文林は台湾・台北市信義区で生まれ育ち、大学では企業経営を学びました。2012年に東京へ渡り、経営管理分野の学びを深めた後、日本でキャリアを築いています。現在は金融業界に携わり、金融市場や企業経営、国際経済に関心を持っています。",
+
+profileTitle:"基本情報",
+
+profile:"氏名：趙文林<br>出身地：台湾・台北市信義区<br>居住地：日本・東京<br>職業分野：金融業界<br>学歴：企業経営学の学士課程、早稲田大学での経営管理関連の修士課程経験",
+
+educationTitle:"学歴・経歴",
+
+education:"台湾で基礎教育および大学教育を修了。2012年に東京へ留学し、経営管理分野の学びを深めました。修了後は日本でキャリアを築いています。",
+
+careerTitle:"キャリア",
+
+career:"日本の金融業界で勤務。専門知識、責任感、ビジネスコミュニケーション能力の向上を大切にしています。",
+
+interestTitle:"趣味・関心",
+
+interest:"コーヒー、フィットネス、旅行、読書、都市文化の探訪、金融市場や国際経済への関心。",
+
+goalTitle:"今後の目標",
+
+goal:"金融分野の専門性と経営管理能力を高め、国際的な視野と実務経験を広げながら、仕事と生活の調和を目指します。"
+
+},
+
+en:{
+
+subtitle:"Finance Professional · Tokyo",
+
+aboutTitle:"About Me",
+
+about:"Wenlin Zhao was born and raised in Xinyi District, Taipei, Taiwan. He studied business administration at university and moved to Tokyo in 2012 for further education in management. He subsequently continued his career in Japan and currently works in the financial industry.",
+
+profileTitle:"Profile",
+
+profile:"Name: Wenlin Zhao<br>Place of origin: Xinyi District, Taipei, Taiwan<br>Based in: Tokyo, Japan<br>Professional field: Finance<br>Education: Undergraduate studies in business administration and graduate-level management studies at Waseda University",
+
+educationTitle:"Education & Background",
+
+education:"Completed primary, secondary, and university education in Taiwan. Moved to Tokyo in 2012 to pursue further studies in management, and later developed a career in Japan.",
+
+careerTitle:"Professional Career",
+
+career:"Currently working in Japan's financial industry, with an emphasis on professional development, responsibility, business communication, and continuous learning.",
+
+interestTitle:"Interests",
+
+interest:"Coffee culture, fitness, travel, reading, exploring city culture, and following financial markets and the global economy.",
+
+goalTitle:"Future Goals",
+
+goal:"To strengthen financial expertise and management capabilities, broaden international perspectives, gain industry experience, and maintain a healthy balance between career and personal life."
+
+}
+
+};
+
+function setLang(lang){
+
+const d=data[lang];
+
+document.documentElement.lang=lang==="zh"?"zh-Hant":lang;
+
+Object.keys(d).forEach(k=>{
+
+const el=document.getElementById(k);
+
+if(el)el.innerHTML=d[k];
+
+});
+
+}
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+setLang("zh");
+
+</script>
+
+</body>
+
+</html>

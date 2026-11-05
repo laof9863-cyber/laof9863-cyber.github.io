@@ -33,6 +33,156 @@ th{background:#f0f3f7;color:#294866}
 .event:before{content:"";position:absolute;left:-28px;top:9px;width:10px;height:10px;background:#c5a46d;border-radius:50%}
 footer{text-align:center;color:#778394;padding:25px;font-size:13px}
 @media(max-width:600px){header h1{font-size:31px}section{padding:18px}td,th{padding:6px;font-size:14px}}
+
+/* ===== MODERN FINANCE OFFICE THEME ===== */
+
+body {
+  margin: 0;
+  color: #f0f3f7;
+  font: 16px/1.85 -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+  background-color: #10243a;
+  background-image:
+    linear-gradient(
+      rgba(8, 24, 42, 0.73),
+      rgba(8, 20, 36, 0.83)
+    ),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72");
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* 顶部个人资料 */
+header {
+  background: linear-gradient(
+    135deg,
+    rgba(8, 24, 42, 0.96),
+    rgba(32, 62, 88, 0.91)
+  );
+  color: white;
+  text-align: center;
+  padding: 55px 18px;
+  border-bottom: 1px solid rgba(205, 174, 119, 0.55);
+}
+
+header h1 {
+  color: #e8cb91;
+}
+
+header p {
+  color: #dce5ee;
+}
+
+/* 语言按钮 */
+.languages button {
+  background: transparent;
+  color: white;
+  border: 1px solid #c9aa70;
+  border-radius: 20px;
+  padding: 8px 13px;
+}
+
+.languages button.active,
+.languages button:hover {
+  background: #c9aa70;
+  color: #14283d;
+  border-color: #c9aa70;
+}
+
+/* 导航栏 */
+nav {
+  background: rgba(7, 22, 38, 0.93);
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(205,174,119,0.35);
+  backdrop-filter: blur(12px);
+}
+
+nav a {
+  color: #e9d7b5;
+  text-decoration: none;
+  margin: 5px 9px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #f2cd84;
+}
+
+/* 个人资料卡片 */
+section {
+  background: rgba(15, 31, 48, 0.91);
+  color: #f0f3f7;
+  margin: 22px 0;
+  padding: 26px;
+  border-radius: 14px;
+  border: 1px solid rgba(205, 174, 119, 0.32);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.24);
+  backdrop-filter: blur(10px);
+}
+
+/* 标题 */
+h2 {
+  color: #e8cb91;
+  border-left: 4px solid #c5a46d;
+  padding-left: 12px;
+  font-size: 21px;
+}
+
+h3 {
+  color: #d7bd91;
+}
+
+/* 表格 */
+td, th {
+  border: 1px solid rgba(205,174,119,0.28);
+  padding: 9px;
+  text-align: left;
+}
+
+th {
+  background: rgba(35, 56, 76, 0.95);
+  color: #ecd39f;
+}
+
+/* 时间轴 */
+.timeline {
+  border-left: 2px solid #c5a46d;
+}
+
+.event:before {
+  background: #d7b77d;
+}
+
+/* 页脚 */
+footer {
+  text-align: center;
+  color: #e5d4b5;
+  padding: 30px;
+  background: rgba(7, 22, 38, 0.95);
+  border-top: 1px solid rgba(205,174,119,0.35);
+}
+
+/* 手机端适配 */
+@media(max-width:600px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  header h1 {
+    font-size: 31px;
+  }
+
+  section {
+    padding: 18px;
+  }
+}
+    
 </style>
 </head>
 <body>

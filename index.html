@@ -3,351 +3,712 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="赵文林完整个人档案、教育背景、职业发展与个人生活">
-<title>赵文林｜完整个人档案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="赵文林个人档案：个人成长、教育背景、职业经历、商业投资与个人生活">
+<meta name="theme-color" content="#101010">
+<title>赵文林｜个人档案</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f4f6f9;color:#263445;font:16px/1.85 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{background:linear-gradient(135deg,#14243a,#294866);color:white;text-align:center;padding:48px 18px}
-header h1{font-size:38px;margin:8px}
-header p{color:#e3eaf1;margin:5px}
-.languages{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px}
-.languages button{background:transparent;color:white;border:1px solid #dce5ef;border-radius:20px;padding:8px 13px;cursor:pointer}
-.languages button.active,.languages button:hover{background:#c5a46d;color:#172b43;border-color:#c5a46d}
-nav{background:white;padding:14px;text-align:center;border-bottom:1px solid #e5e9ef}
-nav a{display:inline-block;color:#344b65;text-decoration:none;margin:5px 9px;font-size:14px}
-nav a:hover{color:#b18a4e}
-main{max-width:920px;margin:30px auto;padding:0 16px}
-section{background:white;margin:18px 0;padding:24px;border-radius:12px;box-shadow:0 4px 16px rgba(20,36,58,.05);scroll-margin-top:15px}
-h2{color:#1c3652;border-left:4px solid #c5a46d;padding-left:12px;font-size:21px}
-h3{color:#52677e;margin:20px 0 5px}
-p{margin:9px 0}
-ul{padding-left:23px}
-table{width:100%;border-collapse:collapse;margin:12px 0}
-td,th{border:1px solid #e2e7ed;padding:9px;text-align:left}
-th{background:#f0f3f7;color:#294866}
-.note{color:#687789;font-size:13px}
-.timeline{border-left:2px solid #c5a46d;padding-left:22px;margin-left:8px}
-.event{margin:15px 0;position:relative}
-.event:before{content:"";position:absolute;left:-28px;top:9px;width:10px;height:10px;background:#c5a46d;border-radius:50%}
-footer{text-align:center;color:#778394;padding:25px;font-size:13px}
-@media(max-width:600px){header h1{font-size:31px}section{padding:18px}td,th{padding:6px;font-size:14px}}
-
-/* ===== MODERN FINANCE OFFICE THEME ===== */
-
+:root {
+  --gold:#d6b46a;
+  --gold-light:#f1dba5;
+  --bg:#101010;
+  --card:#1b1b1b;
+  --text:#eee;
+  --muted:#aaa;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:125px}
 body {
-  margin: 0;
-  color: #f0f3f7;
-  font: 16px/1.85 -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-
-  background-color: #10243a;
-  background-image:
-    linear-gradient(
-      rgba(8, 24, 42, 0.73),
-      rgba(8, 20, 36, 0.83)
-    ),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72");
-
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background:radial-gradient(ellipse at top right,#3c301d,transparent 40%),
+  linear-gradient(135deg,#101010,#191919,#090909);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Arial,sans-serif;
+  line-height:1.8;
 }
-
-/* 顶部个人资料 */
 header {
-  background: linear-gradient(
-    135deg,
-    rgba(8, 24, 42, 0.96),
-    rgba(32, 62, 88, 0.91)
-  );
-  color: white;
-  text-align: center;
-  padding: 55px 18px;
-  border-bottom: 1px solid rgba(205, 174, 119, 0.55);
+  min-height:330px;
+  padding:65px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,#302719,#111 65%,#090909);
+  border-bottom:1px solid #67532d;
 }
-
+.eyebrow {color:var(--gold);letter-spacing:5px;font-size:12px}
 header h1 {
-  color: #e8cb91;
+  color:var(--gold-light);
+  font-size:clamp(38px,8vw,65px);
+  letter-spacing:8px;
+  margin:12px 0;
 }
-
-header p {
-  color: #dce5ee;
+header p {color:#ccc;font-size:14px;letter-spacing:2px}
+.languages {
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:13px 8px;
+  background:rgba(12,12,12,.97);
+  border-bottom:1px solid #5a4728;
 }
-
-/* 语言按钮 */
 .languages button {
-  background: transparent;
-  color: white;
-  border: 1px solid #c9aa70;
-  border-radius: 20px;
-  padding: 8px 13px;
+  padding:8px 13px;
+  border:1px solid #80683e;
+  border-radius:22px;
+  background:transparent;
+  color:#ddd;
+  cursor:pointer;
+  font-size:12px;
 }
-
-.languages button.active,
-.languages button:hover {
-  background: #c9aa70;
-  color: #14283d;
-  border-color: #c9aa70;
+.languages button.active,.languages button:hover {
+  background:var(--gold);
+  color:#15110a;
 }
-
-/* 导航栏 */
 nav {
-  background: rgba(7, 22, 38, 0.93);
-  padding: 14px;
-  text-align: center;
-  border-bottom: 1px solid rgba(205,174,119,0.35);
-  backdrop-filter: blur(12px);
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px 20px;
+  padding:20px 12px;
+  background:#171717;
+  border-bottom:1px solid #332a1c;
 }
-
 nav a {
-  color: #e9d7b5;
-  text-decoration: none;
-  margin: 5px 9px;
-  font-size: 14px;
+  color:var(--gold-light);
+  text-decoration:none;
+  font-size:13px;
+  padding:4px 0;
+  border-bottom:1px solid transparent;
 }
-
-nav a:hover {
-  color: #f2cd84;
+nav a:hover,nav a:focus {
+  color:white;
+  border-bottom-color:var(--gold);
 }
-
-/* 个人资料卡片 */
-section {
-  background: rgba(15, 31, 48, 0.91);
-  color: #f0f3f7;
-  margin: 22px 0;
-  padding: 26px;
-  border-radius: 14px;
-  border: 1px solid rgba(205, 174, 119, 0.32);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.24);
-  backdrop-filter: blur(10px);
+.container {width:min(1050px,92%);margin:auto;padding:40px 0 65px}
+section {margin-bottom:48px;scroll-margin-top:125px}
+.section-title {
+  color:var(--gold-light);
+  font-size:23px;
+  border-left:3px solid var(--gold);
+  padding-left:15px;
+  margin-bottom:22px;
 }
-
-/* 标题 */
-h2 {
-  color: #e8cb91;
-  border-left: 4px solid #c5a46d;
-  padding-left: 12px;
-  font-size: 21px;
+.card,.profile-item {
+  background:linear-gradient(145deg,#222,#171717);
+  border:1px solid rgba(214,180,106,.2);
+  border-radius:11px;
+  padding:21px;
+  margin-bottom:14px;
 }
-
-h3 {
-  color: #d7bd91;
+.card h3 {color:var(--gold);font-size:16px;margin-bottom:8px}
+.card p {font-size:14px;color:#ccc}
+.profile-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
 }
-
-/* 表格 */
-td, th {
-  border: 1px solid rgba(205,174,119,0.28);
-  padding: 9px;
-  text-align: left;
+.profile-item {margin:0;padding:15px}
+.profile-item span {display:block;color:#999;font-size:12px}
+.profile-item strong {display:block;color:var(--gold-light);font-size:15px;margin-top:5px}
+.timeline {border-left:2px solid var(--gold);margin-left:10px;padding-left:24px}
+.timeline-item {position:relative;margin-bottom:24px}
+.timeline-item:before {
+  content:"";
+  position:absolute;
+  left:-31px;top:9px;
+  width:11px;height:11px;
+  border-radius:50%;
+  background:var(--gold);
 }
-
-th {
-  background: rgba(35, 56, 76, 0.95);
-  color: #ecd39f;
-}
-
-/* 时间轴 */
-.timeline {
-  border-left: 2px solid #c5a46d;
-}
-
-.event:before {
-  background: #d7b77d;
-}
-
-/* 页脚 */
+.timeline-item h3 {color:var(--gold-light);font-size:15px}
+.timeline-item p {font-size:14px;color:#ccc}
 footer {
-  text-align: center;
-  color: #e5d4b5;
-  padding: 30px;
-  background: rgba(7, 22, 38, 0.95);
-  border-top: 1px solid rgba(205,174,119,0.35);
+  text-align:center;
+  padding:32px 15px;
+  background:#090909;
+  border-top:1px solid #5a4728;
+  color:#888;
+  font-size:12px;
 }
-
-/* 手机端适配 */
+footer strong {color:var(--gold);font-weight:normal}
+.top-link {
+  position:fixed;
+  right:15px;
+  bottom:20px;
+  z-index:90;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--gold);
+  color:#17120a;
+  text-decoration:none;
+  font-size:20px;
+}
 @media(max-width:600px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-
-  header h1 {
-    font-size: 31px;
-  }
-
-  section {
-    padding: 18px;
-  }
+  header {min-height:270px;padding:45px 12px}
+  header h1 {letter-spacing:4px}
+  .languages {gap:6px;padding:11px 5px}
+  .languages button {padding:7px 9px;font-size:11px}
+  nav {gap:9px 13px;padding:16px 9px}
+  nav a {font-size:12px}
+  .container {padding-top:28px}
+  .card {padding:17px}
 }
-    
 </style>
 </head>
+
 <body>
+
 <header>
-<p>PERSONAL PROFILE</p>
-<h1 id="personName">赵文林</h1>
-<p id="tagline">个人成长 · 教育背景 · 职业发展 · 个人生活</p>
-<p id="location">出生于台湾台北 · 现居日本东京 · 金融行业</p>
-<div class="languages">
-<button data-lang="zh-CN" class="active">简体中文</button>
-<button data-lang="zh-TW">繁體中文</button>
-<button data-lang="en">English</button>
-<button data-lang="ja">日本語</button>
-<button data-lang="ko">한국어</button>
-</div>
+  <div class="eyebrow">PERSONAL PROFILE</div>
+  <h1>赵文林</h1>
+  <p id="subtitle"></p>
 </header>
-<nav id="nav"></nav>
-<main id="content"></main>
-<footer id="footer">赵文林 · 完整个人档案</footer>
+
+<div class="languages">
+  <button class="active" data-lang="zh-CN">简体中文</button>
+  <button data-lang="zh-TW">繁體中文</button>
+  <button data-lang="en">English</button>
+  <button data-lang="ja">日本語</button>
+  <button data-lang="ko">한국어</button>
+</div>
+
+<nav id="navigation"></nav>
+
+<main class="container" id="content"></main>
+
+<footer>
+  <strong>WENLIN ZHAO</strong>
+  <p id="footerText"></p>
+</footer>
+
+<a class="top-link" href="#" aria-label="Back to top">↑</a>
 
 <script>
-const ids=["basic","growth","education","japan","career","hobbies","language","values","goals","life","bio","timeline"];
+const profiles = {
 
-const translations={
-"zh-CN":{
-name:"赵文林",tag:"个人成长 · 教育背景 · 职业发展 · 个人生活",location:"出生于台湾台北 · 现居日本东京 · 金融行业",
-nav:["基本资料","成长经历","教育背景","日本留学","职业经历","兴趣爱好","语言技能","性格与价值观","职业规划","生活愿景","完整个人简介","人物时间轴"],
-titles:["一、基本资料","二、出生背景与成长经历","三、台湾教育经历（1993—2012年）","四、日本东京留学经历（2012—2016年）","五、日本金融行业职业经历（2016—2026年）","六、个人兴趣爱好","七、语言技能","八、性格特点与个人价值观","九、职业规划与未来发展目标","十、个人生活与未来愿景","十一、完整个人简介","十二、人物档案时间轴"],
-body:[
-`<table><tr><th>项目</th><th>内容</th></tr>
-<tr><td>姓名</td><td>赵文林</td></tr><tr><td>出生年份</td><td>1990年</td></tr><tr><td>年龄</td><td>36岁（2026年，具体以生日为准）</td></tr><tr><td>出生地</td><td>中国台湾台北市信义区</td></tr><tr><td>成长环境</td><td>台北101大楼附近</td></tr><tr><td>现居地</td><td>日本东京都</td></tr><tr><td>本科专业</td><td>企业管理</td></tr><tr><td>本科毕业</td><td>2012年</td></tr><tr><td>硕士院校</td><td>早稻田大学</td></tr><tr><td>硕士方向</td><td>经营管理相关</td></tr><tr><td>硕士毕业</td><td>2016年</td></tr><tr><td>职业行业</td><td>金融行业</td></tr><tr><td>职业身份</td><td>企业职员</td></tr><tr><td>生活状态</td><td>在东京工作及生活</td></tr></table>`,
-`<p>赵文林出生于1990年，成长于中国台湾台北市信义区，童年生活环境位于台北101大楼附近。</p><p>信义区作为台北重要的商业及城市发展区域，为其成长提供了现代化的城市生活环境。从小接触多元文化和城市生活，逐渐培养出较为开放的思维方式。</p><p>童年时期性格比较开朗，喜欢与同龄人交流，也对新鲜事物保持好奇心。随着年龄增长，逐渐形成独立、自律及认真负责的性格特点。</p>`,
-`<h3>台湾地区教育经历</h3><table><tr><th>时间</th><th>教育阶段</th><th>地点</th></tr><tr><td>1993—1996年</td><td>幼儿园</td><td>台北市信义区</td></tr><tr><td>1996—2002年</td><td>小学</td><td>台北市</td></tr><tr><td>2002—2005年</td><td>初中</td><td>台北市</td></tr><tr><td>2005—2008年</td><td>高中</td><td>台北市</td></tr><tr><td>2008—2012年</td><td>大学本科</td><td>台湾地区</td></tr></table><h3>大学专业：企业管理</h3><p>大学期间主修企业管理，系统学习商业及企业运营相关知识。主要课程包括：</p><ul><li>经济学</li><li>会计学</li><li>财务管理</li><li>市场营销</li><li>企业战略</li><li>组织管理</li><li>商业分析</li></ul><p>大学期间逐渐对金融市场、企业经营及国际商务产生兴趣，为之后赴日本留学和进入金融行业奠定基础。2012年完成大学本科阶段学习，取得学士学位。</p>`,
-`<h3>2012年｜赴日本东京留学</h3><p>大学毕业后，赵文林决定前往日本东京继续深造。选择日本的原因主要包括：</p><ul><li>对日本企业经营模式及商业文化感兴趣。</li><li>希望拓展国际视野。</li><li>计划进一步学习企业管理和金融相关知识。</li><li>希望未来在日本长期发展。</li></ul><h3>2014—2016年｜早稻田大学硕士阶段</h3><p><b>学习方向：</b>经营管理、企业金融及商业分析相关领域。</p><p><b>学习内容：</b>企业经营战略、财务管理、国际商务、经济分析及市场研究。</p><p><b>学习目标：</b>加强企业管理及金融业务理解，为进入日本金融行业做好准备。</p><p>2016年完成硕士阶段学习，正式进入日本职场。</p><p class="note">硕士具体学位名称及课程设置需以实际就读项目为准。</p>`,
-`<h3>2016—2020年｜职业起步阶段</h3><p>硕士毕业后，赵文林选择留在日本发展，进入东京金融相关企业工作。</p><p>主要工作方向：</p><ul><li>金融业务运营</li><li>客户关系管理</li><li>商务沟通及业务协调</li><li>金融市场及业务数据分析</li><li>企业内部业务流程管理</li></ul><p>这一阶段主要积累金融行业基础经验，逐渐熟悉日本企业文化及职场环境。</p><h3>2020—2023年｜职业成长阶段</h3><p>随着工作经验增加，逐渐提升业务能力及工作责任。发展重点：</p><ul><li>参与金融项目及业务管理</li><li>协助处理客户及企业业务需求</li><li>参与业务分析和项目协调</li><li>提升金融业务理解及沟通能力</li><li>积累跨部门合作经验</li></ul><h3>2023—2026年｜稳定发展阶段</h3><p>目前以金融行业企业职员身份在东京工作和生活。职业发展方向包括：</p><ul><li>金融业务管理</li><li>企业金融及客户管理</li><li>商务协调与项目运营</li><li>金融市场及经济分析</li><li>企业内部业务管理</li></ul><p>希望通过持续学习和工作积累，逐步向资深业务人员、项目负责人或管理岗位发展。</p><p class="note">具体公司、职位名称、业务部门及工作成果尚未确认。</p>`,
-`<h3>咖啡与餐饮</h3><p>喜欢探索东京不同风格的咖啡馆和餐厅，享受安静舒适的生活空间。</p><h3>健身与运动</h3><p>喜欢健身、慢跑和散步，注重身体健康及生活规律。</p><h3>旅行与文化</h3><p>喜欢日本国内旅行，探索不同地区的自然景观、建筑文化和当地美食。</p><h3>财经与阅读</h3><p>关注金融市场、企业经营、国际经济及商业趋势，喜欢阅读财经资讯。</p><p>其他兴趣包括：电影与音乐、摄影及城市探索、与朋友聚会及交流、关注科技和社会发展、学习新的商业知识。</p>`,
-`<table><tr><th>语言</th><th>能力描述</th></tr><tr><td>中文（繁体）</td><td>母语水平，熟练阅读、书写及沟通</td></tr><tr><td>普通话</td><td>流利交流，具备商务沟通能力</td></tr></table>`,
-`<p>赵文林的人物性格设定为成熟、稳重、理性，同时具备一定的生活情趣。</p><table><tr><th>性格特点</th><th>具体表现</th></tr><tr><td>理性稳重</td><td>注重分析问题，做事有计划</td></tr><tr><td>认真负责</td><td>重视工作质量及责任感</td></tr><tr><td>独立自主</td><td>能够独立安排生活和工作</td></tr><tr><td>诚信可靠</td><td>重视信任及长期关系</td></tr><tr><td>持续学习</td><td>愿意不断提升专业能力</td></tr><tr><td>注重生活</td><td>追求工作与生活的平衡</td></tr></table><h3>个人价值观</h3><ul><li>诚信是建立关系的重要基础。</li><li>工作需要责任感及专业能力。</li><li>生活需要适当的自由和空间。</li><li>人际关系重视真诚及互相尊重。</li><li>长期发展比短期利益更加重要。</li></ul>`,
-`<h3>短期目标（2026—2028年）</h3><ul><li>深化金融业务专业知识。</li><li>提升金融市场及业务分析能力。</li><li>增强客户沟通及项目协调能力。</li><li>争取承担更加专业的工作职责。</li><li>保持稳定的职业发展节奏。</li></ul><h3>中期目标（2028—2031年）</h3><ul><li>在金融行业形成明确的专业方向。</li><li>积累更丰富的金融业务经验。</li><li>向资深金融业务人员或项目负责人发展。</li><li>提升团队协作及业务管理能力。</li><li>建立稳定的行业人脉。</li></ul><h3>长期目标（2031年以后）</h3><ul><li>在日本金融行业建立长期职业发展基础。</li><li>成为具备专业能力和国际视野的金融从业人员。</li><li>争取向管理岗位或高级专业岗位发展。</li><li>持续提升职业价值及个人竞争力。</li><li>实现事业稳定、生活充实及个人成长。</li></ul>`,
-`<p>赵文林希望未来能够继续在东京生活和发展，在稳定工作的基础上逐渐提高生活品质。</p><p>生活方面，希望保持健康的运动习惯，定期旅行，拓展兴趣爱好，拥有舒适的生活环境。</p><p>人际关系方面，重视真诚、可靠及互相尊重，希望建立长期稳定的朋友关系和良好的社会联系。</p><h3>未来希望实现</h3><ul><li>事业稳定发展。</li><li>经济生活更加稳健。</li><li>拥有健康的生活方式。</li><li>保持持续学习及个人成长。</li><li>在事业、生活和人际关系之间取得平衡。</li></ul>`,
-`<p>赵文林，36岁，出生于中国台湾台北市信义区，成长于台北101附近。早年在台北完成基础教育及大学本科学习，主修企业管理，系统学习经济学、财务管理、企业经营及市场营销等相关知识。</p><p>2012年大学毕业后前往日本东京留学，2014年进入早稻田大学攻读经营管理相关硕士课程，并于2016年完成学业。毕业后选择留在日本发展，进入金融行业工作，逐渐积累金融业务运营、客户关系管理、商务协调及企业业务管理方面的经验。</p><p>经过多年的学习与职业发展，目前以金融行业企业职员身份在东京工作和生活，持续提升专业能力，关注金融市场、企业经营及国际经济发展。</p><p>在个人生活中，喜欢咖啡、健身、旅行、阅读及探索东京城市文化。性格理性稳重、独立自主、认真负责，重视诚信、沟通和长期关系，同时注重生活品质及个人成长。</p><p>职业方面，希望持续深耕日本金融行业，逐步向资深业务人员、项目负责人或管理岗位发展。未来希望在事业稳定发展的同时，保持健康、充实且有品质的生活，实现个人成长、职业发展与生活平衡。</p>`,
-`<div class="timeline"><div class="event"><b>1990年</b><p>出生于台湾台北市信义区。</p></div><div class="event"><b>1993—2008年</b><p>在台北完成幼儿园、小学、初中及高中教育。</p></div><div class="event"><b>2008—2012年</b><p>大学本科，主修企业管理。</p></div><div class="event"><b>2012年</b><p>大学毕业，前往日本东京留学。</p></div><div class="event"><b>2014—2016年</b><p>早稻田大学经营管理相关硕士学习。</p></div><div class="event"><b>2016年</b><p>硕士毕业，进入日本金融行业工作。</p></div><div class="event"><b>2016—2026年</b><p>在日本金融行业积累职业经验。</p></div><div class="event"><b>2026年以后</b><p>持续在东京发展金融事业，规划长期职业及生活目标。</p></div></div>`
-],
-footer:"赵文林 · 完整个人档案",
-note:"说明：本页面根据提供的个人资料整理。学历、毕业时间、任职经历及其他可核验信息，请以正式文件和实际经历为准；未核实内容不应作为已验证事实使用。"
+"zh-CN": {
+subtitle:"个人成长 · 教育背景 · 职业发展 · 商业投资 · 个人生活",
+footer:"个人档案 · 个人成长 · 职业发展 · 商业投资",
+sections:[
+["个人资料",[
+["姓名","赵文林"],
+["出生年份","1990年"],
+["年龄","36岁（2026年）"],
+["出生地","中国台湾台北市信义区"],
+["成长环境","台北101大楼附近"],
+["现居地","日本东京都"],
+["本科专业方向","企业管理相关专业"],
+["本科毕业年份","2012年"],
+["留学院校","早稻田大学"],
+["硕士学习方向","企业管理及经营管理相关领域"],
+["硕士毕业年份","2016年"],
+["主要经历","企业管理、商业投资、全球线上店铺经营"],
+["职业发展方向","企业管理、商业投资、跨境电商"]
+]],
+["出生背景与成长经历",[
+["出生与成长","1990年出生于中国台湾台北市信义区，在台北101大楼附近成长。"],
+["成长环境","在多元化的城市环境中成长，逐渐形成开放的思维方式，并对商业、经济及社会发展产生兴趣。"],
+["个人成长","童年时期性格开朗，喜欢交流，对新事物保持好奇。随着成长，逐渐形成独立、自律、认真负责的处事态度。"]
+]],
+["教育经历",[
+["1993—1996年｜幼儿园","在台北市信义区接受幼儿启蒙教育，培养基础认知能力及生活习惯。"],
+["1996—2002年｜小学","在台北市完成小学阶段教育，学习基础课程，建立语言、数学及综合学习能力。"],
+["2002—2005年｜初中","接受综合基础教育，逐步培养独立思考及学习能力。"],
+["2005—2008年｜高中","完成高中阶段课程学习，为大学专业学习打下基础。"],
+["2008—2012年｜大学本科","在台湾地区学习企业管理相关专业，课程包括管理学、经济学、市场营销、企业经营战略、组织管理、人力资源管理、商业分析及国际商务。2012年完成本科阶段学习并取得学士学位。"],
+["2012年｜赴日本东京留学","本科毕业后前往东京继续深造，希望了解日本企业经营模式及商业文化，拓展国际视野，并为未来在日本长期发展做好准备。"],
+["2014—2016年｜早稻田大学硕士阶段","学习方向涉及企业管理、经营管理及商业运营。学习企业经营战略、企业组织与管理、市场营销战略、国际商务、企业运营分析及商业决策与管理。"],
+["2016年｜完成硕士阶段学习","完成硕士阶段学习，随后进入日本职场，开始积累企业管理及业务运营方面的工作经验。"]
+]],
+["日本企业工作经历",[
+["2016—2017年｜企业管理相关工作","进入日本企业工作，参与企业日常运营事务协调、部门业务沟通、内部流程管理、资料整理与分析、商务沟通及业务协调，并协助日常经营管理工作。"],
+["职业经验积累","通过实际工作逐步了解日本企业文化、组织管理方式及内部运营流程，积累企业职场经验。"],
+["2017年｜职业方向调整","工作约一年后离开原有岗位，重新规划职业发展方向，并开始探索商业投资及自主经营的可能性。"]
+]],
+["商业投资经历",[
+["2017年以后｜高端健身房合伙投资","与合伙人共同参与高端健身房项目投资，以投资合作为主。"],
+["参与方式","作为合伙投资人参与项目投资及合作沟通，关注整体经营情况、投资状况及项目发展。"],
+["职责范围","不负责健身房日常运营，不参与员工管理，不担任店长、经理或其他日常管理职务。"],
+["经验积累","通过项目了解高端健身商业模式、会员服务体系及市场需求，积累实体商业投资经验。"]
+]],
+["全球线上店铺经营",[
+["2021年至今｜线上店铺副业","2021年经合伙人介绍，开始参与全球线上店铺经营，将其作为个人副业及跨境业务探索方向。"],
+["业务范围","面向全球消费者开展线上商品销售及跨境业务，关注不同市场的消费需求与商业机会。"],
+["主要工作内容","全球市场调研、消费需求分析、线上店铺建立及维护、商品选择与信息整理、商品展示、销售及订单管理、国际客户沟通与售后服务、跨境物流跟进、线上营销推广及海外市场拓展。"],
+["项目关系","全球线上店铺经营与高端健身房投资属于不同的商业项目，分别独立开展。"]
+]],
+["兴趣爱好",[
+["咖啡与餐饮","喜欢探索东京不同地区的咖啡馆、餐厅及特色美食。"],
+["健身与运动","重视身体健康，平时喜欢健身、慢跑及户外散步。"],
+["旅行与文化","喜欢日本国内旅行，欣赏自然景观、城市建筑及当地美食。"],
+["财经与商业阅读","关注企业经营、国际贸易、全球市场及商业发展趋势。"],
+["其他兴趣","电影、音乐、摄影、城市探索、朋友聚会交流，以及科技与社会发展。"]
+]],
+["性格特点与个人理念",[
+["性格特点","成熟稳重、理性务实、认真负责、独立自主，重视个人成长及生活品质。"],
+["诚信原则","相信诚信是建立长期关系及稳定合作的重要基础。"],
+["责任意识","认为商业发展需要责任感、专业能力及持续学习。"],
+["合作理念","重视信任、沟通与相互尊重，希望建立长期、稳定的合作关系。"],
+["生活态度","重视自由、个人空间与生活品质，认为长期积累比短期利益更加重要。"]
+]],
+["未来发展规划",[
+["短期规划｜2026—2028年","深化企业管理及商业知识，提升全球线上店铺运营能力，加强跨境业务与国际市场分析，了解全球消费者需求，建立稳定合作关系，并关注实体投资项目的长期发展。"],
+["中期规划｜2028—2031年","进一步拓展全球线上业务，提升商业分析与经营规划能力，探索具有潜力的投资机会，优化线上店铺运营模式，积累国际商业合作经验。"],
+["长期规划｜2031年以后","继续在日本稳定发展事业与生活，拓展国际合作，提升经营管理及投资能力，在事业发展、经济稳定与个人生活之间建立平衡。"]
+]],
+["个人生活愿景",[
+["生活方向","继续在东京生活与发展，保持健康运动习惯，安排旅行及个人兴趣，创造舒适、有品质的生活环境。"],
+["事业目标","在企业管理知识基础上，持续积累投资及全球线上业务经验，提高国际经营能力。"],
+["人际关系","重视真诚、可靠与尊重，希望建立长期稳定的友谊及商业合作关系。"],
+["人生目标","追求事业发展、商业稳定、经济稳健、健康生活、持续学习与个人成长。"]
+]],
+["个人成长时间轴",[
+["1990年","出生于中国台湾台北市信义区。"],
+["1993—2008年","在台北市完成幼儿园、小学、初中及高中阶段教育。"],
+["2008—2012年","大学本科阶段学习企业管理相关专业。"],
+["2012年","本科毕业后前往日本东京留学。"],
+["2014—2016年","在早稻田大学进行硕士阶段学习。"],
+["2016年","完成硕士阶段学习，进入日本企业工作。"],
+["2016—2017年","从事企业管理及业务运营相关工作。"],
+["2017年","调整职业规划，开始探索商业投资。"],
+["2017年以后","参与高端健身房合伙投资，不参与日常经营管理。"],
+["2021年至今","持续开展全球线上店铺经营及跨境业务探索。"],
+["2026年以后","持续推进国际业务、商业投资及个人发展。"]
+]]
+]
 },
 
-"zh-TW":{
-name:"趙文林",tag:"個人成長 · 教育背景 · 職業發展 · 個人生活",location:"出生於台灣台北 · 現居日本東京 · 金融業",
-nav:["基本資料","成長經歷","教育背景","日本留學","職業經歷","興趣愛好","語言技能","性格與價值觀","職涯規劃","生活願景","完整個人簡介","人物時間軸"],
-titles:["一、基本資料","二、出生背景與成長經歷","三、台灣地區教育經歷","四、日本東京留學經歷","五、日本金融業職業經歷","六、個人興趣愛好","七、語言技能","八、性格特點與個人價值觀","九、職涯規劃與未來目標","十、個人生活與未來願景","十一、完整個人簡介","十二、人物檔案時間軸"],
-body:[
-`<table><tr><th>項目</th><th>內容</th></tr><tr><td>姓名</td><td>趙文林</td></tr><tr><td>出生年份</td><td>1990年</td></tr><tr><td>年齡</td><td>36歲（2026年，實際以生日為準）</td></tr><tr><td>出生地</td><td>台灣台北市信義區</td></tr><tr><td>成長環境</td><td>台北101大樓附近</td></tr><tr><td>現居地</td><td>日本東京都</td></tr><tr><td>大學主修</td><td>企業管理</td></tr><tr><td>大學畢業</td><td>2012年</td></tr><tr><td>碩士院校</td><td>早稻田大學</td></tr><tr><td>碩士方向</td><td>經營管理相關</td></tr><tr><td>碩士畢業</td><td>2016年</td></tr><tr><td>職業領域</td><td>金融業</td></tr><tr><td>職業身分</td><td>企業職員</td></tr><tr><td>生活狀態</td><td>在東京工作及生活</td></tr></table>`,
-`<p>趙文林出生於1990年，成長於台灣台北市信義區，童年生活環境位於台北101大樓附近。</p><p>信義區是台北重要的商業及城市發展區域，多元文化與都市生活逐漸培養出開放的思維方式。</p><p>童年時性格開朗，喜歡與同齡人交流，對新事物保持好奇。隨著年齡增長，逐漸形成獨立、自律及認真負責的性格。</p>`,
-`<h3>台灣地區教育經歷</h3><table><tr><th>時間</th><th>教育階段</th><th>地點</th></tr><tr><td>1993—1996年</td><td>幼稚園</td><td>台北市信義區</td></tr><tr><td>1996—2002年</td><td>國小</td><td>台北市</td></tr><tr><td>2002—2005年</td><td>國中</td><td>台北市</td></tr><tr><td>2005—2008年</td><td>高中</td><td>台北市</td></tr><tr><td>2008—2012年</td><td>大學本科</td><td>台灣地區</td></tr></table><h3>大學主修：企業管理</h3><p>大學期間主修企業管理，系統學習商業及企業營運相關知識，主要課程包括經濟學、會計學、財務管理、市場行銷、企業策略、組織管理及商業分析。</p><p>逐漸對金融市場、企業經營及國際商務產生興趣。2012年完成本科學習並取得學士學位。</p>`,
-`<h3>2012年｜前往日本東京留學</h3><p>大學畢業後前往日本東京深造，希望拓展國際視野，學習企業管理及金融知識，並為在日本長期發展做準備。</p><h3>2014—2016年｜早稻田大學碩士階段</h3><p><b>學習方向：</b>經營管理、企業金融及商業分析相關領域。</p><p><b>學習內容：</b>企業經營策略、財務管理、國際商務、經濟分析及市場研究。</p><p>2016年完成碩士階段學習，正式進入日本職場。</p><p class="note">碩士具體學位名稱及課程設定請以實際就讀專案為準。</p>`,
-`<h3>2016—2020年｜職涯起步</h3><p>碩士畢業後留在日本發展，進入東京金融相關企業工作，接觸金融業務營運、客戶關係管理、商務溝通、業務協調、金融市場及資料分析。</p><h3>2020—2023年｜職涯成長</h3><p>參與金融專案及業務管理，協助處理客戶與企業需求，參與業務分析和專案協調，累積跨部門合作經驗。</p><h3>2023—2026年｜穩定發展</h3><p>目前以金融業企業職員身分在東京工作及生活。發展方向包括金融業務管理、企業金融、客戶管理、商務協調、專案營運及市場分析。</p><p class="note">具體公司、職稱、部門及工作成果尚未確認。</p>`,
-`<h3>咖啡與餐飲</h3><p>喜歡探索東京不同風格的咖啡館和餐廳，享受安靜舒適的生活空間。</p><h3>健身與運動</h3><p>喜歡健身、慢跑和散步，重視健康與規律生活。</p><h3>旅行與文化</h3><p>喜歡日本國內旅行，探索自然景觀、建築文化及當地美食。</p><h3>財經與閱讀</h3><p>關注金融市場、企業經營、國際經濟及商業趨勢。</p><p>其他興趣包括電影、音樂、攝影、城市探索、朋友聚會、科技發展及商業知識。</p>`,
-`<table><tr><th>語言</th><th>能力描述</th></tr><tr><td>中文（繁體）</td><td>母語程度，熟練閱讀、書寫及溝通</td></tr><tr><td>普通話</td><td>流利交流，具備商務溝通能力</td></tr></table>`,
-`<p>趙文林的性格設定為成熟、穩重、理性，同時具備生活情趣。</p><table><tr><th>性格特點</th><th>具體表現</th></tr><tr><td>理性穩重</td><td>重視分析與計畫</td></tr><tr><td>認真負責</td><td>重視工作品質與責任感</td></tr><tr><td>獨立自主</td><td>能獨立安排生活與工作</td></tr><tr><td>誠信可靠</td><td>重視信任與長期關係</td></tr><tr><td>持續學習</td><td>不斷提升專業能力</td></tr><tr><td>重視生活</td><td>追求工作與生活平衡</td></tr></table><h3>個人價值觀</h3><ul><li>誠信是建立關係的重要基礎。</li><li>工作需要責任感與專業能力。</li><li>生活需要適度自由與空間。</li><li>人際關係重視真誠與尊重。</li><li>長期發展比短期利益更重要。</li></ul>`,
-`<h3>短期目標（2026—2028年）</h3><ul><li>深化金融業務專業知識。</li><li>提升金融市場與業務分析能力。</li><li>加強客戶溝通與專案協調。</li><li>承擔更專業的工作職責。</li></ul><h3>中期目標（2028—2031年）</h3><ul><li>在金融業建立明確專業方向。</li><li>累積更多金融業務經驗。</li><li>朝資深業務人員或專案負責人發展。</li><li>提升團隊合作及管理能力。</li></ul><h3>長期目標（2031年以後）</h3><ul><li>在日本金融業建立長期職涯基礎。</li><li>成為具備專業能力及國際視野的金融從業人員。</li><li>朝管理或高階專業職位發展。</li><li>兼顧事業、生活及個人成長。</li></ul>`,
-`<p>希望未來繼續在東京生活及發展，在穩定工作基礎上逐漸提升生活品質。</p><p>生活方面，希望保持健康運動習慣、定期旅行、拓展興趣，擁有舒適的生活環境。</p><p>人際關係方面，重視真誠、可靠及互相尊重，希望建立長期穩定的朋友關係與社會連結。</p><ul><li>事業穩定發展</li><li>經濟生活更加穩健</li><li>維持健康生活方式</li><li>持續學習與個人成長</li><li>平衡事業、生活及人際關係</li></ul>`,
-`<p>趙文林，1990年出生於台灣台北市信義區，成長於台北101附近。早年在台北完成基礎教育及大學本科學習，主修企業管理，系統學習經濟學、財務管理、企業經營及市場行銷等相關知識。</p><p>2012年大學畢業後前往日本東京留學，2014年進入早稻田大學攻讀經營管理相關碩士課程，並於2016年完成學業。畢業後選擇留在日本發展，進入金融業工作，逐漸累積金融業務營運、客戶關係管理、商務協調及企業業務管理方面的經驗。</p><p>經過多年學習與職涯發展，目前以金融業企業職員身分在東京工作及生活，持續提升專業能力，關注金融市場、企業經營及國際經濟發展。</p><p>個人生活中喜歡咖啡、健身、旅行、閱讀及探索東京城市文化。性格理性穩重、獨立自主、認真負責，重視誠信、溝通及長期關係，也注重生活品質與個人成長。</p><p>職涯方面，希望持續深耕日本金融業，逐步朝資深業務人員、專案負責人或管理職位發展，實現個人成長、職涯發展與生活平衡。</p>`,
-`<div class="timeline"><div class="event"><b>1990年</b><p>出生於台灣台北市信義區。</p></div><div class="event"><b>1993—2008年</b><p>在台北完成幼稚園、小學、國中及高中教育。</p></div><div class="event"><b>2008—2012年</b><p>大學本科，主修企業管理。</p></div><div class="event"><b>2012年</b><p>大學畢業，前往日本東京留學。</p></div><div class="event"><b>2014—2016年</b><p>早稻田大學經營管理相關碩士學習。</p></div><div class="event"><b>2016年</b><p>碩士畢業，進入日本金融業工作。</p></div><div class="event"><b>2016—2026年</b><p>在日本金融業累積職涯經驗。</p></div><div class="event"><b>2026年以後</b><p>持續在東京發展金融事業。</p></div></div>`
-],
-footer:"趙文林 · 完整個人檔案",
-note:"說明：本頁面依提供的個人資料整理。學歷、畢業時間、任職經歷及其他可查證資訊，請以正式文件及實際經歷為準；未確認內容不應作為已驗證事實使用。"
+"zh-TW": {
+subtitle:"個人成長 · 教育背景 · 職業發展 · 商業投資 · 個人生活",
+footer:"個人檔案 · 個人成長 · 職業發展 · 商業投資",
+sections:[
+["基本資料",[
+["姓名","趙文林"],["出生年份","1990年"],["年齡","36歲（2026年）"],["出生地","中國台灣台北市信義區"],["成長環境","台北101大樓附近"],["現居地","日本東京都"],["大學專業方向","企業管理相關專業"],["大學畢業年份","2012年"],["留學院校","早稻田大學"],["碩士學習方向","企業管理及經營管理相關領域"],["碩士畢業年份","2016年"],["主要經歷","企業管理、商業投資、全球線上店鋪經營"],["職業方向","企業管理、商業投資、跨境電商"]
+]],
+["出生背景與成長經歷",[
+["出生與成長","1990年出生於中國台灣台北市信義區，在台北101大樓附近成長。"],
+["成長環境","在多元化的城市環境中成長，逐漸形成開放思維，並對商業、經濟及社會發展產生興趣。"],
+["個人成長","童年時期性格開朗，喜歡交流，對新事物保持好奇。隨著成長，逐漸形成獨立、自律、認真負責的處事態度。"]
+]],
+["教育經歷",[
+["1993—1996年｜幼兒園","在台北市信義區接受幼兒啟蒙教育。"],
+["1996—2002年｜小學","在台北市完成小學教育，建立基礎學習能力。"],
+["2002—2005年｜國中","接受綜合基礎教育，培養獨立思考及學習能力。"],
+["2005—2008年｜高中","完成高中課程，為大學專業學習打下基礎。"],
+["2008—2012年｜大學本科","在台灣學習企業管理相關專業，課程包括管理學、經濟學、市場行銷、企業策略、組織管理、人力資源、商業分析及國際商務。2012年完成學習並取得學士學位。"],
+["2012年｜赴日本東京留學","大學畢業後前往東京繼續深造，了解日本企業經營模式及商業文化，拓展國際視野。"],
+["2014—2016年｜早稻田大學碩士階段","學習企業管理、經營管理及商業營運相關領域，包括企業策略、組織管理、市場行銷、國際商務及企業營運分析。"],
+["2016年｜完成碩士階段學習","完成碩士階段學習，隨後進入日本職場。"]
+]],
+["日本企業工作經歷",[
+["2016—2017年｜企業管理相關工作","參與企業日常營運協調、部門溝通、內部流程管理、資料整理與分析、商務溝通及業務協調。"],
+["職業經驗累積","透過實際工作了解日本企業文化、組織管理及內部營運流程。"],
+["2017年｜職業方向調整","工作約一年後離開原有職位，重新規劃職業發展，並探索商業投資及自主經營。"]
+]],
+["商業投資經歷",[
+["2017年以後｜高端健身房合夥投資","與合夥人共同參與高端健身房專案投資，以投資合作為主。"],
+["參與方式","以合夥投資人身分參與投資及合作溝通，關注整體經營與投資情況。"],
+["職責範圍","不負責健身房日常營運及員工管理，不擔任店長、經理或其他日常管理職務。"],
+["經驗累積","了解高端健身產業的商業模式、會員服務體系及市場需求。"]
+]],
+["全球線上店鋪經營",[
+["2021年至今｜線上店鋪副業","2021年經合夥人介紹，開始參與全球線上店鋪經營，作為個人副業及跨境業務探索方向。"],
+["業務範圍","面向全球消費者開展線上商品銷售及跨境業務。"],
+["主要工作內容","市場調查、消費需求分析、線上店鋪建立與維護、商品選擇及展示、銷售與訂單管理、國際客戶溝通、售後服務、跨境物流、線上行銷及海外市場拓展。"],
+["專案關係","線上店鋪與高端健身房投資屬於不同商業專案。"]
+]],
+["興趣愛好",[
+["咖啡與餐飲","喜歡探索東京不同地區的咖啡館、餐廳及特色美食。"],
+["健身與運動","重視健康，喜歡健身、慢跑及戶外散步。"],
+["旅行與文化","喜歡日本國內旅行，欣賞自然景觀、建築及當地美食。"],
+["財經與商業閱讀","關注企業經營、國際貿易、全球市場及商業趨勢。"],
+["其他興趣","電影、音樂、攝影、城市探索、朋友聚會、科技與社會發展。"]
+]],
+["性格特點與個人理念",[
+["性格特點","成熟穩重、理性務實、認真負責、獨立自主。"],
+["誠信原則","相信誠信是建立長期關係及穩定合作的重要基礎。"],
+["責任意識","重視責任感、專業能力及持續學習。"],
+["合作理念","重視信任、溝通與相互尊重。"],
+["生活態度","重視自由、個人空間與生活品質，認為長期累積比短期利益更加重要。"]
+]],
+["未來發展規劃",[
+["短期｜2026—2028年","深化企業管理及商業知識，提升線上店鋪營運、跨境業務及國際市場分析能力。"],
+["中期｜2028—2031年","拓展全球線上業務，提升商業分析與經營規劃能力，探索投資機會及國際合作。"],
+["長期｜2031年以後","繼續在日本穩定發展，拓展國際合作，建立事業與生活的平衡。"]
+]],
+["個人生活願景",[
+["生活方向","繼續在東京生活與發展，保持運動習慣，安排旅行及個人興趣。"],
+["事業目標","持續累積投資及全球線上業務經驗，提高國際經營能力。"],
+["人際關係","重視真誠、可靠與尊重，建立長期友誼及商業合作關係。"],
+["人生目標","追求事業發展、商業穩定、經濟穩健、健康生活及持續成長。"]
+]],
+["個人成長時間軸",[
+["1990年","出生於台灣台北市信義區。"],
+["1993—2008年","在台北完成幼兒園、小學、國中及高中教育。"],
+["2008—2012年","大學本科學習企業管理相關專業。"],
+["2012年","前往日本東京留學。"],
+["2014—2016年","在早稻田大學進行碩士階段學習。"],
+["2016年","完成碩士階段學習並進入日本企業。"],
+["2016—2017年","從事企業管理及業務營運相關工作。"],
+["2017年以後","參與高端健身房合夥投資。"],
+["2021年至今","持續經營全球線上店鋪副業。"],
+["2026年以後","持續推進國際業務及個人發展。"]
+]]
+]
 },
 
-"en":{
-name:"Zhao Wenlin",tag:"Personal Growth · Education · Career · Lifestyle",location:"Born in Taipei, Taiwan · Based in Tokyo, Japan · Finance",
-nav:["Profile","Early Life","Education","Study in Japan","Career","Interests","Languages","Values","Career Goals","Lifestyle","Biography","Timeline"],
-titles:["1. Personal Profile","2. Background and Early Life","3. Education in Taiwan","4. Studies in Tokyo, Japan","5. Financial Career in Japan","6. Interests and Hobbies","7. Language Skills","8. Personality and Values","9. Career Plans and Goals","10. Lifestyle and Future Vision","11. Full Biography","12. Personal Timeline"],
-body:[
-`<table><tr><th>Item</th><th>Details</th></tr><tr><td>Name</td><td>Zhao Wenlin</td></tr><tr><td>Birth Year</td><td>1990</td></tr><tr><td>Age</td><td>36 in 2026, depending on birthday</td></tr><tr><td>Birthplace</td><td>Xinyi District, Taipei, Taiwan</td></tr><tr><td>Growing Up</td><td>Near Taipei 101</td></tr><tr><td>Residence</td><td>Tokyo, Japan</td></tr><tr><td>Undergraduate Major</td><td>Business Administration</td></tr><tr><td>Undergraduate Graduation</td><td>2012</td></tr><tr><td>Graduate University</td><td>Waseda University</td></tr><tr><td>Graduate Focus</td><td>Business Management</td></tr><tr><td>Graduate Completion</td><td>2016</td></tr><tr><td>Industry</td><td>Financial Services</td></tr><tr><td>Occupation</td><td>Corporate Employee</td></tr><tr><td>Lifestyle</td><td>Working and living in Tokyo</td></tr></table>`,
-`<p>Zhao Wenlin was born in 1990 and grew up in Xinyi District, Taipei, Taiwan, near Taipei 101.</p><p>Xinyi is an important commercial and urban development area. Growing up in a modern city environment with diverse cultures helped develop an open perspective.</p><p>As a child, he was outgoing and curious about new things. Over time, he developed independence, self-discipline and a sense of responsibility.</p>`,
-`<h3>Education in Taiwan</h3><table><tr><th>Period</th><th>Stage</th><th>Location</th></tr><tr><td>1993–1996</td><td>Kindergarten</td><td>Xinyi, Taipei</td></tr><tr><td>1996–2002</td><td>Primary School</td><td>Taipei</td></tr><tr><td>2002–2005</td><td>Junior High School</td><td>Taipei</td></tr><tr><td>2005–2008</td><td>Senior High School</td><td>Taipei</td></tr><tr><td>2008–2012</td><td>Undergraduate</td><td>Taiwan</td></tr></table><h3>Major: Business Administration</h3><p>Studied economics, accounting, financial management, marketing, corporate strategy, organizational management and business analysis.</p><p>Developed an interest in financial markets, corporate management and international business. Completed undergraduate studies in 2012 and received a bachelor's degree.</p>`,
-`<h3>2012 | Move to Tokyo for Further Study</h3><p>After graduating, Zhao Wenlin moved to Tokyo to continue his education, broaden his international perspective and study business and finance.</p><h3>2014–2016 | Graduate Studies at Waseda University</h3><p><b>Focus:</b> Business management, corporate finance and business analysis.</p><p><b>Subjects:</b> Corporate strategy, financial management, international business, economic analysis and market research.</p><p>Completed graduate-level studies in 2016 and entered the Japanese workforce.</p><p class="note">The exact degree title and curriculum should be confirmed against official academic records.</p>`,
-`<h3>2016–2020 | Early Career</h3><p>After graduation, he remained in Japan and began working in a finance-related company in Tokyo.</p><ul><li>Financial operations</li><li>Customer relationship management</li><li>Business communication and coordination</li><li>Financial market and business data analysis</li><li>Internal business processes</li></ul><p>This period focused on building foundational experience and understanding Japanese corporate culture.</p><h3>2020–2023 | Career Development</h3><ul><li>Participation in financial projects and business management</li><li>Support for customer and corporate needs</li><li>Business analysis and project coordination</li><li>Improvement of financial knowledge and communication</li><li>Cross-department collaboration</li></ul><h3>2023–2026 | Continued Development</h3><p>Currently described as working and living in Tokyo as a financial-sector employee. Areas of development include financial operations, corporate finance, client management, project coordination and market analysis.</p><p class="note">Specific employers, titles, departments and achievements have not yet been confirmed.</p>`,
-`<h3>Coffee and Dining</h3><p>Enjoys discovering different cafés and restaurants in Tokyo.</p><h3>Fitness and Exercise</h3><p>Enjoys fitness, jogging and walking, and values a healthy routine.</p><h3>Travel and Culture</h3><p>Enjoys travelling around Japan and exploring nature, architecture and local cuisine.</p><h3>Finance and Reading</h3><p>Follows financial markets, corporate management, international economics and business trends.</p><p>Other interests include films, music, photography, urban exploration, meeting friends, technology and business learning.</p>`,
-`<table><tr><th>Language</th><th>Ability</th></tr><tr><td>Traditional Chinese</td><td>Native-level reading, writing and communication</td></tr><tr><td>Mandarin</td><td>Fluent, including business communication</td></tr></table>`,
-`<p>His described personality is mature, steady and rational, while also appreciating a fulfilling personal life.</p><table><tr><th>Trait</th><th>Description</th></tr><tr><td>Rational</td><td>Analytical and organized</td></tr><tr><td>Responsible</td><td>Values quality and accountability</td></tr><tr><td>Independent</td><td>Manages work and life independently</td></tr><tr><td>Reliable</td><td>Values trust and long-term relationships</td></tr><tr><td>Growth-minded</td><td>Continually improves professional skills</td></tr><tr><td>Balanced</td><td>Values work-life balance</td></tr></table><h3>Personal Values</h3><ul><li>Honesty is the foundation of relationships.</li><li>Work requires responsibility and professionalism.</li><li>Life needs freedom and personal space.</li><li>Relationships should be sincere and respectful.</li><li>Long-term development matters more than short-term gain.</li></ul>`,
-`<h3>Short-Term Goals (2026–2028)</h3><ul><li>Deepen financial expertise.</li><li>Improve market and business analysis.</li><li>Strengthen client communication and project coordination.</li><li>Take on more specialized responsibilities.</li><li>Maintain steady career development.</li></ul><h3>Medium-Term Goals (2028–2031)</h3><ul><li>Establish a clear specialization in finance.</li><li>Build broader financial experience.</li><li>Progress toward senior or project leadership roles.</li><li>Improve teamwork and management skills.</li><li>Develop a stable professional network.</li></ul><h3>Long-Term Goals (After 2031)</h3><ul><li>Build a long-term career in Japan's financial sector.</li><li>Develop professional expertise and international perspective.</li><li>Progress toward management or senior specialist roles.</li><li>Balance career, personal life and growth.</li></ul>`,
-`<p>Zhao Wenlin hopes to continue living and developing his career in Tokyo while gradually improving his quality of life.</p><p>He aims to maintain healthy exercise habits, travel regularly, develop personal interests and enjoy a comfortable living environment.</p><p>He values sincerity, reliability and mutual respect, and hopes to build lasting friendships and positive social connections.</p><h3>Future Aspirations</h3><ul><li>Stable career development</li><li>Sound financial well-being</li><li>A healthy lifestyle</li><li>Continuous learning and growth</li><li>Balance among career, life and relationships</li></ul>`,
-`<p>Zhao Wenlin, born in 1990 in Xinyi District, Taipei, Taiwan, grew up near Taipei 101. He completed his early education and undergraduate studies in Taipei, majoring in Business Administration and studying economics, financial management, corporate management and marketing.</p><p>After graduating in 2012, he moved to Tokyo for further study. In 2014, he began graduate-level studies in a business-management-related field at Waseda University and completed his studies in 2016. He then chose to remain in Japan and entered the financial industry, gradually gaining experience in financial operations, client relationship management, business coordination and corporate operations.</p><p>After years of study and professional development, he is described as working and living in Tokyo in the financial sector. He continues to develop his professional abilities and follows financial markets, corporate management and international economic developments.</p><p>In his personal life, he enjoys coffee, fitness, travel, reading and exploring Tokyo. He is described as rational, independent and responsible, values honesty, communication and long-term relationships, and appreciates quality of life and personal growth.</p><p>Professionally, he hopes to continue developing in Japan's financial industry and progress toward senior business, project leadership or management roles while maintaining a healthy and fulfilling life.</p>`,
-`<div class="timeline"><div class="event"><b>1990</b><p>Born in Xinyi District, Taipei, Taiwan.</p></div><div class="event"><b>1993–2008</b><p>Completed kindergarten through high school in Taipei.</p></div><div class="event"><b>2008–2012</b><p>Undergraduate studies in Business Administration.</p></div><div class="event"><b>2012</b><p>Graduated and moved to Tokyo for further study.</p></div><div class="event"><b>2014–2016</b><p>Graduate studies at Waseda University.</p></div><div class="event"><b>2016</b><p>Completed graduate studies and entered Japan's financial industry.</p></div><div class="event"><b>2016–2026</b><p>Built professional experience in Japan's financial sector.</p></div><div class="event"><b>After 2026</b><p>Continued career and life development in Tokyo.</p></div></div>`
-],
-footer:"Zhao Wenlin · Personal Profile",
-note:"Note: This page is compiled from supplied personal information. Education, graduation dates, employment history and other verifiable details should be checked against official records. Unverified details should not be presented as confirmed facts."
+"en": {
+subtitle:"Personal Growth · Education · Career · Business Investment · Lifestyle",
+footer:"Personal Profile · Personal Growth · Career · Business Investment",
+sections:[
+["Personal Information",[
+["Name","Wenlin Zhao"],["Year of Birth","1990"],["Age","36 (2026)"],["Place of Birth","Xinyi District, Taipei, Taiwan"],["Growing-up Area","Near Taipei 101"],["Current Residence","Tokyo, Japan"],["Undergraduate Field","Business Administration-related studies"],["Undergraduate Graduation","2012"],["Graduate Institution","Waseda University"],["Graduate Study Focus","Business and Management"],["Graduate Study Completion","2016"],["Experience","Business management, investment and global online store operations"],["Career Interests","Business management, investment and cross-border e-commerce"]
+]],
+["Birth and Personal Background",[
+["Early Life","Born in 1990 in Xinyi District, Taipei, Taiwan, and raised near Taipei 101."],
+["Growing Environment","Growing up in a diverse urban environment helped develop an open-minded perspective and an interest in business, economics and social development."],
+["Personal Development","Outgoing and curious during childhood. Over time, developed independence, self-discipline and a strong sense of responsibility."]
+]],
+["Education",[
+["1993–1996 | Kindergarten","Early childhood education in Xinyi District, Taipei."],
+["1996–2002 | Primary School","Completed primary education in Taipei and developed foundational academic skills."],
+["2002–2005 | Junior High School","Completed general education and developed independent thinking and learning skills."],
+["2005–2008 | Senior High School","Completed secondary education in preparation for university studies."],
+["2008–2012 | Undergraduate Studies","Studied a business administration-related field in Taiwan, including management, economics, marketing, corporate strategy, organizational management, human resources, business analysis and international business. Completed undergraduate studies in 2012."],
+["2012 | Moved to Tokyo","Moved to Tokyo after undergraduate studies to pursue further education, explore Japanese business culture and broaden international perspectives."],
+["2014–2016 | Waseda University","Graduate-level studies involving business management, corporate management and business operations, including corporate strategy, organizational management, marketing strategy, international business and operational analysis."],
+["2016 | Graduate Studies Completed","Completed the graduate study period and entered the Japanese workforce."]
+]],
+["Professional Experience in Japan",[
+["2016–2017 | Business Management-related Work","Worked at a Japanese company, supporting daily operational coordination, interdepartmental communication, internal processes, document organization, analysis and business coordination."],
+["Professional Development","Gained practical exposure to Japanese corporate culture, organizational structures and internal operating processes."],
+["2017 | Career Transition","After approximately one year, left the position to reassess career goals and explore investment and independent business opportunities."]
+]],
+["Business Investment",[
+["From 2017 | Premium Fitness Club Investment","Participated in a premium fitness club investment project together with business partners."],
+["Role","Participated as an investment partner, focusing on investment cooperation and communication."],
+["Responsibilities","Not responsible for daily club operations or staff management, and does not serve as a store manager or operational manager."],
+["Experience","Developed an understanding of premium fitness business models, membership services and market demand."]
+]],
+["Global Online Store Business",[
+["2021–Present | Online Business as a Side Venture","Started participating in global online store operations in 2021 through an introduction from a business partner."],
+["Business Scope","Online product sales and cross-border business serving consumers in international markets."],
+["Activities","Market research, consumer demand analysis, online store setup and maintenance, product selection and presentation, sales and order management, customer communication, after-sales service, cross-border logistics, online marketing and overseas market development."],
+["Separate Projects","The online store business and the fitness club investment are separate commercial projects."]
+]],
+["Interests and Hobbies",[
+["Coffee and Dining","Enjoys exploring cafés, restaurants and local food across Tokyo."],
+["Fitness and Exercise","Values health and enjoys fitness, jogging and walking."],
+["Travel and Culture","Enjoys travelling within Japan and discovering nature, architecture and local cuisine."],
+["Business and Finance","Interested in corporate management, international trade, global markets and business trends."],
+["Other Interests","Film, music, photography, urban exploration, social gatherings, technology and social development."]
+]],
+["Personal Values and Character",[
+["Character","Mature, calm, rational, responsible and independent, with an emphasis on personal growth and quality of life."],
+["Integrity","Believes integrity is essential for lasting relationships and reliable cooperation."],
+["Responsibility","Values responsibility, professional competence and continuous learning in business."],
+["Cooperation","Emphasizes trust, communication and mutual respect."],
+["Lifestyle","Values freedom, personal space and quality of life, believing long-term progress matters more than short-term gains."]
+]],
+["Future Development Plans",[
+["Short Term | 2026–2028","Deepen business knowledge, improve global online store operations, strengthen cross-border business and international market analysis, and build stable partnerships."],
+["Medium Term | 2028–2031","Expand global online business, improve business analysis and planning, explore promising investments and develop international partnerships."],
+["Long Term | From 2031","Continue building a stable life and career in Japan, expand international cooperation and balance business development with personal well-being."]
+]],
+["Personal Life Vision",[
+["Lifestyle","Continue living and developing in Tokyo, maintaining healthy habits and making time for travel and personal interests."],
+["Career Goals","Build on business management knowledge and continue gaining experience in investment and global online business."],
+["Relationships","Value sincerity, reliability and respect in friendships and business relationships."],
+["Life Goals","Pursue career development, business stability, financial security, good health and continuous learning."]
+]],
+["Personal Timeline",[
+["1990","Born in Xinyi District, Taipei, Taiwan."],
+["1993–2008","Completed kindergarten, primary, junior high and senior high education in Taipei."],
+["2008–2012","Undergraduate studies in a business administration-related field."],
+["2012","Moved to Tokyo for further education."],
+["2014–2016","Graduate-level studies at Waseda University."],
+["2016","Completed graduate studies and entered the Japanese workforce."],
+["2016–2017","Worked in business management and operations-related roles."],
+["From 2017","Participated in a premium fitness club investment project."],
+["2021–Present","Developed a global online store business as a side venture."],
+["From 2026","Continue international business development and personal growth."]
+]]
+]
 },
 
-"ja":{
-name:"趙 文林",tag:"成長 · 学歴 · キャリア · ライフスタイル",location:"台湾・台北出身 · 日本・東京在住 · 金融業界",
-nav:["基本情報","成長の歩み","学歴","日本留学","職務経歴","趣味","語学力","性格と価値観","キャリア計画","生活と将来像","人物紹介","経歴年表"],
-titles:["1. 基本情報","2. 出生背景と成長","3. 台湾での教育歴","4. 東京留学経験","5. 日本の金融業界での職務経歴","6. 趣味・関心","7. 語学力","8. 性格と価値観","9. キャリア計画と目標","10. 生活と将来のビジョン","11. 詳細プロフィール","12. 人物年表"],
-body:[
-`<table><tr><th>項目</th><th>内容</th></tr><tr><td>氏名</td><td>趙 文林</td></tr><tr><td>生年</td><td>1990年</td></tr><tr><td>年齢</td><td>2026年時点で36歳（誕生日による）</td></tr><tr><td>出生地</td><td>台湾・台北市信義区</td></tr><tr><td>成長環境</td><td>台北101周辺</td></tr><tr><td>居住地</td><td>東京都</td></tr><tr><td>学部専攻</td><td>経営管理</td></tr><tr><td>学部卒業</td><td>2012年</td></tr><tr><td>大学院</td><td>早稲田大学</td></tr><tr><td>大学院の分野</td><td>経営管理関連</td></tr><tr><td>修了年</td><td>2016年</td></tr><tr><td>業界</td><td>金融業界</td></tr><tr><td>職業</td><td>企業勤務</td></tr><tr><td>生活</td><td>東京で仕事と生活</td></tr></table>`,
-`<p>趙文林は1990年に生まれ、台湾・台北市信義区、台北101周辺で育ちました。</p><p>信義区は台北の主要な商業・都市開発エリアです。多様な文化と都市生活に触れながら、開かれた考え方を育んできました。</p><p>幼少期は明るく、新しいことに好奇心を持ち、成長とともに自立心、規律、責任感を身につけてきました。</p>`,
-`<h3>台湾での教育歴</h3><table><tr><th>期間</th><th>教育段階</th><th>場所</th></tr><tr><td>1993～1996年</td><td>幼稚園</td><td>台北市信義区</td></tr><tr><td>1996～2002年</td><td>小学校</td><td>台北市</td></tr><tr><td>2002～2005年</td><td>中学校</td><td>台北市</td></tr><tr><td>2005～2008年</td><td>高等学校</td><td>台北市</td></tr><tr><td>2008～2012年</td><td>大学学部</td><td>台湾</td></tr></table><h3>専攻：経営管理</h3><p>経済学、会計学、財務管理、マーケティング、企業戦略、組織管理、ビジネス分析などを学びました。</p><p>金融市場、企業経営、国際ビジネスへの関心を深め、2012年に学士課程を修了しました。</p>`,
-`<h3>2012年｜東京へ留学</h3><p>大学卒業後、国際的な視野を広げ、経営管理や金融を学ぶため東京へ渡りました。</p><h3>2014～2016年｜早稲田大学大学院</h3><p><b>学習分野：</b>経営管理、企業金融、ビジネス分析関連。</p><p><b>学習内容：</b>企業戦略、財務管理、国際ビジネス、経済分析、市場調査。</p><p>2016年に大学院段階の学習を終え、日本での職業生活を開始しました。</p><p class="note">具体的な学位名とカリキュラムは正式な在籍記録で確認してください。</p>`,
-`<h3>2016～2020年｜キャリア初期</h3><p>卒業後も日本に残り、東京の金融関連企業で働き始めました。</p><ul><li>金融業務の運営</li><li>顧客関係管理</li><li>ビジネスコミュニケーションと調整</li><li>金融市場・業務データ分析</li><li>社内業務プロセス管理</li></ul><h3>2020～2023年｜キャリア成長</h3><ul><li>金融プロジェクトと業務管理への参加</li><li>顧客・企業ニーズへの対応</li><li>業務分析とプロジェクト調整</li><li>金融知識とコミュニケーション能力の向上</li><li>部門横断の協力経験</li></ul><h3>2023～2026年｜継続的な発展</h3><p>現在は金融業界の企業職員として東京で働き、生活しているという設定です。金融業務管理、企業金融、顧客管理、プロジェクト運営、市場分析などを今後の方向としています。</p><p class="note">勤務先、役職、部署、具体的な成果は未確認です。</p>`,
-`<h3>コーヒーと食文化</h3><p>東京のさまざまなカフェやレストランを訪れることが好きです。</p><h3>フィットネスと運動</h3><p>筋力トレーニング、ジョギング、散歩を楽しみ、健康的な生活を大切にしています。</p><h3>旅行と文化</h3><p>日本国内を旅行し、自然、建築、地域の料理を楽しみます。</p><h3>金融と読書</h3><p>金融市場、企業経営、国際経済、ビジネストレンドに関心があります。</p><p>その他、映画、音楽、写真、街歩き、友人との交流、テクノロジーやビジネス知識にも関心があります。</p>`,
-`<table><tr><th>言語</th><th>能力</th></tr><tr><td>繁体字中国語</td><td>母語レベル。読み書きと会話に熟達</td></tr><tr><td>標準中国語</td><td>流暢な会話。ビジネスコミュニケーションが可能</td></tr></table>`,
-`<p>人物像として、成熟して落ち着きがあり、理性的でありながら生活の楽しみも大切にする性格を設定しています。</p><table><tr><th>特徴</th><th>具体的な表れ</th></tr><tr><td>冷静</td><td>分析的で計画的</td></tr><tr><td>責任感</td><td>仕事の質と責任を重視</td></tr><tr><td>自立</td><td>仕事と生活を自分で管理</td></tr><tr><td>誠実</td><td>信頼と長期的な関係を重視</td></tr><tr><td>学び続ける姿勢</td><td>専門能力を継続的に向上</td></tr><tr><td>生活重視</td><td>仕事と生活のバランスを追求</td></tr></table><h3>価値観</h3><ul><li>誠実さは人間関係の基礎。</li><li>仕事には責任感と専門性が必要。</li><li>生活には自由と個人の空間が必要。</li><li>真心と相互尊重を大切にする。</li><li>短期的利益より長期的発展を重視。</li></ul>`,
-`<h3>短期目標（2026～2028年）</h3><ul><li>金融業務の専門知識を深める。</li><li>市場分析と業務分析の能力を高める。</li><li>顧客対応とプロジェクト調整力を向上。</li><li>より専門的な責任を担う。</li></ul><h3>中期目標（2028～2031年）</h3><ul><li>金融業界で専門分野を確立する。</li><li>金融業務の経験を積む。</li><li>シニア担当者やプロジェクト責任者を目指す。</li><li>チームワークと管理能力を高める。</li></ul><h3>長期目標（2031年以降）</h3><ul><li>日本の金融業界で長期的なキャリアを築く。</li><li>専門性と国際的な視野を持つ人材を目指す。</li><li>管理職または上級専門職を目指す。</li><li>仕事、生活、自己成長のバランスを保つ。</li></ul>`,
-`<p>今後も東京で生活とキャリアを続け、安定した仕事を基盤に生活の質を高めたいと考えています。</p><p>健康的な運動習慣、定期的な旅行、趣味の充実、快適な住環境を大切にします。</p><p>人間関係では誠実さ、信頼、相互尊重を重視し、長く続く友情や良好な社会的つながりを築きたいと考えています。</p><h3>将来実現したいこと</h3><ul><li>安定したキャリア</li><li>健全な経済生活</li><li>健康的なライフスタイル</li><li>継続的な学習と成長</li><li>仕事、生活、人間関係の調和</li></ul>`,
-`<p>趙文林は1990年に台湾・台北市信義区で生まれ、台北101周辺で育ちました。台北で基礎教育と大学教育を受け、経営管理を専攻し、経済学、財務管理、企業経営、マーケティングなどを学びました。</p><p>2012年の大学卒業後、東京へ留学。2014年に早稲田大学で経営管理関連の大学院課程に進み、2016年に学習を修了しました。その後日本に残り、金融業界に入り、金融業務運営、顧客関係管理、ビジネス調整、企業業務管理の経験を積んできたというプロフィールです。</p><p>現在は金融業界の企業職員として東京で働き生活しているという設定で、専門能力の向上に努め、金融市場、企業経営、国際経済の動向に関心を持っています。</p><p>私生活ではコーヒー、フィットネス、旅行、読書、東京の街歩きを楽しみます。理性的で自立心があり、責任感を大切にし、誠実さ、コミュニケーション、長期的な関係を重視しています。</p><p>仕事では日本の金融業界で経験を深め、シニア担当者、プロジェクト責任者、管理職を目指し、仕事と生活のバランスを大切にしたいと考えています。</p>`,
-`<div class="timeline"><div class="event"><b>1990年</b><p>台湾・台北市信義区で出生。</p></div><div class="event"><b>1993～2008年</b><p>台北で幼稚園から高校までの教育を受ける。</p></div><div class="event"><b>2008～2012年</b><p>経営管理を専攻し大学学部課程を修了。</p></div><div class="event"><b>2012年</b><p>大学卒業後、東京へ留学。</p></div><div class="event"><b>2014～2016年</b><p>早稲田大学大学院で学ぶ。</p></div><div class="event"><b>2016年</b><p>大学院課程を終え、日本の金融業界へ。</p></div><div class="event"><b>2016～2026年</b><p>日本の金融業界で職務経験を積む。</p></div><div class="event"><b>2026年以降</b><p>東京で長期的なキャリアと生活を計画。</p></div></div>`
-],
-footer:"趙 文林 · 個人プロフィール",
-note:"注記：本ページは提供された個人情報をもとに整理しています。学歴、修了時期、職歴などの確認可能な情報は、正式な書類と実際の経歴に基づいて確認してください。未確認の内容を検証済みの事実として扱わないでください。"
+"ja": {
+subtitle:"自己成長 · 学歴 · 職務経歴 · 事業投資 · 個人生活",
+footer:"個人プロフィール · 自己成長 · キャリア · 事業投資",
+sections:[
+["基本情報",[
+["氏名","趙 文林"],["生年","1990年"],["年齢","36歳（2026年）"],["出生地","台湾・台北市信義区"],["成長した地域","台北101周辺"],["現住所","日本・東京都"],["大学専攻","企業経営関連分野"],["大学卒業年","2012年"],["留学先","早稲田大学"],["大学院での学習分野","企業経営・経営管理"],["大学院修了年","2016年"],["主な経験","企業管理、事業投資、グローバルオンラインショップ運営"],["キャリアの方向性","企業経営、事業投資、越境EC"]
+]],
+["出生背景と成長",[
+["出生と成長","1990年、台湾・台北市信義区に生まれ、台北101周辺で育つ。"],
+["成長環境","多様な都市環境の中で育ち、柔軟な考え方を身につけ、ビジネス、経済、社会の発展に関心を持つようになる。"],
+["人物形成","幼少期は明るく、人との交流や新しいことに興味を持つ。成長とともに、自立心、自律性、責任感を大切にするようになる。"]
+]],
+["学歴",[
+["1993～1996年｜幼稚園","台北市信義区で幼児教育を受ける。"],
+["1996～2002年｜小学校","台北市で初等教育を修了し、基礎的な学習能力を身につける。"],
+["2002～2005年｜中学校","基礎教育を受け、主体的に考える力と学習能力を育む。"],
+["2005～2008年｜高等学校","高校課程を修了し、大学での専門的な学習に備える。"],
+["2008～2012年｜大学学部課程","台湾で企業経営関連分野を学ぶ。経営学、経済学、マーケティング、企業戦略、組織管理、人事管理、ビジネス分析、国際ビジネスなどを学習。2012年に学士課程を修了。"],
+["2012年｜東京へ留学","大学卒業後、東京へ渡り、さらに学びを深める。日本企業の経営モデルやビジネス文化への関心を持ち、国際的な視野を広げることを目指す。"],
+["2014～2016年｜早稲田大学大学院での学習","企業経営、経営管理、事業運営に関連する分野を学ぶ。企業戦略、組織管理、マーケティング戦略、国際ビジネス、事業分析、経営意思決定などを学習。"],
+["2016年｜大学院課程修了","大学院での学習を終え、日本で就職し、企業管理や業務運営に関する経験を積み始める。"]
+]],
+["日本企業での職務経験",[
+["2016～2017年｜企業管理関連業務","日本企業に勤務し、日常業務の調整、部門間の連絡、社内業務プロセスの管理、資料整理・分析、ビジネス上の連絡調整などに携わる。"],
+["実務経験","実際の業務を通じて、日本企業の文化、組織管理、社内運営の流れについて理解を深める。"],
+["2017年｜キャリアの見直し","約1年間の勤務後、退職してキャリアを見直し、事業投資や自主的な事業活動の可能性を探る。"]
+]],
+["事業投資",[
+["2017年以降｜高級フィットネスクラブへの共同投資","パートナーとともに高級フィットネスクラブの投資プロジェクトに参加。"],
+["参加形態","投資パートナーとして投資や協力に関する調整に参加し、事業全体や投資状況に関心を持つ。"],
+["担当範囲","日常運営や従業員管理は担当せず、店長、マネージャーなどの運営管理職には就いていない。"],
+["経験","高級フィットネス業界のビジネスモデル、会員サービス、市場ニーズについて理解を深める。"]
+]],
+["グローバルオンラインショップ事業",[
+["2021年～現在｜オンラインショップの副業","2021年、ビジネスパートナーの紹介をきっかけに、グローバルオンラインショップの運営に参加。"],
+["事業内容","世界各地の消費者を対象としたオンライン販売および越境ビジネス。"],
+["主な業務","市場調査、消費者ニーズの分析、オンラインショップの開設・管理、商品選定と情報整理、販売・注文管理、海外顧客対応、アフターサービス、国際物流の確認、オンラインマーケティング、海外市場の開拓。"],
+["プロジェクトについて","オンラインショップ事業とフィットネスクラブ投資は、それぞれ独立した別の事業プロジェクト。"]
+]],
+["趣味・関心",[
+["コーヒー・食事","東京各地のカフェ、レストラン、地域の料理を楽しむ。"],
+["フィットネス・運動","健康を大切にし、トレーニング、ジョギング、散歩を楽しむ。"],
+["旅行・文化","日本国内を旅行し、自然、建築、地域の食文化に触れることが好き。"],
+["経済・ビジネス","企業経営、国際貿易、世界市場、ビジネストレンドに関心がある。"],
+["その他","映画、音楽、写真、街歩き、友人との交流、テクノロジーや社会の発展。"]
+]],
+["性格・価値観",[
+["性格","落ち着きがあり、理性的で責任感を持ち、自立心と生活の質を大切にする。"],
+["誠実さ","誠実さは長期的な信頼関係と安定した協力の基盤だと考える。"],
+["責任感","ビジネスの発展には責任感、専門性、継続的な学習が必要だと考える。"],
+["協力の考え方","信頼、コミュニケーション、相互尊重を大切にする。"],
+["生活姿勢","自由、個人の時間、生活の質を重視し、短期的な利益より長期的な積み重ねを大切にする。"]
+]],
+["将来の計画",[
+["短期｜2026～2028年","経営やビジネスの知識を深め、オンラインショップの運営能力、越境ビジネス、国際市場分析を強化し、安定した協力関係を築く。"],
+["中期｜2028～2031年","グローバルオンライン事業を拡大し、事業分析や経営計画の能力を高め、有望な投資機会や国際的な協力を探る。"],
+["長期｜2031年以降","日本で安定した生活とキャリアを築き、国際協力を広げ、事業と生活のバランスを大切にする。"]
+]],
+["個人生活",[
+["生活","東京での生活と活動を続け、健康的な習慣、旅行、趣味を大切にする。"],
+["仕事","企業管理の知識を基盤に、投資とグローバルオンライン事業の経験を積み、国際的な事業運営能力を高める。"],
+["人間関係","誠実さ、信頼、尊重を大切にし、長期的な友人関係とビジネス関係を築く。"],
+["人生の目標","仕事の発展、事業の安定、経済的な安定、健康、継続的な学習と成長を目指す。"]
+]],
+["個人年表",[
+["1990年","台湾・台北市信義区に生まれる。"],
+["1993～2008年","台北市で幼稚園から高校までの教育を受ける。"],
+["2008～2012年","大学で企業経営関連分野を学ぶ。"],
+["2012年","大学卒業後、東京へ留学。"],
+["2014～2016年","早稲田大学で大学院課程の学習。"],
+["2016年","大学院課程を終え、日本企業に就職。"],
+["2016～2017年","企業管理・業務運営関連の仕事に従事。"],
+["2017年以降","高級フィットネスクラブの共同投資に参加。"],
+["2021年～現在","グローバルオンラインショップ事業を副業として開始・継続。"],
+["2026年以降","国際事業、投資、個人の成長を継続。"]
+]]
+]
 },
 
-"ko":{
-name:"자오원린",tag:"개인 성장 · 학력 · 경력 · 생활",location:"대만 타이베이 출생 · 일본 도쿄 거주 · 금융업",
-nav:["기본 정보","성장 배경","학력","일본 유학","경력","취미","언어 능력","성격과 가치관","경력 목표","생활과 미래","상세 소개","연혁"],
-titles:["1. 기본 정보","2. 출생 배경과 성장 과정","3. 대만 교육 이력","4. 일본 도쿄 유학 경험","5. 일본 금융업 경력","6. 취미와 관심사","7. 언어 능력","8. 성격과 개인 가치관","9. 경력 계획과 목표","10. 개인 생활과 미래 비전","11. 상세 자기소개","12. 주요 연혁"],
-body:[
-`<table><tr><th>항목</th><th>내용</th></tr><tr><td>이름</td><td>자오원린</td></tr><tr><td>출생 연도</td><td>1990년</td></tr><tr><td>나이</td><td>2026년 기준 36세 (생일에 따라 다름)</td></tr><tr><td>출생지</td><td>대만 타이베이시 신이구</td></tr><tr><td>성장 환경</td><td>타이베이 101 인근</td></tr><tr><td>거주지</td><td>일본 도쿄도</td></tr><tr><td>학부 전공</td><td>경영학</td></tr><tr><td>학부 졸업</td><td>2012년</td></tr><tr><td>대학원</td><td>와세다대학교</td></tr><tr><td>대학원 분야</td><td>경영관리 관련</td></tr><tr><td>대학원 수료</td><td>2016년</td></tr><tr><td>산업 분야</td><td>금융업</td></tr><tr><td>직업</td><td>기업 직원</td></tr><tr><td>생활</td><td>도쿄에서 근무 및 생활</td></tr></table>`,
-`<p>자오원린은 1990년 대만 타이베이시 신이구에서 태어나 타이베이 101 인근에서 성장했습니다.</p><p>신이구는 타이베이의 주요 상업 및 도시 개발 지역입니다. 다양한 문화와 도시 환경을 경험하며 개방적인 사고방식을 키웠습니다.</p><p>어린 시절에는 밝고 새로운 것에 호기심이 많았으며, 성장하면서 독립심과 자기관리 능력, 책임감을 갖추게 되었습니다.</p>`,
-`<h3>대만 교육 이력</h3><table><tr><th>기간</th><th>교육 단계</th><th>장소</th></tr><tr><td>1993–1996</td><td>유치원</td><td>타이베이 신이구</td></tr><tr><td>1996–2002</td><td>초등학교</td><td>타이베이</td></tr><tr><td>2002–2005</td><td>중학교</td><td>타이베이</td></tr><tr><td>2005–2008</td><td>고등학교</td><td>타이베이</td></tr><tr><td>2008–2012</td><td>대학교 학부</td><td>대만</td></tr></table><h3>전공: 경영학</h3><p>경제학, 회계학, 재무관리, 마케팅, 기업 전략, 조직관리 및 비즈니스 분석을 공부했습니다.</p><p>금융시장, 기업 경영 및 국제 비즈니스에 관심을 갖게 되었으며 2012년 학부 과정을 마치고 학사 학위를 취득했습니다.</p>`,
-`<h3>2012년 | 일본 도쿄 유학</h3><p>대학교 졸업 후 국제적 시야를 넓히고 경영 및 금융 지식을 더 배우기 위해 도쿄로 이동했습니다.</p><h3>2014–2016년 | 와세다대학교 대학원</h3><p><b>학습 분야:</b> 경영관리, 기업금융 및 비즈니스 분석 관련 분야.</p><p><b>학습 내용:</b> 기업 전략, 재무관리, 국제 비즈니스, 경제 분석 및 시장 조사.</p><p>2016년 대학원 과정을 마치고 일본 직장 생활을 시작했습니다.</p><p class="note">구체적인 학위명과 교육과정은 실제 재학 기록으로 확인해야 합니다.</p>`,
-`<h3>2016–2020년 | 경력 초기</h3><p>졸업 후 일본에 남아 도쿄의 금융 관련 기업에서 경력을 시작했습니다.</p><ul><li>금융 업무 운영</li><li>고객 관계 관리</li><li>비즈니스 소통 및 업무 조정</li><li>금융시장 및 업무 데이터 분석</li><li>기업 내부 업무 프로세스 관리</li></ul><h3>2020–2023년 | 경력 성장</h3><ul><li>금융 프로젝트 및 업무 관리 참여</li><li>고객 및 기업 요구사항 지원</li><li>업무 분석 및 프로젝트 조정</li><li>금융 지식과 소통 능력 향상</li><li>부서 간 협업 경험 축적</li></ul><h3>2023–2026년 | 지속적인 발전</h3><p>현재 금융업 기업 직원으로 도쿄에서 일하고 생활하는 것으로 정리되어 있습니다. 금융 업무 관리, 기업금융, 고객 관리, 프로젝트 운영 및 시장 분석 등을 발전 방향으로 삼고 있습니다.</p><p class="note">구체적인 회사, 직책, 부서 및 성과는 아직 확인되지 않았습니다.</p>`,
-`<h3>커피와 외식</h3><p>도쿄의 다양한 카페와 레스토랑을 찾아다니는 것을 좋아합니다.</p><h3>운동과 건강</h3><p>피트니스, 조깅과 산책을 즐기며 건강한 생활 습관을 중요하게 생각합니다.</p><h3>여행과 문화</h3><p>일본 국내 여행을 통해 자연경관, 건축 문화와 지역 음식을 경험하는 것을 좋아합니다.</p><h3>경제와 독서</h3><p>금융시장, 기업 경영, 국제경제 및 비즈니스 동향에 관심이 있습니다.</p><p>그 밖에 영화, 음악, 사진, 도시 탐방, 친구들과의 교류, 기술과 비즈니스 지식에도 관심이 있습니다.</p>`,
-`<table><tr><th>언어</th><th>능력</th></tr><tr><td>번체 중국어</td><td>모국어 수준의 읽기, 쓰기 및 의사소통</td></tr><tr><td>표준 중국어</td><td>유창한 의사소통 및 비즈니스 대화 능력</td></tr></table>`,
-`<p>성숙하고 차분하며 이성적인 성격으로 설정되어 있으며, 생활의 즐거움도 중요하게 생각합니다.</p><table><tr><th>성격 특징</th><th>구체적인 모습</th></tr><tr><td>이성적이고 차분함</td><td>문제를 분석하고 계획적으로 행동</td></tr><tr><td>책임감</td><td>업무의 질과 책임을 중시</td></tr><tr><td>독립적</td><td>생활과 업무를 스스로 관리</td></tr><tr><td>신뢰성</td><td>신뢰와 장기적인 관계를 중시</td></tr><tr><td>지속적인 학습</td><td>전문 역량을 계속 향상</td></tr><tr><td>생활의 균형</td><td>일과 삶의 균형을 추구</td></tr></table><h3>개인 가치관</h3><ul><li>정직은 관계 형성의 중요한 기반입니다.</li><li>업무에는 책임감과 전문성이 필요합니다.</li><li>생활에는 자유와 개인 공간이 필요합니다.</li><li>인간관계에서는 진정성과 상호 존중을 중시합니다.</li><li>단기적 이익보다 장기적인 발전을 중요하게 생각합니다.</li></ul>`,
-`<h3>단기 목표 (2026–2028년)</h3><ul><li>금융 업무 전문 지식을 심화합니다.</li><li>금융시장 및 업무 분석 역량을 높입니다.</li><li>고객 소통과 프로젝트 조정 능력을 강화합니다.</li><li>더 전문적인 업무 책임을 맡는 것을 목표로 합니다.</li></ul><h3>중기 목표 (2028–2031년)</h3><ul><li>금융업에서 명확한 전문 분야를 확립합니다.</li><li>금융 업무 경험을 넓힙니다.</li><li>선임 담당자 또는 프로젝트 책임자로 성장합니다.</li><li>팀 협업 및 관리 역량을 높입니다.</li></ul><h3>장기 목표 (2031년 이후)</h3><ul><li>일본 금융업에서 장기적인 경력 기반을 구축합니다.</li><li>전문성과 국제적 시야를 갖춘 금융 전문가를 지향합니다.</li><li>관리직 또는 고급 전문직으로 발전합니다.</li><li>일과 생활, 개인 성장의 균형을 추구합니다.</li></ul>`,
-`<p>앞으로도 도쿄에서 생활하고 경력을 발전시키며 안정적인 직장 생활을 바탕으로 삶의 질을 높이고자 합니다.</p><p>건강한 운동 습관, 정기적인 여행, 취미 활동과 편안한 생활환경을 중요하게 생각합니다.</p><p>인간관계에서는 진정성, 신뢰와 상호 존중을 중시하며 오래 지속되는 우정과 좋은 사회적 관계를 만들고자 합니다.</p><h3>미래에 이루고 싶은 목표</h3><ul><li>안정적인 경력 발전</li><li>건전한 경제생활</li><li>건강한 생활 방식</li><li>지속적인 학습과 성장</li><li>일과 생활, 인간관계의 균형</li></ul>`,
-`<p>자오원린은 1990년 대만 타이베이시 신이구에서 태어나 타이베이 101 인근에서 성장했습니다. 타이베이에서 기초교육과 대학교 학부 과정을 마쳤으며 경영학을 전공하고 경제학, 재무관리, 기업 경영 및 마케팅 등을 공부했습니다.</p><p>2012년 대학교 졸업 후 일본 도쿄로 유학을 떠났고, 2014년 와세다대학교에서 경영관리 관련 대학원 과정을 시작해 2016년 학업을 마쳤습니다. 이후 일본에 남아 금융업계에 진출했으며 금융 업무 운영, 고객 관계 관리, 비즈니스 조정 및 기업 업무 관리 경험을 쌓았습니다.</p><p>여러 해의 학업과 경력 개발을 거쳐 현재 금융업 기업 직원으로 도쿄에서 일하고 생활하는 것으로 정리되어 있습니다. 전문 역량을 지속적으로 높이고 금융시장, 기업 경영 및 국제경제 동향에 관심을 갖고 있습니다.</p><p>개인 생활에서는 커피, 운동, 여행, 독서와 도쿄 도시 문화를 즐깁니다. 이성적이고 독립적이며 책임감 있는 성격으로 정직, 소통과 장기적인 관계를 중시하고 삶의 질과 개인 성장을 중요하게 생각합니다.</p><p>직업적으로는 일본 금융업계에서 전문성을 심화하고 선임 담당자, 프로젝트 책임자 또는 관리직으로 성장하며 일과 생활의 균형을 이루고자 합니다.</p>`,
-`<div class="timeline"><div class="event"><b>1990년</b><p>대만 타이베이시 신이구 출생.</p></div><div class="event"><b>1993–2008년</b><p>타이베이에서 유치원부터 고등학교까지 교육 이수.</p></div><div class="event"><b>2008–2012년</b><p>경영학 전공으로 대학교 학부 과정 이수.</p></div><div class="event"><b>2012년</b><p>대학교 졸업 후 일본 도쿄 유학.</p></div><div class="event"><b>2014–2016년</b><p>와세다대학교 대학원에서 학업.</p></div><div class="event"><b>2016년</b><p>대학원 과정 마치고 일본 금융업계 진출.</p></div><div class="event"><b>2016–2026년</b><p>일본 금융업계에서 경력 축적.</p></div><div class="event"><b>2026년 이후</b><p>도쿄에서 장기적인 경력과 생활 계획.</p></div></div>`
-],
-footer:"자오원린 · 개인 프로필",
-note:"안내: 본 페이지는 제공된 개인 정보를 바탕으로 정리했습니다. 학력, 졸업 시기, 경력 및 확인 가능한 정보는 공식 서류와 실제 이력을 기준으로 확인해야 합니다. 확인되지 않은 내용을 검증된 사실로 제시하지 마십시오."
+"ko": {
+subtitle:"개인 성장 · 학력 · 경력 · 사업 투자 · 개인 생활",
+footer:"개인 프로필 · 개인 성장 · 경력 개발 · 사업 투자",
+sections:[
+["기본 정보",[
+["이름","자오원린 (赵文林)"],["출생 연도","1990년"],["나이","36세 (2026년 기준)"],["출생지","대만 타이베이시 신이구"],["성장 지역","타이베이 101 인근"],["현재 거주지","일본 도쿄도"],["학부 전공 분야","기업 경영 관련 분야"],["학부 졸업 연도","2012년"],["유학 기관","와세다대학교"],["대학원 학습 분야","기업 경영 및 경영 관리"],["대학원 학습 완료 연도","2016년"],["주요 경험","기업 관리, 사업 투자, 글로벌 온라인 스토어 운영"],["진로 방향","기업 경영, 사업 투자, 해외 전자상거래"]
+]],
+["출생 배경과 성장 과정",[
+["출생과 성장","1990년 대만 타이베이시 신이구에서 태어나 타이베이 101 인근에서 성장했다."],
+["성장 환경","다양한 도시 환경에서 성장하며 열린 사고방식을 형성했고, 비즈니스와 경제 및 사회 발전에 관심을 갖게 되었다."],
+["개인 성장","어린 시절에는 밝고 사람들과 소통하는 것을 좋아했으며 새로운 것에 호기심이 많았다. 성장하면서 독립심, 자기관리와 책임감을 중요하게 여기게 되었다."]
+]],
+["학력",[
+["1993~1996년｜유치원","대만 타이베이시 신이구에서 유아 교육을 받았다."],
+["1996~2002년｜초등학교","타이베이에서 초등 교육을 마치고 기초 학습 능력을 키웠다."],
+["2002~2005년｜중학교","기초 교육을 받으며 독립적인 사고와 학습 능력을 발전시켰다."],
+["2005~2008년｜고등학교","고등학교 과정을 마치고 대학 전공 학습을 준비했다."],
+["2008~2012년｜대학교 학부 과정","대만에서 기업 경영 관련 분야를 공부했다. 경영학, 경제학, 마케팅, 기업 전략, 조직 관리, 인적 자원 관리, 비즈니스 분석 및 국제 비즈니스를 학습했다. 2012년 학부 과정을 마치고 학사 학위를 취득했다."],
+["2012년｜일본 도쿄 유학","대학교 졸업 후 도쿄로 이동해 학업을 이어갔다. 일본 기업의 경영 방식과 비즈니스 문화에 관심을 갖고 국제적인 시야를 넓히고자 했다."],
+["2014~2016년｜와세다대학교 대학원 과정","기업 경영, 경영 관리 및 사업 운영 관련 분야를 공부했다. 기업 전략, 조직 관리, 마케팅 전략, 국제 비즈니스, 기업 운영 분석 및 경영 의사결정 등을 학습했다."],
+["2016년｜대학원 학습 완료","대학원 학습을 마친 후 일본 직장 생활을 시작했다."]
+]],
+["일본 기업 근무 경력",[
+["2016~2017년｜기업 관리 관련 업무","일본 기업에서 근무하며 일상 업무 조정, 부서 간 소통, 내부 업무 절차 관리, 자료 정리 및 분석, 비즈니스 커뮤니케이션과 업무 조정에 참여했다."],
+["실무 경험","실제 업무를 통해 일본 기업 문화, 조직 관리 방식 및 내부 운영 절차에 대한 이해를 넓혔다."],
+["2017년｜진로 조정","약 1년간 근무한 후 기존 직장을 떠나 진로를 재정비하고 사업 투자와 독립적인 사업 활동을 모색했다."]
+]],
+["사업 투자 경험",[
+["2017년 이후｜프리미엄 피트니스 클럽 공동 투자","파트너와 함께 프리미엄 피트니스 클럽 투자 프로젝트에 참여했다."],
+["참여 방식","투자 파트너로서 투자 및 협력 관련 소통에 참여하고 전반적인 사업과 투자 상황에 관심을 두었다."],
+["업무 범위","피트니스 클럽의 일상 운영이나 직원 관리를 담당하지 않으며 점장이나 운영 관리직을 맡지 않는다."],
+["경험","프리미엄 피트니스 산업의 비즈니스 모델, 회원 서비스 체계 및 시장 수요에 대한 이해를 쌓았다."]
+]],
+["글로벌 온라인 스토어 사업",[
+["2021년~현재｜온라인 스토어 부업","2021년 사업 파트너의 소개를 통해 글로벌 온라인 스토어 운영에 참여하기 시작했다."],
+["사업 범위","글로벌 소비자를 대상으로 온라인 상품 판매와 해외 전자상거래 사업을 진행한다."],
+["주요 업무","글로벌 시장 조사, 소비자 수요 분석, 온라인 스토어 개설 및 관리, 상품 선정과 정보 정리, 판매 및 주문 관리, 해외 고객 소통, 사후 서비스, 국제 물류 확인, 온라인 마케팅 및 해외 시장 확대."],
+["프로젝트 관계","온라인 스토어 사업과 피트니스 클럽 투자는 서로 별개의 사업 프로젝트이다."]
+]],
+["취미와 관심사",[
+["커피와 외식","도쿄 여러 지역의 카페와 레스토랑 및 지역 음식을 탐방하는 것을 좋아한다."],
+["피트니스와 운동","건강을 중요하게 생각하며 운동, 조깅과 산책을 즐긴다."],
+["여행과 문화","일본 국내 여행을 즐기며 자연경관, 도시 건축과 현지 음식을 경험하는 것을 좋아한다."],
+["경제와 비즈니스","기업 경영, 국제 무역, 글로벌 시장과 비즈니스 동향에 관심이 있다."],
+["기타 관심사","영화, 음악, 사진, 도시 탐방, 친구들과의 교류, 기술 및 사회 발전."]
+]],
+["성격과 개인 가치관",[
+["성격","성숙하고 침착하며 이성적이고 책임감이 있으며 독립성을 중시한다."],
+["정직과 신뢰","정직은 장기적인 관계와 안정적인 협력의 중요한 기반이라고 생각한다."],
+["책임감","사업 발전에는 책임감, 전문성과 지속적인 학습이 필요하다고 생각한다."],
+["협력 방식","신뢰, 소통과 상호 존중을 중요하게 생각한다."],
+["생활 태도","자유와 개인적인 공간 및 삶의 질을 중시하며 장기적인 성장을 중요하게 생각한다."]
+]],
+["미래 발전 계획",[
+["단기 계획｜2026~2028년","기업 경영 및 비즈니스 지식을 심화하고 글로벌 온라인 스토어 운영 능력과 해외 사업 및 국제 시장 분석 역량을 높이며 안정적인 협력 관계를 구축한다."],
+["중기 계획｜2028~2031년","글로벌 온라인 사업을 확대하고 사업 분석 및 경영 기획 능력을 높이며 유망한 투자 기회와 국제 협력을 모색한다."],
+["장기 계획｜2031년 이후","일본에서 안정적인 생활과 경력을 이어가고 국제 협력을 확대하며 사업과 개인 생활의 균형을 추구한다."]
+]],
+["개인 생활 비전",[
+["생활 방향","도쿄에서 생활과 활동을 이어가며 건강한 운동 습관과 여행 및 개인적인 취미를 중요하게 생각한다."],
+["직업 목표","기업 경영 지식을 바탕으로 투자와 글로벌 온라인 사업 경험을 지속적으로 쌓고 국제 사업 운영 능력을 높인다."],
+["인간관계","진실함, 신뢰와 존중을 중요하게 여기며 장기적인 우정과 비즈니스 관계를 구축하고자 한다."],
+["인생 목표","직업 발전, 사업 안정, 경제적 안정, 건강한 생활, 지속적인 학습과 성장을 추구한다."]
+]],
+["개인 성장 연혁",[
+["1990년","대만 타이베이시 신이구에서 출생."],
+["1993~2008년","타이베이에서 유치원부터 고등학교까지 교육을 받음."],
+["2008~2012년","대학교에서 기업 경영 관련 분야를 공부함."],
+["2012년","대학교 졸업 후 일본 도쿄로 유학."],
+["2014~2016년","와세다대학교 대학원 과정에서 학습."],
+["2016년","대학원 학습을 마치고 일본 기업에 입사."],
+["2016~2017년","기업 관리 및 업무 운영 관련 업무 수행."],
+["2017년 이후","프리미엄 피트니스 클럽 공동 투자에 참여."],
+["2021년~현재","글로벌 온라인 스토어 사업을 부업으로 운영."],
+["2026년 이후","국제 사업, 투자 및 개인 발전을 지속."]
+]]
+]
 }
 };
 
-function render(lang){
-const d=translations[lang]||translations["zh-CN"];
-document.documentElement.lang=lang;
-document.getElementById("personName").textContent=d.name;
-document.getElementById("tagline").textContent=d.tag;
-document.getElementById("location").textContent=d.location;
-document.getElementById("footer").textContent=d.footer;
+function render(lang) {
+  const profile = profiles[lang];
+  document.documentElement.lang = lang;
+  document.getElementById("subtitle").textContent = profile.subtitle;
+  document.getElementById("footerText").textContent = profile.footer;
 
-document.getElementById("nav").innerHTML=d.nav.map((label,i)=>
-`<a href="#${ids[i]}">${label}</a>`).join("");
+  const navigation = document.getElementById("navigation");
+  const content = document.getElementById("content");
 
-document.getElementById("content").innerHTML=d.body.map((html,i)=>
-`<section id="${ids[i]}"><h2>${d.titles[i]}</h2>${html}</section>`).join("")+
-`<section><p class="note">${d.note}</p></section>`;
+  navigation.innerHTML = "";
+  content.innerHTML = "";
 
-document.querySelectorAll(".languages button").forEach(btn=>{
-btn.classList.toggle("active",btn.dataset.lang===lang);
-});
-document.title=d.name+"｜"+d.nav[0];
-try{localStorage.setItem("profileLanguage",lang)}catch(e){}
+  profile.sections.forEach((section,index) => {
+    const id = "section-" + index;
+
+    // 导航直接使用章节标题，保证名称和目标始终一致
+    const link = document.createElement("a");
+    link.href = "#" + id;
+    link.textContent = section[0];
+    navigation.appendChild(link);
+
+    const sectionElement = document.createElement("section");
+    sectionElement.id = id;
+
+    const heading = document.createElement("h2");
+    heading.className = "section-title";
+    heading.textContent = section[0];
+    sectionElement.appendChild(heading);
+
+    if(index === 0) {
+      const grid = document.createElement("div");
+      grid.className = "profile-grid";
+
+      section[1].forEach(item => {
+        const card = document.createElement("div");
+        card.className = "profile-item";
+
+        const label = document.createElement("span");
+        label.textContent = item[0];
+
+        const value = document.createElement("strong");
+        value.textContent = item[1];
+
+        card.append(label,value);
+        grid.appendChild(card);
+      });
+
+      sectionElement.appendChild(grid);
+
+    } else if(index === 10) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "card";
+
+      const timeline = document.createElement("div");
+      timeline.className = "timeline";
+
+      section[1].forEach(item => {
+        const entry = document.createElement("div");
+        entry.className = "timeline-item";
+
+        const year = document.createElement("h3");
+        year.textContent = item[0];
+
+        const description = document.createElement("p");
+        description.textContent = item[1];
+
+        entry.append(year,description);
+        timeline.appendChild(entry);
+      });
+
+      wrapper.appendChild(timeline);
+      sectionElement.appendChild(wrapper);
+
+    } else {
+      section[1].forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const title = document.createElement("h3");
+        title.textContent = item[0];
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = item[1];
+
+        card.append(title,paragraph);
+        sectionElement.appendChild(card);
+      });
+    }
+
+    content.appendChild(sectionElement);
+  });
+
+  document.querySelectorAll(".languages button").forEach(button => {
+    button.classList.toggle("active",button.dataset.lang === lang);
+  });
 }
 
-document.querySelectorAll(".languages button").forEach(btn=>{
-btn.addEventListener("click",()=>render(btn.dataset.lang));
+document.querySelectorAll(".languages button").forEach(button => {
+  button.addEventListener("click",() => {
+    render(button.dataset.lang);
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
 });
 
-let initial="zh-CN";
-try{initial=localStorage.getItem("profileLanguage")||"zh-CN"}catch(e){}
-render(translations[initial]?initial:"zh-CN");
+render("zh-CN");
 </script>
 </body>
 </html>

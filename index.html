@@ -3,164 +3,436 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="赵文林个人档案：个人成长、教育背景、职业经历、商业投资与个人生活">
-<meta name="theme-color" content="#101010">
-<title>赵文林｜个人档案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赵文林完整个人档案">
+<title>赵文林｜完整个人档案</title>
 
 <style>
 :root {
-  --gold:#d6b46a;
-  --gold-light:#f1dba5;
-  --bg:#101010;
-  --card:#1b1b1b;
-  --text:#eee;
-  --muted:#aaa;
+  --gold:#d9b66f;
+  --gold2:#f1dcae;
+  --bg:#07111f;
+  --panel:rgba(12,25,43,.94);
+  --text:#edf2f8;
+  --muted:#bdc8d7;
+  --border:rgba(217,182,111,.28);
 }
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth;scroll-padding-top:125px}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:120px;
+}
+
 body {
-  background:radial-gradient(ellipse at top right,#3c301d,transparent 40%),
-  linear-gradient(135deg,#101010,#191919,#090909);
+  font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif;
   color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Arial,sans-serif;
-  line-height:1.8;
+  background:var(--bg);
+  line-height:1.9;
 }
+
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(rgba(3,9,19,.86),rgba(3,9,19,.95)),
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
+}
+
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:radial-gradient(
+    circle at 15% 15%,
+    rgba(217,182,111,.09),
+    transparent 35%
+  );
+}
+
+/* 顶部 */
 header {
-  min-height:330px;
-  padding:65px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,12,23,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(15px);
+}
+
+.header-inner {
+  max-width:1350px;
+  margin:auto;
+  padding:12px 20px;
   display:flex;
-  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.logo {
+  color:var(--gold);
+  font-size:20px;
+  font-weight:bold;
+  letter-spacing:3px;
+  white-space:nowrap;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  overflow-x:auto;
+  scrollbar-width:thin;
+  flex:1;
+  padding:5px 2px;
+}
+
+.nav-links a {
+  color:#dce5f0;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color:var(--gold);
+}
+
+.language-select {
+  flex-shrink:0;
+  color:var(--gold2);
+  background:#101e31;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:9px;
+  cursor:pointer;
+  outline:none;
+}
+
+/* 首页 */
+.hero {
+  min-height:75vh;
+  display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:linear-gradient(135deg,#302719,#111 65%,#090909);
-  border-bottom:1px solid #67532d;
+  padding:90px 20px;
 }
-.eyebrow {color:var(--gold);letter-spacing:5px;font-size:12px}
-header h1 {
-  color:var(--gold-light);
-  font-size:clamp(38px,8vw,65px);
-  letter-spacing:8px;
-  margin:12px 0;
+
+.hero-content {
+  max-width:900px;
+  animation:appear 1s ease;
 }
-header p {color:#ccc;font-size:14px;letter-spacing:2px}
-.languages {
-  position:sticky;
-  top:0;
-  z-index:100;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:8px;
-  padding:13px 8px;
-  background:rgba(12,12,12,.97);
-  border-bottom:1px solid #5a4728;
-}
-.languages button {
-  padding:8px 13px;
-  border:1px solid #80683e;
-  border-radius:22px;
-  background:transparent;
-  color:#ddd;
-  cursor:pointer;
-  font-size:12px;
-}
-.languages button.active,.languages button:hover {
-  background:var(--gold);
-  color:#15110a;
-}
-nav {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px 20px;
-  padding:20px 12px;
-  background:#171717;
-  border-bottom:1px solid #332a1c;
-}
-nav a {
-  color:var(--gold-light);
-  text-decoration:none;
+
+.hero-label {
+  color:var(--gold);
+  letter-spacing:6px;
   font-size:13px;
-  padding:4px 0;
-  border-bottom:1px solid transparent;
+  margin-bottom:20px;
 }
-nav a:hover,nav a:focus {
+
+.hero h1 {
+  font-size:clamp(45px,8vw,82px);
+  letter-spacing:10px;
   color:white;
-  border-bottom-color:var(--gold);
+  margin-bottom:15px;
 }
-.container {width:min(1050px,92%);margin:auto;padding:40px 0 65px}
-section {margin-bottom:48px;scroll-margin-top:125px}
-.section-title {
-  color:var(--gold-light);
-  font-size:23px;
-  border-left:3px solid var(--gold);
-  padding-left:15px;
+
+.hero h1 span {
+  color:var(--gold);
+}
+
+.hero-subtitle {
+  color:var(--gold2);
+  font-size:clamp(15px,2vw,21px);
   margin-bottom:22px;
 }
-.card,.profile-item {
-  background:linear-gradient(145deg,#222,#171717);
-  border:1px solid rgba(214,180,106,.2);
-  border-radius:11px;
-  padding:21px;
-  margin-bottom:14px;
+
+.hero-description {
+  color:var(--muted);
+  max-width:700px;
+  margin:auto;
 }
-.card h3 {color:var(--gold);font-size:16px;margin-bottom:8px}
-.card p {font-size:14px;color:#ccc}
-.profile-grid {
+
+.hero-button {
+  display:inline-block;
+  margin-top:30px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:10px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.hero-button:hover {
+  background:var(--gold);
+  color:#07111f;
+}
+
+/* 主体 */
+.container {
+  width:min(1120px,92%);
+  margin:auto;
+  padding:35px 0 80px;
+}
+
+.section {
+  margin:0 0 75px;
+  scroll-margin-top:115px;
+}
+
+.section-heading {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-heading h2 {
+  color:var(--gold);
+  font-size:28px;
+  letter-spacing:2px;
+}
+
+.section-heading p {
+  color:#9baabd;
+  font-size:12px;
+  letter-spacing:3px;
+}
+
+.card {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:27px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  transition:.25s;
+}
+
+.card:hover {
+  border-color:rgba(217,182,111,.6);
+  transform:translateY(-2px);
+}
+
+.card h3 {
+  color:var(--gold2);
+  font-size:19px;
+  margin:16px 0 10px;
+}
+
+.card h3:first-child {
+  margin-top:0;
+}
+
+.card p {
+  color:#c9d3df;
+  margin-bottom:12px;
+  white-space:pre-line;
+}
+
+.card p:last-child {
+  margin-bottom:0;
+}
+
+.info-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:12px;
 }
-.profile-item {margin:0;padding:15px}
-.profile-item span {display:block;color:#999;font-size:12px}
-.profile-item strong {display:block;color:var(--gold-light);font-size:15px;margin-top:5px}
-.timeline {border-left:2px solid var(--gold);margin-left:10px;padding-left:24px}
-.timeline-item {position:relative;margin-bottom:24px}
-.timeline-item:before {
+
+.info-item {
+  background:rgba(255,255,255,.025);
+  border-left:2px solid var(--gold);
+  padding:9px 12px;
+  color:#dce5ef;
+}
+
+.info-item strong {
+  color:var(--gold2);
+  margin-right:7px;
+}
+
+.subheading {
+  color:var(--gold2);
+  margin:20px 0 10px;
+}
+
+.table-wrap {
+  width:100%;
+  overflow-x:auto;
+  margin:15px 0;
+}
+
+table {
+  border-collapse:collapse;
+  width:100%;
+  min-width:480px;
+}
+
+th,td {
+  border:1px solid var(--border);
+  padding:11px 13px;
+  text-align:left;
+  vertical-align:top;
+}
+
+th {
+  color:var(--gold2);
+  background:rgba(217,182,111,.1);
+}
+
+td {
+  color:#d1dbe7;
+  background:rgba(255,255,255,.015);
+}
+
+.detail-list,
+.number-list {
+  padding-left:25px;
+  color:#cbd5e1;
+  margin:8px 0 15px;
+}
+
+.detail-list li,
+.number-list li {
+  padding:3px 0;
+}
+
+.timeline {
+  border-left:1px solid rgba(217,182,111,.45);
+  margin:15px 0 10px 10px;
+  padding-left:28px;
+}
+
+.timeline-item {
+  position:relative;
+  margin-bottom:28px;
+}
+
+.timeline-item:last-child {
+  margin-bottom:0;
+}
+
+.timeline-item::before {
   content:"";
   position:absolute;
-  left:-31px;top:9px;
-  width:11px;height:11px;
+  left:-34px;
+  top:12px;
+  width:10px;
+  height:10px;
   border-radius:50%;
   background:var(--gold);
 }
-.timeline-item h3 {color:var(--gold-light);font-size:15px}
-.timeline-item p {font-size:14px;color:#ccc}
+
+.timeline-date {
+  color:var(--gold);
+  font-size:13px;
+}
+
+.timeline-item h3 {
+  color:var(--gold2);
+  margin:3px 0 6px;
+}
+
+.timeline-item p {
+  color:#cbd5e1;
+}
+
 footer {
+  border-top:1px solid var(--border);
   text-align:center;
-  padding:32px 15px;
-  background:#090909;
-  border-top:1px solid #5a4728;
-  color:#888;
-  font-size:12px;
+  padding:35px 15px;
+  color:#8796a9;
+  font-size:13px;
 }
-footer strong {color:var(--gold);font-weight:normal}
-.top-link {
+
+footer strong {
+  color:var(--gold);
+}
+
+#topButton {
   position:fixed;
-  right:15px;
-  bottom:20px;
-  z-index:90;
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
+  bottom:24px;
+  right:22px;
+  display:none;
+  width:45px;
+  height:45px;
+  border:1px solid var(--gold);
+  background:#0b192a;
+  color:var(--gold);
   border-radius:50%;
-  background:var(--gold);
-  color:#17120a;
-  text-decoration:none;
+  cursor:pointer;
   font-size:20px;
+  z-index:900;
 }
+
+#topButton.show {
+  display:block;
+}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:900px) {
+  .header-inner {
+    flex-wrap:wrap;
+  }
+
+  .logo {
+    flex:1;
+  }
+
+  .nav-links {
+    order:3;
+    flex-basis:100%;
+  }
+
+  .language-select {
+    order:2;
+  }
+}
+
 @media(max-width:600px) {
-  header {min-height:270px;padding:45px 12px}
-  header h1 {letter-spacing:4px}
-  .languages {gap:6px;padding:11px 5px}
-  .languages button {padding:7px 9px;font-size:11px}
-  nav {gap:9px 13px;padding:16px 9px}
-  nav a {font-size:12px}
-  .container {padding-top:28px}
-  .card {padding:17px}
+  .hero {
+    min-height:65vh;
+    padding:75px 18px;
+  }
+
+  .hero h1 {
+    letter-spacing:5px;
+  }
+
+  .container {
+    width:94%;
+  }
+
+  .section-heading h2 {
+    font-size:23px;
+  }
+
+  .card {
+    padding:19px;
+  }
+
+  .info-grid {
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -168,547 +440,1294 @@ footer strong {color:var(--gold);font-weight:normal}
 <body>
 
 <header>
-  <div class="eyebrow">PERSONAL PROFILE</div>
-  <h1>赵文林</h1>
-  <p id="subtitle"></p>
+  <div class="header-inner">
+
+    <div class="logo">ZHAO WENLIN</div>
+
+    <nav class="nav-links" id="mainNav">
+      <a href="#profile" data-i="nav1">基本资料</a>
+      <a href="#growth" data-i="nav2">成长经历</a>
+      <a href="#education" data-i="nav3">教育背景</a>
+      <a href="#career" data-i="nav4">职业发展</a>
+      <a href="#interests" data-i="nav5">兴趣爱好</a>
+      <a href="#language" data-i="nav6">语言技能</a>
+      <a href="#values" data-i="nav7">性格特点</a>
+      <a href="#beliefs" data-i="nav8">个人价值观</a>
+      <a href="#future" data-i="nav9">未来规划</a>
+      <a href="#life" data-i="nav10">个人生活</a>
+      <a href="#biography" data-i="nav11">个人简介</a>
+      <a href="#timeline" data-i="nav12">时间轴</a>
+    </nav>
+
+    <select class="language-select" id="languageSelect">
+      <option value="zh">简体中文</option>
+      <option value="tw">繁體中文</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+    </select>
+
+  </div>
 </header>
 
-<div class="languages">
-  <button class="active" data-lang="zh-CN">简体中文</button>
-  <button data-lang="zh-TW">繁體中文</button>
-  <button data-lang="en">English</button>
-  <button data-lang="ja">日本語</button>
-  <button data-lang="ko">한국어</button>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-label">PERSONAL PROFILE</div>
+    <h1>赵<span>文林</span></h1>
+    <div class="hero-subtitle" data-i="heroSubtitle">
+      个人成长 · 教育背景 · 职业发展 · 个人生活
+    </div>
+    <p class="hero-description" data-i="heroDescription">
+      完整个人档案，记录成长经历、教育背景、职业发展与未来生活目标。
+    </p>
+    <a href="#profile" class="hero-button" data-i="heroButton">
+      查看完整个人档案
+    </a>
+  </div>
+</section>
 
-<nav id="navigation"></nav>
+<main class="container">
 
-<main class="container" id="content"></main>
+<!-- 基本资料 -->
+<section class="section" id="profile">
+  <div class="section-heading">
+    <h2 data-i="titleProfile">基本资料</h2>
+    <p>PERSONAL INFORMATION</p>
+  </div>
+
+  <div class="card">
+    <div class="info-grid">
+      <div class="info-item"><strong data-i="labelName">姓名</strong><span data-i="name">赵文林</span></div>
+      <div class="info-item"><strong data-i="labelBirth">出生年份</strong><span data-i="birth">1990年</span></div>
+      <div class="info-item"><strong data-i="labelAge">年龄</strong><span data-i="age">36岁</span></div>
+      <div class="info-item"><strong data-i="labelPlace">出生地</strong><span data-i="place">中国台湾台北市信义区</span></div>
+      <div class="info-item"><strong data-i="labelChildhood">成长环境</strong><span data-i="childhood">台北101大楼附近</span></div>
+      <div class="info-item"><strong data-i="labelCurrent">现居地</strong><span data-i="current">日本东京都</span></div>
+      <div class="info-item"><strong data-i="labelMajor">大学专业</strong><span data-i="major">计算机及半导体相关技术</span></div>
+      <div class="info-item"><strong data-i="labelUniversity">大学院校</strong><span data-i="university">浙江大学</span></div>
+      <div class="info-item"><strong data-i="labelDirection">大学方向</strong><span data-i="direction">半导体方向</span></div>
+      <div class="info-item"><strong data-i="labelGraduate">大学毕业</strong><span data-i="graduate">2012年</span></div>
+      <div class="info-item"><strong data-i="labelIndustry">职业行业</strong><span data-i="industry">半导体</span></div>
+      <div class="info-item"><strong data-i="labelIdentity">职业身份</strong><span data-i="identity">企业职员</span></div>
+      <div class="info-item"><strong data-i="labelLife">生活状态</strong><span data-i="status">在东京工作及生活</span></div>
+    </div>
+
+    <h3 data-i="incomeTitle">收入</h3>
+    <p data-i="income">
+      （35万—42万日元，税后27.5万—27.8万）（14,700元—17,640元，税后13,776元）
+    </p>
+  </div>
+</section>
+
+<!-- 一 -->
+<section class="section" id="growth">
+  <div class="section-heading">
+    <h2 data-i="titleGrowth">一、出生背景与成长经历</h2>
+    <p>PERSONAL GROWTH</p>
+  </div>
+
+  <div class="card">
+    <p data-i="growthP1">
+      赵文林出生于1990年，成长于中国台湾台北市信义区，童年生活环境位于台北101大楼附近。
+    </p>
+    <p data-i="growthP2">
+      信义区作为台北重要的商业及城市发展区域，为其成长提供了现代化的城市生活环境。从小接触多元文化和城市生活，逐渐培养出较为开放的思维方式。
+    </p>
+    <p data-i="growthP3">
+      童年时期性格比较开朗，喜欢与同龄人交流，也对新鲜事物保持好奇心。随着年龄增长，逐渐形成独立、自律及认真负责的性格特点。
+    </p>
+  </div>
+</section>
+
+<!-- 二 -->
+<section class="section" id="education">
+  <div class="section-heading">
+    <h2 data-i="titleEducation">二、台湾教育经历（1993—2008年）</h2>
+    <p>EDUCATION</p>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i="tableTime">时间</th>
+            <th data-i="tableStage">教育阶段</th>
+            <th data-i="tablePlace">地点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1993—1996</td><td data-i="schoolKindergarten">幼儿园</td><td data-i="schoolTaipeiXinyi">台北市信义区</td></tr>
+          <tr><td>1996—2002</td><td data-i="schoolPrimary">小学</td><td data-i="schoolTaipei">台北市</td></tr>
+          <tr><td>2002—2005</td><td data-i="schoolMiddle">初中</td><td data-i="schoolTaipei2">台北市</td></tr>
+          <tr><td>2005—2008</td><td data-i="schoolHigh">高中</td><td data-i="schoolTaipei3">台北市</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-heading">
+    <h2 data-i="titleMainland">大陆大学教育经历（2008—2012年）</h2>
+    <p>UNIVERSITY EDUCATION</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i="universityPeriod">2008—2012年大学</h3>
+    <p data-i="universityInfo">
+      院校：浙江大学
+      地点：浙江省杭州市
+      学习方向：计算机及半导体相关技术
+      专业兴趣：芯片设计、集成电路、半导体研发。
+    </p>
+
+    <h3 data-i="freshman">大陆大学经历：（大一阶段2008-2009）（2008—2012年毕业）</h3>
+    <p data-i="arrival">2008—2012年｜赴大陆浙江大学</p>
+    <p data-i="opening">开学时间：2008.8.11日开学典礼.9月正式进入秋季课程学习</p>
+
+    <h3 data-i="august11">1. 8月11号-8月15号</h3>
+    <ul class="detail-list">
+      <li data-i="orientation1">参加开学典礼</li>
+      <li data-i="orientation2">熟悉紫金港校区</li>
+      <li data-i="orientation3">办理校园卡，住宿及相关手续</li>
+      <li data-i="orientation4">领取校园生活用品</li>
+      <li data-i="orientation5">熟悉图书馆，食堂和教学楼</li>
+    </ul>
+
+    <h3 data-i="militaryTitle">2. 8月16号-8月30号：军训</h3>
+    <ul class="detail-list">
+      <li data-i="military1">早操和队列训练</li>
+      <li data-i="military2">军事理论及国防教育</li>
+      <li data-i="military3">内务整理</li>
+      <li data-i="military4">团队活动</li>
+      <li data-i="military5">新生集体训练</li>
+    </ul>
+
+    <h3 data-i="orientationTitle">3. 8月底-9月初：入学教育</h3>
+    <ul class="detail-list">
+      <li data-i="orientation6">学习学校规章制度</li>
+      <li data-i="orientation7">了解大学培养方案</li>
+      <li data-i="orientation8">参加学院及班级活动</li>
+    </ul>
+
+    <h3 data-i="classTitle">4. 9月初：准备正式上课</h3>
+    <ul class="detail-list">
+      <li data-i="class1">领取教材</li>
+      <li data-i="class2">制定学习计划</li>
+      <li data-i="class3">了解课程安排</li>
+      <li data-i="class4">开始大学基础课程学历</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i="whySemiTitle">为什么选择半导体</h3>
+    <p data-i="whySemi">
+      高中期间因为夏天手机发热，在同学的推荐下购买了手机半导体散热背夹，觉的挺神奇的就对其了解了一下，逐渐对其产生了兴趣、就在高中毕业之后，选择申请到大陆浙江大学学习计算机半导体专业。
+    </p>
+    <p data-i="degree">2012年6月完成大学阶段学习，取得学士学位。</p>
+  </div>
+</section>
+
+<!-- 三 -->
+<section class="section" id="career">
+  <div class="section-heading">
+    <h2 data-i="titleCareer">三：2012—2019年｜职业起步阶段</h2>
+    <p>CAREER DEVELOPMENT</p>
+  </div>
+
+  <div class="card">
+    <p data-i="afterGraduate">大学毕业后：赵文林</p>
+    <p data-i="firstJob">
+      选择留在浙江杭州下沙经济技术开发区杭州士兰微电子股份有限公司做软测试工程师（实习生）工资：2000人民币
+    </p>
+    <ol class="number-list">
+      <li data-i="job1">芯片设计</li>
+      <li data-i="job2">集成电路</li>
+      <li data-i="job3">半导体研发</li>
+    </ol>
+    <p data-i="promotion">2014年年底成功晋级初级研发工程师，工资7000-10000人民币</p>
+    <p data-i="toJapan">一直工作到2019年选择到日本继续深造自己学习新的相关技术</p>
+    <p data-i="loveJapan">在日本工作期间逐渐爱上了日本希望未来在日本长期发展。</p>
+  </div>
+
+  <div class="section-heading">
+    <h2 data-i="career2019">2019—2026年｜职业成长阶段</h2>
+    <p>PROFESSIONAL DEVELOPMENT</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i="developmentFocus">发展重点：</h3>
+    <ul class="detail-list">
+      <li data-i="focus1">参与研发部研发项目</li>
+      <li data-i="focus2">协助高级工程师产品研发</li>
+      <li data-i="focus3">芯片设计</li>
+      <li data-i="focus4">半导体研发</li>
+      <li data-i="focus5">解决芯片设计中的技术问题</li>
+    </ul>
+    <p data-i="careerHope">
+      希望通过持续学习和工作积累，逐步向资深业务人员、项目负责人或高级工程师发展。
+    </p>
+  </div>
+</section>
+
+<!-- 四 -->
+<section class="section" id="interests">
+  <div class="section-heading">
+    <h2 data-i="titleInterests">四、个人兴趣爱好</h2>
+    <p>INTERESTS & HOBBIES</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i="coffee">咖啡与餐饮</h3>
+    <h3 data-i="fitness">健身与运动</h3>
+    <p data-i="fitnessText">喜欢健身、慢跑和散步，注重身体健康及生活规律。</p>
+    <h3 data-i="otherInterests">其他兴趣包括：</h3>
+    <ul class="detail-list">
+      <li data-i="interest1">电影与音乐。</li>
+      <li data-i="interest2">与朋友聚会及交流。</li>
+      <li data-i="interest3">关注科技和社会发展。</li>
+      <li data-i="interest4">学习新的商业知识。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 五 -->
+<section class="section" id="language">
+  <div class="section-heading">
+    <h2 data-i="titleLanguage">五、语言技能</h2>
+    <p>LANGUAGE SKILLS</p>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i="languageCol">语言</th>
+            <th data-i="abilityCol">能力描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i="traditionalChinese">中文（繁体）</td>
+            <td data-i="traditionalAbility">母语水平，熟练阅读、书写及沟通</td>
+          </tr>
+          <tr>
+            <td data-i="mandarin">普通话</td>
+            <td data-i="mandarinAbility">流利交流，具备商务沟通能力</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 六 -->
+<section class="section" id="values">
+  <div class="section-heading">
+    <h2 data-i="titlePersonality">六、性格特点与个人价值观</h2>
+    <p>PERSONALITY</p>
+  </div>
+
+  <div class="card">
+    <p data-i="personalityIntro">
+      赵文林的人物性格设定为成熟、稳重、理性，同时具备一定的生活情趣。
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i="personalityCol">性格特点</th>
+            <th data-i="behaviorCol">具体表现</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-i="trait1">理性稳重</td><td data-i="trait1Text">注重分析问题，做事有计划</td></tr>
+          <tr><td data-i="trait2">认真负责</td><td data-i="trait2Text">重视工作质量及责任感</td></tr>
+          <tr><td data-i="trait3">独立自主</td><td data-i="trait3Text">能够独立安排生活和工作</td></tr>
+          <tr><td data-i="trait4">诚信可靠</td><td data-i="trait4Text">重视信任及长期关系</td></tr>
+          <tr><td data-i="trait5">持续学习</td><td data-i="trait5Text">愿意不断提升专业能力</td></tr>
+          <tr><td data-i="trait6">注重生活</td><td data-i="trait6Text">追求工作与生活的平衡</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 七 -->
+<section class="section" id="beliefs">
+  <div class="section-heading">
+    <h2 data-i="titleBeliefs">七、个人价值观</h2>
+    <p>PERSONAL VALUES</p>
+  </div>
+
+  <div class="card">
+    <ol class="number-list">
+      <li data-i="belief1">诚信是建立关系的重要基础。</li>
+      <li data-i="belief2">工作需要责任感及专业能力。</li>
+      <li data-i="belief3">生活需要适当的自由和空间。</li>
+      <li data-i="belief4">人际关系重视真诚及互相尊重。</li>
+      <li data-i="belief5">长期发展比短期利益更加重要。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 八 -->
+<section class="section" id="future">
+  <div class="section-heading">
+    <h2 data-i="titleFuture">八、职业规划与未来发展目标</h2>
+    <p>FUTURE GOALS</p>
+  </div>
+
+  <div class="card">
+    <h3 data-i="shortTitle">短期目标（2026—2028年）</h3>
+    <ul class="detail-list">
+      <li data-i="short1">深化半导体专业知识。</li>
+      <li data-i="short2">提升半导体及相关分析能力。</li>
+      <li data-i="short3">增强自己身能力。</li>
+      <li data-i="short4">争取承担更加专业的工作职责。</li>
+      <li data-i="short5">保持稳定的职业发展节奏。</li>
+      <li data-i="short6">最好能寻找到另一半</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i="mediumTitle">中期目标（2028—2031年）</h3>
+    <ul class="detail-list">
+      <li data-i="medium1">在半导体研发行业形成明确的专业方向。</li>
+      <li data-i="medium2">积累更丰富的半导体研发经验。</li>
+      <li data-i="medium3">向资深工程师人员或相关专业知识发展。</li>
+      <li data-i="medium4">提升团队协作能力。</li>
+      <li data-i="medium5">建立稳定的行业人脉。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i="longTitle">长期目标（2031年以后）</h3>
+    <ul class="detail-list">
+      <li data-i="long1">在日本半导体行业业建立长期职业发展基础。</li>
+      <li data-i="long2">成为具备专业能力和国际视野的从业人员。</li>
+      <li data-i="long3">争取向管理岗位或资深专业岗位发展。</li>
+      <li data-i="long4">持续提升职业价值及个人竞争力。</li>
+      <li data-i="long5">实现事业稳定、生活充实及个人成长。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 九 -->
+<section class="section" id="life">
+  <div class="section-heading">
+    <h2 data-i="titleLife">九、个人生活与未来愿景</h2>
+    <p>LIFESTYLE & VISION</p>
+  </div>
+
+  <div class="card">
+    <p data-i="lifeP1">
+      赵文林希望未来能够继续在东京生活和发展，在稳定工作的基础上逐渐提高生活品质。
+    </p>
+    <p data-i="lifeP2">
+      生活方面，希望保持健康的运动习惯，定期旅行，拓展兴趣爱好，拥有舒适的生活环境。
+    </p>
+    <p data-i="lifeP3">
+      人际关系方面，重视真诚、可靠及互相尊重，希望建立长期稳定的朋友关系和良好的社会联系。
+    </p>
+
+    <h3 data-i="futureRealize">未来希望实现：</h3>
+    <ul class="detail-list">
+      <li data-i="lifeGoal1">事业稳定发展。</li>
+      <li data-i="lifeGoal2">经济生活更加稳健。</li>
+      <li data-i="lifeGoal3">拥有健康的生活方式。</li>
+      <li data-i="lifeGoal4">保持持续学习及个人成长。</li>
+      <li data-i="lifeGoal5">在事业、生活和人际关系之间取得平衡。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 十 -->
+<section class="section" id="biography">
+  <div class="section-heading">
+    <h2 data-i="titleBiography">十、完整个人简介</h2>
+    <p>PERSONAL BIOGRAPHY</p>
+  </div>
+
+  <div class="card">
+    <p data-i="bio1">
+      赵文林，36岁，出生于中国台湾台北市信义区，成长于台北101附近。早年在台北完成基础教育
+    </p>
+    <p data-i="bio2">
+      2008 年高中毕业后申请前往大陆浙江大学继续上学，2008年进入浙江大学攻读计算机半导体相关课程，并于2012年完成学业。毕业后选择留在大陆发展，进入半导体行业工作实习，逐渐积累半导体研发相关知识
+    </p>
+    <p data-i="bio3">
+      在个人生活中，喜欢咖啡、健身慢跑散步。性格理性稳重、独立自主、认真负责，重视诚信、沟通和长期关系，同时注重生活品质及个人成长。
+    </p>
+    <p data-i="bio4">
+      职业方面，希望持续深耕日本半导体行业，逐步走向资深人员、未来希望在事业稳定发展的同时，保持健康、寻找到伴侣，充实且有品质的生活，实现个人成长、职业发展与生活平衡。
+    </p>
+  </div>
+</section>
+
+<!-- 十一 -->
+<section class="section" id="timeline">
+  <div class="section-heading">
+    <h2 data-i="titleTimeline">十一、人物档案时间轴</h2>
+    <p>PERSONAL TIMELINE</p>
+  </div>
+
+  <div class="card">
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">1990年</div>
+        <h3 data-i="time1Title">出生</h3>
+        <p data-i="time1">出生于台湾台北市信义区。</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1993—2008年</div>
+        <h3 data-i="time2Title">基础教育</h3>
+        <p data-i="time2">在台北完成幼儿园、小学、初中及高中教育。</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2008—2012年</div>
+        <h3 data-i="time3Title">大学本科</h3>
+        <p data-i="time3">大学本科，主修计算机半导体相关专业。</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2012—2019年</div>
+        <h3 data-i="time4Title">职业起步</h3>
+        <p data-i="time4">大学毕业，选择留在大陆，进入大陆半导体工作行业积累职业经验。</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2019年—至今</div>
+        <h3 data-i="time5Title">日本发展</h3>
+        <p data-i="time5">前往日本发展半导体事业，规划长期职业及生活目标。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <strong>WENLIN ZHAO</strong>
-  <p id="footerText"></p>
+  <p>© 2026 <strong>ZHAO WENLIN</strong></p>
+  <p data-i="footer">个人成长 · 教育背景 · 职业发展 · 个人生活</p>
 </footer>
 
-<a class="top-link" href="#" aria-label="Back to top">↑</a>
+<button id="topButton" aria-label="Back to top">↑</button>
 
 <script>
-const profiles = {
+/* =================================================
+   五国语言包
+   所有翻译均内置在本文件中，不依赖外部翻译插件
+================================================= */
 
-"zh-CN": {
-subtitle:"个人成长 · 教育背景 · 职业发展 · 商业投资 · 个人生活",
-footer:"个人档案 · 个人成长 · 职业发展 · 商业投资",
-sections:[
-["个人资料",[
-["姓名","赵文林"],
-["出生年份","1990年"],
-["年龄","36岁（2026年）"],
-["出生地","中国台湾台北市信义区"],
-["成长环境","台北101大楼附近"],
-["现居地","日本东京都"],
-["本科专业方向","企业管理相关专业"],
-["本科毕业年份","2012年"],
-["留学院校","早稻田大学"],
-["硕士学习方向","企业管理及经营管理相关领域"],
-["硕士毕业年份","2016年"],
-["主要经历","企业管理、商业投资、全球线上店铺经营"],
-["职业发展方向","企业管理、商业投资、跨境电商"]
-]],
-["出生背景与成长经历",[
-["出生与成长","1990年出生于中国台湾台北市信义区，在台北101大楼附近成长。"],
-["成长环境","在多元化的城市环境中成长，逐渐形成开放的思维方式，并对商业、经济及社会发展产生兴趣。"],
-["个人成长","童年时期性格开朗，喜欢交流，对新事物保持好奇。随着成长，逐渐形成独立、自律、认真负责的处事态度。"]
-]],
-["教育经历",[
-["1993—1996年｜幼儿园","在台北市信义区接受幼儿启蒙教育，培养基础认知能力及生活习惯。"],
-["1996—2002年｜小学","在台北市完成小学阶段教育，学习基础课程，建立语言、数学及综合学习能力。"],
-["2002—2005年｜初中","接受综合基础教育，逐步培养独立思考及学习能力。"],
-["2005—2008年｜高中","完成高中阶段课程学习，为大学专业学习打下基础。"],
-["2008—2012年｜大学本科","在台湾地区学习企业管理相关专业，课程包括管理学、经济学、市场营销、企业经营战略、组织管理、人力资源管理、商业分析及国际商务。2012年完成本科阶段学习并取得学士学位。"],
-["2012年｜赴日本东京留学","本科毕业后前往东京继续深造，希望了解日本企业经营模式及商业文化，拓展国际视野，并为未来在日本长期发展做好准备。"],
-["2014—2016年｜早稻田大学硕士阶段","学习方向涉及企业管理、经营管理及商业运营。学习企业经营战略、企业组织与管理、市场营销战略、国际商务、企业运营分析及商业决策与管理。"],
-["2016年｜完成硕士阶段学习","完成硕士阶段学习，随后进入日本职场，开始积累企业管理及业务运营方面的工作经验。"]
-]],
-["日本企业工作经历",[
-["2016—2017年｜企业管理相关工作","进入日本企业工作，参与企业日常运营事务协调、部门业务沟通、内部流程管理、资料整理与分析、商务沟通及业务协调，并协助日常经营管理工作。"],
-["职业经验积累","通过实际工作逐步了解日本企业文化、组织管理方式及内部运营流程，积累企业职场经验。"],
-["2017年｜职业方向调整","工作约一年后离开原有岗位，重新规划职业发展方向，并开始探索商业投资及自主经营的可能性。"]
-]],
-["商业投资经历",[
-["2017年以后｜高端健身房合伙投资","与合伙人共同参与高端健身房项目投资，以投资合作为主。"],
-["参与方式","作为合伙投资人参与项目投资及合作沟通，关注整体经营情况、投资状况及项目发展。"],
-["职责范围","不负责健身房日常运营，不参与员工管理，不担任店长、经理或其他日常管理职务。"],
-["经验积累","通过项目了解高端健身商业模式、会员服务体系及市场需求，积累实体商业投资经验。"]
-]],
-["全球线上店铺经营",[
-["2021年至今｜线上店铺副业","2021年经合伙人介绍，开始参与全球线上店铺经营，将其作为个人副业及跨境业务探索方向。"],
-["业务范围","面向全球消费者开展线上商品销售及跨境业务，关注不同市场的消费需求与商业机会。"],
-["主要工作内容","全球市场调研、消费需求分析、线上店铺建立及维护、商品选择与信息整理、商品展示、销售及订单管理、国际客户沟通与售后服务、跨境物流跟进、线上营销推广及海外市场拓展。"],
-["项目关系","全球线上店铺经营与高端健身房投资属于不同的商业项目，分别独立开展。"]
-]],
-["兴趣爱好",[
-["咖啡与餐饮","喜欢探索东京不同地区的咖啡馆、餐厅及特色美食。"],
-["健身与运动","重视身体健康，平时喜欢健身、慢跑及户外散步。"],
-["旅行与文化","喜欢日本国内旅行，欣赏自然景观、城市建筑及当地美食。"],
-["财经与商业阅读","关注企业经营、国际贸易、全球市场及商业发展趋势。"],
-["其他兴趣","电影、音乐、摄影、城市探索、朋友聚会交流，以及科技与社会发展。"]
-]],
-["性格特点与个人理念",[
-["性格特点","成熟稳重、理性务实、认真负责、独立自主，重视个人成长及生活品质。"],
-["诚信原则","相信诚信是建立长期关系及稳定合作的重要基础。"],
-["责任意识","认为商业发展需要责任感、专业能力及持续学习。"],
-["合作理念","重视信任、沟通与相互尊重，希望建立长期、稳定的合作关系。"],
-["生活态度","重视自由、个人空间与生活品质，认为长期积累比短期利益更加重要。"]
-]],
-["未来发展规划",[
-["短期规划｜2026—2028年","深化企业管理及商业知识，提升全球线上店铺运营能力，加强跨境业务与国际市场分析，了解全球消费者需求，建立稳定合作关系，并关注实体投资项目的长期发展。"],
-["中期规划｜2028—2031年","进一步拓展全球线上业务，提升商业分析与经营规划能力，探索具有潜力的投资机会，优化线上店铺运营模式，积累国际商业合作经验。"],
-["长期规划｜2031年以后","继续在日本稳定发展事业与生活，拓展国际合作，提升经营管理及投资能力，在事业发展、经济稳定与个人生活之间建立平衡。"]
-]],
-["个人生活愿景",[
-["生活方向","继续在东京生活与发展，保持健康运动习惯，安排旅行及个人兴趣，创造舒适、有品质的生活环境。"],
-["事业目标","在企业管理知识基础上，持续积累投资及全球线上业务经验，提高国际经营能力。"],
-["人际关系","重视真诚、可靠与尊重，希望建立长期稳定的友谊及商业合作关系。"],
-["人生目标","追求事业发展、商业稳定、经济稳健、健康生活、持续学习与个人成长。"]
-]],
-["个人成长时间轴",[
-["1990年","出生于中国台湾台北市信义区。"],
-["1993—2008年","在台北市完成幼儿园、小学、初中及高中阶段教育。"],
-["2008—2012年","大学本科阶段学习企业管理相关专业。"],
-["2012年","本科毕业后前往日本东京留学。"],
-["2014—2016年","在早稻田大学进行硕士阶段学习。"],
-["2016年","完成硕士阶段学习，进入日本企业工作。"],
-["2016—2017年","从事企业管理及业务运营相关工作。"],
-["2017年","调整职业规划，开始探索商业投资。"],
-["2017年以后","参与高端健身房合伙投资，不参与日常经营管理。"],
-["2021年至今","持续开展全球线上店铺经营及跨境业务探索。"],
-["2026年以后","持续推进国际业务、商业投资及个人发展。"]
-]]
-]
+const L = {
+
+zh: {
+nav1:"基本资料",nav2:"成长经历",nav3:"教育背景",nav4:"职业发展",
+nav5:"兴趣爱好",nav6:"语言技能",nav7:"性格特点",nav8:"个人价值观",
+nav9:"未来规划",nav10:"个人生活",nav11:"个人简介",nav12:"时间轴",
+heroSubtitle:"个人成长 · 教育背景 · 职业发展 · 个人生活",
+heroDescription:"完整个人档案，记录成长经历、教育背景、职业发展与未来生活目标。",
+heroButton:"查看完整个人档案",
+titleProfile:"基本资料",labelName:"姓名",name:"赵文林",
+labelBirth:"出生年份",birth:"1990年",labelAge:"年龄",age:"36岁",
+labelPlace:"出生地",place:"中国台湾台北市信义区",
+labelChildhood:"成长环境",childhood:"台北101大楼附近",
+labelCurrent:"现居地",current:"日本东京都",
+labelMajor:"大学专业",major:"计算机及半导体相关技术",
+labelUniversity:"大学院校",university:"浙江大学",
+labelDirection:"大学方向",direction:"半导体方向",
+labelGraduate:"大学毕业",graduate:"2012年",
+labelIndustry:"职业行业",industry:"半导体",
+labelIdentity:"职业身份",identity:"企业职员",
+labelLife:"生活状态",status:"在东京工作及生活",
+incomeTitle:"收入",
+income:"（35万—42万日元，税后27.5万—27.8万）（14,700元—17,640元，税后13,776元）",
+titleGrowth:"一、出生背景与成长经历",
+growthP1:"赵文林出生于1990年，成长于中国台湾台北市信义区，童年生活环境位于台北101大楼附近。",
+growthP2:"信义区作为台北重要的商业及城市发展区域，为其成长提供了现代化的城市生活环境。从小接触多元文化和城市生活，逐渐培养出较为开放的思维方式。",
+growthP3:"童年时期性格比较开朗，喜欢与同龄人交流，也对新鲜事物保持好奇心。随着年龄增长，逐渐形成独立、自律及认真负责的性格特点。",
+titleEducation:"二、台湾教育经历（1993—2008年）",
+tableTime:"时间",tableStage:"教育阶段",tablePlace:"地点",
+schoolKindergarten:"幼儿园",schoolTaipeiXinyi:"台北市信义区",
+schoolPrimary:"小学",schoolTaipei:"台北市",schoolMiddle:"初中",
+schoolTaipei2:"台北市",schoolHigh:"高中",schoolTaipei3:"台北市",
+titleMainland:"大陆大学教育经历（2008—2012年）",
+universityPeriod:"2008—2012年大学",
+universityInfo:"院校：浙江大学\n地点：浙江省杭州市\n学习方向：计算机及半导体相关技术\n专业兴趣：芯片设计、集成电路、半导体研发。",
+freshman:"大陆大学经历：（大一阶段2008-2009）（2008—2012年毕业）",
+arrival:"2008—2012年｜赴大陆浙江大学",
+opening:"开学时间：2008.8.11日开学典礼.9月正式进入秋季课程学习",
+august11:"1. 8月11号-8月15号",
+orientation1:"参加开学典礼",orientation2:"熟悉紫金港校区",
+orientation3:"办理校园卡，住宿及相关手续",orientation4:"领取校园生活用品",
+orientation5:"熟悉图书馆，食堂和教学楼",
+militaryTitle:"2. 8月16号-8月30号：军训",
+military1:"早操和队列训练",military2:"军事理论及国防教育",
+military3:"内务整理",military4:"团队活动",military5:"新生集体训练",
+orientationTitle:"3. 8月底-9月初：入学教育",
+orientation6:"学习学校规章制度",orientation7:"了解大学培养方案",
+orientation8:"参加学院及班级活动",
+classTitle:"4. 9月初：准备正式上课",
+class1:"领取教材",class2:"制定学习计划",class3:"了解课程安排",
+class4:"开始大学基础课程学历",
+whySemiTitle:"为什么选择半导体",
+whySemi:"高中期间因为夏天手机发热，在同学的推荐下购买了手机半导体散热背夹，觉的挺神奇的就对其了解了一下，逐渐对其产生了兴趣、就在高中毕业之后，选择申请到大陆浙江大学学习计算机半导体专业。",
+degree:"2012年6月完成大学阶段学习，取得学士学位。",
+titleCareer:"三：2012—2019年｜职业起步阶段",
+afterGraduate:"大学毕业后：赵文林",
+firstJob:"选择留在浙江杭州下沙经济技术开发区杭州士兰微电子股份有限公司做软测试工程师（实习生）工资：2000人民币",
+job1:"芯片设计",job2:"集成电路",job3:"半导体研发",
+promotion:"2014年年底成功晋级初级研发工程师，工资7000-10000人民币",
+toJapan:"一直工作到2019年选择到日本继续深造自己学习新的相关技术",
+loveJapan:"在日本工作期间逐渐爱上了日本希望未来在日本长期发展。",
+career2019:"2019—2026年｜职业成长阶段",
+developmentFocus:"发展重点：",
+focus1:"参与研发部研发项目",focus2:"协助高级工程师产品研发",
+focus3:"芯片设计",focus4:"半导体研发",focus5:"解决芯片设计中的技术问题",
+careerHope:"希望通过持续学习和工作积累，逐步向资深业务人员、项目负责人或高级工程师发展。",
+titleInterests:"四、个人兴趣爱好",coffee:"咖啡与餐饮",
+fitness:"健身与运动",fitnessText:"喜欢健身、慢跑和散步，注重身体健康及生活规律。",
+otherInterests:"其他兴趣包括：",interest1:"电影与音乐。",
+interest2:"与朋友聚会及交流。",interest3:"关注科技和社会发展。",
+interest4:"学习新的商业知识。",
+titleLanguage:"五、语言技能",languageCol:"语言",abilityCol:"能力描述",
+traditionalChinese:"中文（繁体）",traditionalAbility:"母语水平，熟练阅读、书写及沟通",
+mandarin:"普通话",mandarinAbility:"流利交流，具备商务沟通能力",
+titlePersonality:"六、性格特点与个人价值观",
+personalityIntro:"赵文林的人物性格设定为成熟、稳重、理性，同时具备一定的生活情趣。",
+personalityCol:"性格特点",behaviorCol:"具体表现",
+trait1:"理性稳重",trait1Text:"注重分析问题，做事有计划",
+trait2:"认真负责",trait2Text:"重视工作质量及责任感",
+trait3:"独立自主",trait3Text:"能够独立安排生活和工作",
+trait4:"诚信可靠",trait4Text:"重视信任及长期关系",
+trait5:"持续学习",trait5Text:"愿意不断提升专业能力",
+trait6:"注重生活",trait6Text:"追求工作与生活的平衡",
+titleBeliefs:"七、个人价值观",
+belief1:"诚信是建立关系的重要基础。",
+belief2:"工作需要责任感及专业能力。",
+belief3:"生活需要适当的自由和空间。",
+belief4:"人际关系重视真诚及互相尊重。",
+belief5:"长期发展比短期利益更加重要。",
+titleFuture:"八、职业规划与未来发展目标",
+shortTitle:"短期目标（2026—2028年）",
+short1:"深化半导体专业知识。",short2:"提升半导体及相关分析能力。",
+short3:"增强自己身能力。",short4:"争取承担更加专业的工作职责。",
+short5:"保持稳定的职业发展节奏。",short6:"最好能寻找到另一半",
+mediumTitle:"中期目标（2028—2031年）",
+medium1:"在半导体研发行业形成明确的专业方向。",
+medium2:"积累更丰富的半导体研发经验。",
+medium3:"向资深工程师人员或相关专业知识发展。",
+medium4:"提升团队协作能力。",medium5:"建立稳定的行业人脉。",
+longTitle:"长期目标（2031年以后）",
+long1:"在日本半导体行业业建立长期职业发展基础。",
+long2:"成为具备专业能力和国际视野的从业人员。",
+long3:"争取向管理岗位或资深专业岗位发展。",
+long4:"持续提升职业价值及个人竞争力。",
+long5:"实现事业稳定、生活充实及个人成长。",
+titleLife:"九、个人生活与未来愿景",
+lifeP1:"赵文林希望未来能够继续在东京生活和发展，在稳定工作的基础上逐渐提高生活品质。",
+lifeP2:"生活方面，希望保持健康的运动习惯，定期旅行，拓展兴趣爱好，拥有舒适的生活环境。",
+lifeP3:"人际关系方面，重视真诚、可靠及互相尊重，希望建立长期稳定的朋友关系和良好的社会联系。",
+futureRealize:"未来希望实现：",
+lifeGoal1:"事业稳定发展。",lifeGoal2:"经济生活更加稳健。",
+lifeGoal3:"拥有健康的生活方式。",lifeGoal4:"保持持续学习及个人成长。",
+lifeGoal5:"在事业、生活和人际关系之间取得平衡。",
+titleBiography:"十、完整个人简介",
+bio1:"赵文林，36岁，出生于中国台湾台北市信义区，成长于台北101附近。早年在台北完成基础教育",
+bio2:"2008 年高中毕业后申请前往大陆浙江大学继续上学，2008年进入浙江大学攻读计算机半导体相关课程，并于2012年完成学业。毕业后选择留在大陆发展，进入半导体行业工作实习，逐渐积累半导体研发相关知识",
+bio3:"在个人生活中，喜欢咖啡、健身慢跑散步。性格理性稳重、独立自主、认真负责，重视诚信、沟通和长期关系，同时注重生活品质及个人成长。",
+bio4:"职业方面，希望持续深耕日本半导体行业，逐步走向资深人员、未来希望在事业稳定发展的同时，保持健康、寻找到伴侣，充实且有品质的生活，实现个人成长、职业发展与生活平衡。",
+titleTimeline:"十一、人物档案时间轴",
+time1Title:"出生",time1:"出生于台湾台北市信义区。",
+time2Title:"基础教育",time2:"在台北完成幼儿园、小学、初中及高中教育。",
+time3Title:"大学本科",time3:"大学本科，主修计算机半导体相关专业。",
+time4Title:"职业起步",time4:"大学毕业，选择留在大陆，进入大陆半导体工作行业积累职业经验。",
+time5Title:"日本发展",time5:"前往日本发展半导体事业，规划长期职业及生活目标。",
+footer:"个人成长 · 教育背景 · 职业发展 · 个人生活"
 },
 
-"zh-TW": {
-subtitle:"個人成長 · 教育背景 · 職業發展 · 商業投資 · 個人生活",
-footer:"個人檔案 · 個人成長 · 職業發展 · 商業投資",
-sections:[
-["基本資料",[
-["姓名","趙文林"],["出生年份","1990年"],["年齡","36歲（2026年）"],["出生地","中國台灣台北市信義區"],["成長環境","台北101大樓附近"],["現居地","日本東京都"],["大學專業方向","企業管理相關專業"],["大學畢業年份","2012年"],["留學院校","早稻田大學"],["碩士學習方向","企業管理及經營管理相關領域"],["碩士畢業年份","2016年"],["主要經歷","企業管理、商業投資、全球線上店鋪經營"],["職業方向","企業管理、商業投資、跨境電商"]
-]],
-["出生背景與成長經歷",[
-["出生與成長","1990年出生於中國台灣台北市信義區，在台北101大樓附近成長。"],
-["成長環境","在多元化的城市環境中成長，逐漸形成開放思維，並對商業、經濟及社會發展產生興趣。"],
-["個人成長","童年時期性格開朗，喜歡交流，對新事物保持好奇。隨著成長，逐漸形成獨立、自律、認真負責的處事態度。"]
-]],
-["教育經歷",[
-["1993—1996年｜幼兒園","在台北市信義區接受幼兒啟蒙教育。"],
-["1996—2002年｜小學","在台北市完成小學教育，建立基礎學習能力。"],
-["2002—2005年｜國中","接受綜合基礎教育，培養獨立思考及學習能力。"],
-["2005—2008年｜高中","完成高中課程，為大學專業學習打下基礎。"],
-["2008—2012年｜大學本科","在台灣學習企業管理相關專業，課程包括管理學、經濟學、市場行銷、企業策略、組織管理、人力資源、商業分析及國際商務。2012年完成學習並取得學士學位。"],
-["2012年｜赴日本東京留學","大學畢業後前往東京繼續深造，了解日本企業經營模式及商業文化，拓展國際視野。"],
-["2014—2016年｜早稻田大學碩士階段","學習企業管理、經營管理及商業營運相關領域，包括企業策略、組織管理、市場行銷、國際商務及企業營運分析。"],
-["2016年｜完成碩士階段學習","完成碩士階段學習，隨後進入日本職場。"]
-]],
-["日本企業工作經歷",[
-["2016—2017年｜企業管理相關工作","參與企業日常營運協調、部門溝通、內部流程管理、資料整理與分析、商務溝通及業務協調。"],
-["職業經驗累積","透過實際工作了解日本企業文化、組織管理及內部營運流程。"],
-["2017年｜職業方向調整","工作約一年後離開原有職位，重新規劃職業發展，並探索商業投資及自主經營。"]
-]],
-["商業投資經歷",[
-["2017年以後｜高端健身房合夥投資","與合夥人共同參與高端健身房專案投資，以投資合作為主。"],
-["參與方式","以合夥投資人身分參與投資及合作溝通，關注整體經營與投資情況。"],
-["職責範圍","不負責健身房日常營運及員工管理，不擔任店長、經理或其他日常管理職務。"],
-["經驗累積","了解高端健身產業的商業模式、會員服務體系及市場需求。"]
-]],
-["全球線上店鋪經營",[
-["2021年至今｜線上店鋪副業","2021年經合夥人介紹，開始參與全球線上店鋪經營，作為個人副業及跨境業務探索方向。"],
-["業務範圍","面向全球消費者開展線上商品銷售及跨境業務。"],
-["主要工作內容","市場調查、消費需求分析、線上店鋪建立與維護、商品選擇及展示、銷售與訂單管理、國際客戶溝通、售後服務、跨境物流、線上行銷及海外市場拓展。"],
-["專案關係","線上店鋪與高端健身房投資屬於不同商業專案。"]
-]],
-["興趣愛好",[
-["咖啡與餐飲","喜歡探索東京不同地區的咖啡館、餐廳及特色美食。"],
-["健身與運動","重視健康，喜歡健身、慢跑及戶外散步。"],
-["旅行與文化","喜歡日本國內旅行，欣賞自然景觀、建築及當地美食。"],
-["財經與商業閱讀","關注企業經營、國際貿易、全球市場及商業趨勢。"],
-["其他興趣","電影、音樂、攝影、城市探索、朋友聚會、科技與社會發展。"]
-]],
-["性格特點與個人理念",[
-["性格特點","成熟穩重、理性務實、認真負責、獨立自主。"],
-["誠信原則","相信誠信是建立長期關係及穩定合作的重要基礎。"],
-["責任意識","重視責任感、專業能力及持續學習。"],
-["合作理念","重視信任、溝通與相互尊重。"],
-["生活態度","重視自由、個人空間與生活品質，認為長期累積比短期利益更加重要。"]
-]],
-["未來發展規劃",[
-["短期｜2026—2028年","深化企業管理及商業知識，提升線上店鋪營運、跨境業務及國際市場分析能力。"],
-["中期｜2028—2031年","拓展全球線上業務，提升商業分析與經營規劃能力，探索投資機會及國際合作。"],
-["長期｜2031年以後","繼續在日本穩定發展，拓展國際合作，建立事業與生活的平衡。"]
-]],
-["個人生活願景",[
-["生活方向","繼續在東京生活與發展，保持運動習慣，安排旅行及個人興趣。"],
-["事業目標","持續累積投資及全球線上業務經驗，提高國際經營能力。"],
-["人際關係","重視真誠、可靠與尊重，建立長期友誼及商業合作關係。"],
-["人生目標","追求事業發展、商業穩定、經濟穩健、健康生活及持續成長。"]
-]],
-["個人成長時間軸",[
-["1990年","出生於台灣台北市信義區。"],
-["1993—2008年","在台北完成幼兒園、小學、國中及高中教育。"],
-["2008—2012年","大學本科學習企業管理相關專業。"],
-["2012年","前往日本東京留學。"],
-["2014—2016年","在早稻田大學進行碩士階段學習。"],
-["2016年","完成碩士階段學習並進入日本企業。"],
-["2016—2017年","從事企業管理及業務營運相關工作。"],
-["2017年以後","參與高端健身房合夥投資。"],
-["2021年至今","持續經營全球線上店鋪副業。"],
-["2026年以後","持續推進國際業務及個人發展。"]
-]]
-]
+tw: {
+nav1:"基本資料",nav2:"成長經歷",nav3:"教育背景",nav4:"職業發展",
+nav5:"興趣愛好",nav6:"語言技能",nav7:"性格特點",nav8:"個人價值觀",
+nav9:"未來規劃",nav10:"個人生活",nav11:"個人簡介",nav12:"時間軸",
+heroSubtitle:"個人成長 · 教育背景 · 職業發展 · 個人生活",
+heroDescription:"完整個人檔案，記錄成長經歷、教育背景、職業發展與未來生活目標。",
+heroButton:"查看完整個人檔案",
+titleProfile:"基本資料",labelName:"姓名",name:"趙文林",
+labelBirth:"出生年份",birth:"1990年",labelAge:"年齡",age:"36歲",
+labelPlace:"出生地",place:"中國台灣台北市信義區",
+labelChildhood:"成長環境",childhood:"台北101大樓附近",
+labelCurrent:"現居地",current:"日本東京都",
+labelMajor:"大學專業",major:"電腦及半導體相關技術",
+labelUniversity:"大學院校",university:"浙江大學",
+labelDirection:"大學方向",direction:"半導體方向",
+labelGraduate:"大學畢業",graduate:"2012年",
+labelIndustry:"職業行業",industry:"半導體",
+labelIdentity:"職業身份",identity:"企業職員",
+labelLife:"生活狀態",status:"在東京工作及生活",
+incomeTitle:"收入",
+income:"（35萬—42萬日圓，稅後27.5萬—27.8萬）（14,700元—17,640元，稅後13,776元）",
+titleGrowth:"一、出生背景與成長經歷",
+growthP1:"趙文林出生於1990年，成長於中國台灣台北市信義區，童年生活環境位於台北101大樓附近。",
+growthP2:"信義區作為台北重要的商業及城市發展區域，為其成長提供了現代化的城市生活環境。從小接觸多元文化和城市生活，逐漸培養出較為開放的思維方式。",
+growthP3:"童年時期性格比較開朗，喜歡與同齡人交流，也對新鮮事物保持好奇心。隨著年齡增長，逐漸形成獨立、自律及認真負責的性格特點。",
+titleEducation:"二、台灣教育經歷（1993—2008年）",
+tableTime:"時間",tableStage:"教育階段",tablePlace:"地點",
+schoolKindergarten:"幼兒園",schoolTaipeiXinyi:"台北市信義區",
+schoolPrimary:"小學",schoolTaipei:"台北市",schoolMiddle:"國中",
+schoolTaipei2:"台北市",schoolHigh:"高中",schoolTaipei3:"台北市",
+titleMainland:"大陸大學教育經歷（2008—2012年）",
+universityPeriod:"2008—2012年大學",
+universityInfo:"院校：浙江大學\n地點：浙江省杭州市\n學習方向：電腦及半導體相關技術\n專業興趣：晶片設計、積體電路、半導體研發。",
+freshman:"大陸大學經歷：（大一階段2008-2009）（2008—2012年畢業）",
+arrival:"2008—2012年｜赴大陸浙江大學",
+opening:"開學時間：2008.8.11日開學典禮.9月正式進入秋季課程學習",
+august11:"1. 8月11號-8月15號",
+orientation1:"參加開學典禮",orientation2:"熟悉紫金港校區",
+orientation3:"辦理校園卡，住宿及相關手續",orientation4:"領取校園生活用品",
+orientation5:"熟悉圖書館，餐廳和教學樓",
+militaryTitle:"2. 8月16號-8月30號：軍訓",
+military1:"早操和隊列訓練",military2:"軍事理論及國防教育",
+military3:"內務整理",military4:"團隊活動",military5:"新生集體訓練",
+orientationTitle:"3. 8月底-9月初：入學教育",
+orientation6:"學習學校規章制度",orientation7:"了解大學培養方案",
+orientation8:"參加學院及班級活動",
+classTitle:"4. 9月初：準備正式上課",
+class1:"領取教材",class2:"制定學習計畫",class3:"了解課程安排",
+class4:"開始大學基礎課程學歷",
+whySemiTitle:"為什麼選擇半導體",
+whySemi:"高中期間因為夏天手機發熱，在同學的推薦下購買了手機半導體散熱背夾，覺得挺神奇的就對其了解了一下，逐漸對其產生了興趣、就在高中畢業之後，選擇申請到大陸浙江大學學習電腦半導體專業。",
+degree:"2012年6月完成大學階段學習，取得學士學位。",
+titleCareer:"三：2012—2019年｜職業起步階段",
+afterGraduate:"大學畢業後：趙文林",
+firstJob:"選擇留在浙江杭州下沙經濟技術開發區杭州士蘭微電子股份有限公司做軟體測試工程師（實習生）工資：2000人民幣",
+job1:"晶片設計",job2:"積體電路",job3:"半導體研發",
+promotion:"2014年年底成功晉級初級研發工程師，工資7000-10000人民幣",
+toJapan:"一直工作到2019年選擇到日本繼續深造自己學習新的相關技術",
+loveJapan:"在日本工作期間逐漸愛上了日本，希望未來在日本長期發展。",
+career2019:"2019—2026年｜職業成長階段",
+developmentFocus:"發展重點：",
+focus1:"參與研發部研發專案",focus2:"協助高級工程師產品研發",
+focus3:"晶片設計",focus4:"半導體研發",focus5:"解決晶片設計中的技術問題",
+careerHope:"希望透過持續學習和工作累積，逐步向資深業務人員、專案負責人或高級工程師發展。",
+titleInterests:"四、個人興趣愛好",coffee:"咖啡與餐飲",
+fitness:"健身與運動",fitnessText:"喜歡健身、慢跑和散步，注重身體健康及生活規律。",
+otherInterests:"其他興趣包括：",interest1:"電影與音樂。",
+interest2:"與朋友聚會及交流。",interest3:"關注科技和社會發展。",
+interest4:"學習新的商業知識。",
+titleLanguage:"五、語言技能",languageCol:"語言",abilityCol:"能力描述",
+traditionalChinese:"中文（繁體）",traditionalAbility:"母語程度，熟練閱讀、書寫及溝通",
+mandarin:"普通話",mandarinAbility:"流利交流，具備商務溝通能力",
+titlePersonality:"六、性格特點與個人價值觀",
+personalityIntro:"趙文林的人物性格設定為成熟、穩重、理性，同時具備一定的生活情趣。",
+personalityCol:"性格特點",behaviorCol:"具體表現",
+trait1:"理性穩重",trait1Text:"注重分析問題，做事有計畫",
+trait2:"認真負責",trait2Text:"重視工作品質及責任感",
+trait3:"獨立自主",trait3Text:"能夠獨立安排生活和工作",
+trait4:"誠信可靠",trait4Text:"重視信任及長期關係",
+trait5:"持續學習",trait5Text:"願意不斷提升專業能力",
+trait6:"注重生活",trait6Text:"追求工作與生活的平衡",
+titleBeliefs:"七、個人價值觀",
+belief1:"誠信是建立關係的重要基礎。",
+belief2:"工作需要責任感及專業能力。",
+belief3:"生活需要適當的自由和空間。",
+belief4:"人際關係重視真誠及互相尊重。",
+belief5:"長期發展比短期利益更加重要。",
+titleFuture:"八、職業規劃與未來發展目標",
+shortTitle:"短期目標（2026—2028年）",
+short1:"深化半導體專業知識。",short2:"提升半導體及相關分析能力。",
+short3:"增強自身能力。",short4:"爭取承擔更加專業的工作職責。",
+short5:"保持穩定的職業發展節奏。",short6:"最好能尋找到另一半",
+mediumTitle:"中期目標（2028—2031年）",
+medium1:"在半導體研發行業形成明確的專業方向。",
+medium2:"累積更豐富的半導體研發經驗。",
+medium3:"向資深工程師人員或相關專業知識發展。",
+medium4:"提升團隊協作能力。",medium5:"建立穩定的行業人脈。",
+longTitle:"長期目標（2031年以後）",
+long1:"在日本半導體行業建立長期職業發展基礎。",
+long2:"成為具備專業能力和國際視野的從業人員。",
+long3:"爭取向管理職位或資深專業職位發展。",
+long4:"持續提升職業價值及個人競爭力。",
+long5:"實現事業穩定、生活充實及個人成長。",
+titleLife:"九、個人生活與未來願景",
+lifeP1:"趙文林希望未來能夠繼續在東京生活和發展，在穩定工作的基礎上逐漸提高生活品質。",
+lifeP2:"生活方面，希望保持健康的運動習慣，定期旅行，拓展興趣愛好，擁有舒適的生活環境。",
+lifeP3:"人際關係方面，重視真誠、可靠及互相尊重，希望建立長期穩定的朋友關係和良好的社會聯繫。",
+futureRealize:"未來希望實現：",
+lifeGoal1:"事業穩定發展。",lifeGoal2:"經濟生活更加穩健。",
+lifeGoal3:"擁有健康的生活方式。",lifeGoal4:"保持持續學習及個人成長。",
+lifeGoal5:"在事業、生活和人際關係之間取得平衡。",
+titleBiography:"十、完整個人簡介",
+bio1:"趙文林，36歲，出生於中國台灣台北市信義區，成長於台北101附近。早年在台北完成基礎教育",
+bio2:"2008 年高中畢業後申請前往大陸浙江大學繼續上學，2008年進入浙江大學攻讀電腦半導體相關課程，並於2012年完成學業。畢業後選擇留在大陸發展，進入半導體行業工作實習，逐漸累積半導體研發相關知識",
+bio3:"在個人生活中，喜歡咖啡、健身慢跑散步。性格理性穩重、獨立自主、認真負責，重視誠信、溝通和長期關係，同時注重生活品質及個人成長。",
+bio4:"職業方面，希望持續深耕日本半導體行業，逐步走向資深人員、未來希望在事業穩定發展的同時，保持健康、尋找到伴侶，充實且有品質的生活，實現個人成長、職業發展與生活平衡。",
+titleTimeline:"十一、人物檔案時間軸",
+time1Title:"出生",time1:"出生於台灣台北市信義區。",
+time2Title:"基礎教育",time2:"在台北完成幼兒園、小學、國中及高中教育。",
+time3Title:"大學本科",time3:"大學本科，主修電腦半導體相關專業。",
+time4Title:"職業起步",time4:"大學畢業，選擇留在大陸，進入大陸半導體工作行業累積職業經驗。",
+time5Title:"日本發展",time5:"前往日本發展半導體事業，規劃長期職業及生活目標。",
+footer:"個人成長 · 教育背景 · 職業發展 · 個人生活"
 },
 
-"en": {
-subtitle:"Personal Growth · Education · Career · Business Investment · Lifestyle",
-footer:"Personal Profile · Personal Growth · Career · Business Investment",
-sections:[
-["Personal Information",[
-["Name","Wenlin Zhao"],["Year of Birth","1990"],["Age","36 (2026)"],["Place of Birth","Xinyi District, Taipei, Taiwan"],["Growing-up Area","Near Taipei 101"],["Current Residence","Tokyo, Japan"],["Undergraduate Field","Business Administration-related studies"],["Undergraduate Graduation","2012"],["Graduate Institution","Waseda University"],["Graduate Study Focus","Business and Management"],["Graduate Study Completion","2016"],["Experience","Business management, investment and global online store operations"],["Career Interests","Business management, investment and cross-border e-commerce"]
-]],
-["Birth and Personal Background",[
-["Early Life","Born in 1990 in Xinyi District, Taipei, Taiwan, and raised near Taipei 101."],
-["Growing Environment","Growing up in a diverse urban environment helped develop an open-minded perspective and an interest in business, economics and social development."],
-["Personal Development","Outgoing and curious during childhood. Over time, developed independence, self-discipline and a strong sense of responsibility."]
-]],
-["Education",[
-["1993–1996 | Kindergarten","Early childhood education in Xinyi District, Taipei."],
-["1996–2002 | Primary School","Completed primary education in Taipei and developed foundational academic skills."],
-["2002–2005 | Junior High School","Completed general education and developed independent thinking and learning skills."],
-["2005–2008 | Senior High School","Completed secondary education in preparation for university studies."],
-["2008–2012 | Undergraduate Studies","Studied a business administration-related field in Taiwan, including management, economics, marketing, corporate strategy, organizational management, human resources, business analysis and international business. Completed undergraduate studies in 2012."],
-["2012 | Moved to Tokyo","Moved to Tokyo after undergraduate studies to pursue further education, explore Japanese business culture and broaden international perspectives."],
-["2014–2016 | Waseda University","Graduate-level studies involving business management, corporate management and business operations, including corporate strategy, organizational management, marketing strategy, international business and operational analysis."],
-["2016 | Graduate Studies Completed","Completed the graduate study period and entered the Japanese workforce."]
-]],
-["Professional Experience in Japan",[
-["2016–2017 | Business Management-related Work","Worked at a Japanese company, supporting daily operational coordination, interdepartmental communication, internal processes, document organization, analysis and business coordination."],
-["Professional Development","Gained practical exposure to Japanese corporate culture, organizational structures and internal operating processes."],
-["2017 | Career Transition","After approximately one year, left the position to reassess career goals and explore investment and independent business opportunities."]
-]],
-["Business Investment",[
-["From 2017 | Premium Fitness Club Investment","Participated in a premium fitness club investment project together with business partners."],
-["Role","Participated as an investment partner, focusing on investment cooperation and communication."],
-["Responsibilities","Not responsible for daily club operations or staff management, and does not serve as a store manager or operational manager."],
-["Experience","Developed an understanding of premium fitness business models, membership services and market demand."]
-]],
-["Global Online Store Business",[
-["2021–Present | Online Business as a Side Venture","Started participating in global online store operations in 2021 through an introduction from a business partner."],
-["Business Scope","Online product sales and cross-border business serving consumers in international markets."],
-["Activities","Market research, consumer demand analysis, online store setup and maintenance, product selection and presentation, sales and order management, customer communication, after-sales service, cross-border logistics, online marketing and overseas market development."],
-["Separate Projects","The online store business and the fitness club investment are separate commercial projects."]
-]],
-["Interests and Hobbies",[
-["Coffee and Dining","Enjoys exploring cafés, restaurants and local food across Tokyo."],
-["Fitness and Exercise","Values health and enjoys fitness, jogging and walking."],
-["Travel and Culture","Enjoys travelling within Japan and discovering nature, architecture and local cuisine."],
-["Business and Finance","Interested in corporate management, international trade, global markets and business trends."],
-["Other Interests","Film, music, photography, urban exploration, social gatherings, technology and social development."]
-]],
-["Personal Values and Character",[
-["Character","Mature, calm, rational, responsible and independent, with an emphasis on personal growth and quality of life."],
-["Integrity","Believes integrity is essential for lasting relationships and reliable cooperation."],
-["Responsibility","Values responsibility, professional competence and continuous learning in business."],
-["Cooperation","Emphasizes trust, communication and mutual respect."],
-["Lifestyle","Values freedom, personal space and quality of life, believing long-term progress matters more than short-term gains."]
-]],
-["Future Development Plans",[
-["Short Term | 2026–2028","Deepen business knowledge, improve global online store operations, strengthen cross-border business and international market analysis, and build stable partnerships."],
-["Medium Term | 2028–2031","Expand global online business, improve business analysis and planning, explore promising investments and develop international partnerships."],
-["Long Term | From 2031","Continue building a stable life and career in Japan, expand international cooperation and balance business development with personal well-being."]
-]],
-["Personal Life Vision",[
-["Lifestyle","Continue living and developing in Tokyo, maintaining healthy habits and making time for travel and personal interests."],
-["Career Goals","Build on business management knowledge and continue gaining experience in investment and global online business."],
-["Relationships","Value sincerity, reliability and respect in friendships and business relationships."],
-["Life Goals","Pursue career development, business stability, financial security, good health and continuous learning."]
-]],
-["Personal Timeline",[
-["1990","Born in Xinyi District, Taipei, Taiwan."],
-["1993–2008","Completed kindergarten, primary, junior high and senior high education in Taipei."],
-["2008–2012","Undergraduate studies in a business administration-related field."],
-["2012","Moved to Tokyo for further education."],
-["2014–2016","Graduate-level studies at Waseda University."],
-["2016","Completed graduate studies and entered the Japanese workforce."],
-["2016–2017","Worked in business management and operations-related roles."],
-["From 2017","Participated in a premium fitness club investment project."],
-["2021–Present","Developed a global online store business as a side venture."],
-["From 2026","Continue international business development and personal growth."]
-]]
-]
+en: {
+nav1:"Profile",nav2:"Growth",nav3:"Education",nav4:"Career",
+nav5:"Interests",nav6:"Languages",nav7:"Personality",nav8:"Values",
+nav9:"Future Goals",nav10:"Lifestyle",nav11:"Biography",nav12:"Timeline",
+heroSubtitle:"Personal Growth · Education · Career · Lifestyle",
+heroDescription:"A complete personal profile covering life experiences, education, career development and future goals.",
+heroButton:"View Full Profile",
+titleProfile:"Basic Information",labelName:"Name",name:"Zhao Wenlin",
+labelBirth:"Year of Birth",birth:"1990",labelAge:"Age",age:"36",
+labelPlace:"Birthplace",place:"Xinyi District, Taipei, Taiwan",
+labelChildhood:"Childhood Environment",childhood:"Near Taipei 101",
+labelCurrent:"Current Residence",current:"Tokyo, Japan",
+labelMajor:"University Major",major:"Computer and Semiconductor Technology",
+labelUniversity:"University",university:"Zhejiang University",
+labelDirection:"Academic Focus",direction:"Semiconductors",
+labelGraduate:"Graduation",graduate:"2012",
+labelIndustry:"Industry",industry:"Semiconductors",
+labelIdentity:"Occupation",identity:"Company Employee",
+labelLife:"Lifestyle",status:"Working and living in Tokyo",
+incomeTitle:"Income",
+income:"JPY 350,000–420,000 (after tax: JPY 275,000–278,000); RMB 14,700–17,640 (after tax: RMB 13,776).",
+titleGrowth:"1. Birth Background and Personal Growth",
+growthP1:"Zhao Wenlin was born in 1990 and grew up in Xinyi District, Taipei, Taiwan. His childhood environment was near Taipei 101.",
+growthP2:"As an important commercial and urban development area of Taipei, Xinyi District provided a modern urban environment. Exposure to diverse cultures and city life helped him develop an open-minded outlook.",
+growthP3:"As a child, he was outgoing, enjoyed communicating with peers, and remained curious about new things. Over time, he developed independence, self-discipline, and a responsible attitude.",
+titleEducation:"2. Education in Taiwan (1993–2008)",
+tableTime:"Period",tableStage:"Education Stage",tablePlace:"Location",
+schoolKindergarten:"Kindergarten",schoolTaipeiXinyi:"Xinyi District, Taipei",
+schoolPrimary:"Primary School",schoolTaipei:"Taipei",
+schoolMiddle:"Junior High School",schoolTaipei2:"Taipei",
+schoolHigh:"Senior High School",schoolTaipei3:"Taipei",
+titleMainland:"University Education in Mainland China (2008–2012)",
+universityPeriod:"University: 2008–2012",
+universityInfo:"Institution: Zhejiang University\nLocation: Hangzhou, Zhejiang Province\nStudy focus: Computer and semiconductor-related technology\nAcademic interests: Chip design, integrated circuits, and semiconductor R&D.",
+freshman:"University experience in mainland China: first-year stage (2008–2009); graduation in 2012.",
+arrival:"2008–2012 | Studying at Zhejiang University in mainland China",
+opening:"Opening schedule: Opening ceremony on August 11, 2008; autumn courses officially began in September.",
+august11:"1. August 11–15",
+orientation1:"Attend the opening ceremony",orientation2:"Become familiar with Zijingang Campus",
+orientation3:"Complete campus card, accommodation and related procedures",
+orientation4:"Collect campus living supplies",
+orientation5:"Become familiar with the library, dining halls and teaching buildings",
+militaryTitle:"2. August 16–30: Military Training",
+military1:"Morning exercises and formation training",
+military2:"Military theory and national defense education",
+military3:"Dormitory organization and housekeeping",
+military4:"Team activities",military5:"Group training for new students",
+orientationTitle:"3. Late August–Early September: Student Orientation",
+orientation6:"Learn university rules and regulations",
+orientation7:"Understand the university curriculum and training plan",
+orientation8:"Participate in faculty and class activities",
+classTitle:"4. Early September: Preparation for Classes",
+class1:"Collect textbooks",class2:"Prepare a study plan",
+class3:"Learn the course schedule",
+class4:"Begin foundational university coursework",
+whySemiTitle:"Why Choose Semiconductors",
+whySemi:"During high school, his phone often overheated in summer. On a classmate's recommendation, he bought a semiconductor phone cooling attachment. Finding it fascinating, he began learning about the technology and gradually developed an interest in it. After graduating from high school, he applied to Zhejiang University in mainland China to study computer and semiconductor-related subjects.",
+degree:"Completed university studies and received a bachelor's degree in June 2012.",
+titleCareer:"3. 2012–2019 | Early Career",
+afterGraduate:"After university graduation: Zhao Wenlin",
+firstJob:"He chose to remain in Hangzhou and joined Hangzhou Silan Microelectronics Co., Ltd. in the Xiasha Economic and Technological Development Zone as a software testing engineer intern. Salary: RMB 2,000.",
+job1:"Chip design",job2:"Integrated circuits",job3:"Semiconductor R&D",
+promotion:"At the end of 2014, he advanced to junior R&D engineer, with a salary of RMB 7,000–10,000.",
+toJapan:"He continued working until 2019, when he chose to go to Japan to further his studies and learn new related technologies.",
+loveJapan:"During his work in Japan, he gradually grew fond of the country and hoped to build a long-term future there.",
+career2019:"2019–2026 | Professional Growth",
+developmentFocus:"Key Development Areas:",
+focus1:"Participating in R&D department projects",
+focus2:"Assisting senior engineers with product development",
+focus3:"Chip design",focus4:"Semiconductor R&D",
+focus5:"Resolving technical issues in chip design",
+careerHope:"Through continuous learning and work experience, he hopes to progress toward a senior specialist, project leader, or senior engineer role.",
+titleInterests:"4. Personal Interests and Hobbies",
+coffee:"Coffee and Dining",fitness:"Fitness and Exercise",
+fitnessText:"Enjoys fitness, jogging, and walking, and values physical health and a regular lifestyle.",
+otherInterests:"Other interests include:",
+interest1:"Movies and music.",interest2:"Meeting and communicating with friends.",
+interest3:"Following technology and social development.",
+interest4:"Learning new business knowledge.",
+titleLanguage:"5. Language Skills",languageCol:"Language",abilityCol:"Proficiency",
+traditionalChinese:"Traditional Chinese",
+traditionalAbility:"Native-level proficiency in reading, writing, and communication.",
+mandarin:"Mandarin Chinese",
+mandarinAbility:"Fluent communication with business communication skills.",
+titlePersonality:"6. Personality and Personal Values",
+personalityIntro:"Zhao Wenlin is described as mature, steady, and rational, while also having an appreciation for the pleasures of life.",
+personalityCol:"Trait",behaviorCol:"Description",
+trait1:"Rational and steady",trait1Text:"Analyzes problems carefully and plans his work.",
+trait2:"Responsible",trait2Text:"Values work quality and accountability.",
+trait3:"Independent",trait3Text:"Can independently organize work and daily life.",
+trait4:"Honest and reliable",trait4Text:"Values trust and long-term relationships.",
+trait5:"Continuous learner",trait5Text:"Willing to keep improving professional skills.",
+trait6:"Values quality of life",trait6Text:"Seeks a balance between work and life.",
+titleBeliefs:"7. Personal Values",
+belief1:"Integrity is an important foundation for relationships.",
+belief2:"Work requires responsibility and professional ability.",
+belief3:"Life needs an appropriate degree of freedom and personal space.",
+belief4:"Relationships should be based on sincerity and mutual respect.",
+belief5:"Long-term development is more important than short-term gains.",
+titleFuture:"8. Career Plans and Future Goals",
+shortTitle:"Short-Term Goals (2026–2028)",
+short1:"Deepen semiconductor expertise.",
+short2:"Improve semiconductor-related analysis skills.",
+short3:"Strengthen personal capabilities.",
+short4:"Seek more specialized work responsibilities.",
+short5:"Maintain a stable pace of career development.",
+short6:"Hopefully find a life partner.",
+mediumTitle:"Medium-Term Goals (2028–2031)",
+medium1:"Establish a clear area of specialization in semiconductor R&D.",
+medium2:"Gain richer semiconductor R&D experience.",
+medium3:"Develop toward senior engineering roles and deeper professional expertise.",
+medium4:"Improve teamwork and collaboration.",
+medium5:"Build a stable professional network.",
+longTitle:"Long-Term Goals (After 2031)",
+long1:"Establish a long-term career foundation in Japan's semiconductor industry.",
+long2:"Become a professional with strong expertise and an international perspective.",
+long3:"Pursue management or senior specialist positions.",
+long4:"Continue improving professional value and competitiveness.",
+long5:"Achieve career stability, a fulfilling life, and personal growth.",
+titleLife:"9. Personal Life and Future Vision",
+lifeP1:"Zhao Wenlin hopes to continue living and developing his career in Tokyo, gradually improving his quality of life while maintaining stable employment.",
+lifeP2:"In daily life, he hopes to maintain healthy exercise habits, travel regularly, broaden his interests, and enjoy a comfortable living environment.",
+lifeP3:"In relationships, he values sincerity, reliability, and mutual respect, and hopes to build long-term friendships and positive social connections.",
+futureRealize:"Future aspirations:",
+lifeGoal1:"Stable career development.",lifeGoal2:"Greater financial stability.",
+lifeGoal3:"A healthy lifestyle.",lifeGoal4:"Continuous learning and personal growth.",
+lifeGoal5:"Balance among career, life, and relationships.",
+titleBiography:"10. Complete Personal Biography",
+bio1:"Zhao Wenlin, 36, was born in Xinyi District, Taipei, Taiwan, and grew up near Taipei 101. He completed his early education in Taipei.",
+bio2:"After graduating from high school in 2008, he applied to continue his studies at Zhejiang University in mainland China. He entered Zhejiang University in 2008 to study computer and semiconductor-related courses and completed his studies in 2012. After graduation, he chose to remain in mainland China, entering the semiconductor industry as an intern and gradually building knowledge related to semiconductor R&D.",
+bio3:"In his personal life, he enjoys coffee, fitness, jogging, and walking. He is rational, steady, independent, and responsible. He values integrity, communication, long-term relationships, quality of life, and personal growth.",
+bio4:"Professionally, he hopes to continue developing in Japan's semiconductor industry and gradually advance to a senior role. Alongside career stability, he hopes to stay healthy, find a partner, enjoy a fulfilling and high-quality life, and achieve balance between personal growth, career development, and lifestyle.",
+titleTimeline:"11. Personal Profile Timeline",
+time1Title:"Birth",time1:"Born in Xinyi District, Taipei, Taiwan.",
+time2Title:"Basic Education",time2:"Completed kindergarten, primary, junior high, and senior high education in Taipei.",
+time3Title:"Undergraduate Education",time3:"Undergraduate studies in computer and semiconductor-related subjects.",
+time4Title:"Early Career",time4:"After graduation, he remained in mainland China and gained professional experience in the semiconductor industry.",
+time5Title:"Development in Japan",time5:"Moved to Japan to develop his semiconductor career and plan long-term professional and personal goals.",
+footer:"Personal Growth · Education · Career · Lifestyle"
 },
 
-"ja": {
-subtitle:"自己成長 · 学歴 · 職務経歴 · 事業投資 · 個人生活",
-footer:"個人プロフィール · 自己成長 · キャリア · 事業投資",
-sections:[
-["基本情報",[
-["氏名","趙 文林"],["生年","1990年"],["年齢","36歳（2026年）"],["出生地","台湾・台北市信義区"],["成長した地域","台北101周辺"],["現住所","日本・東京都"],["大学専攻","企業経営関連分野"],["大学卒業年","2012年"],["留学先","早稲田大学"],["大学院での学習分野","企業経営・経営管理"],["大学院修了年","2016年"],["主な経験","企業管理、事業投資、グローバルオンラインショップ運営"],["キャリアの方向性","企業経営、事業投資、越境EC"]
-]],
-["出生背景と成長",[
-["出生と成長","1990年、台湾・台北市信義区に生まれ、台北101周辺で育つ。"],
-["成長環境","多様な都市環境の中で育ち、柔軟な考え方を身につけ、ビジネス、経済、社会の発展に関心を持つようになる。"],
-["人物形成","幼少期は明るく、人との交流や新しいことに興味を持つ。成長とともに、自立心、自律性、責任感を大切にするようになる。"]
-]],
-["学歴",[
-["1993～1996年｜幼稚園","台北市信義区で幼児教育を受ける。"],
-["1996～2002年｜小学校","台北市で初等教育を修了し、基礎的な学習能力を身につける。"],
-["2002～2005年｜中学校","基礎教育を受け、主体的に考える力と学習能力を育む。"],
-["2005～2008年｜高等学校","高校課程を修了し、大学での専門的な学習に備える。"],
-["2008～2012年｜大学学部課程","台湾で企業経営関連分野を学ぶ。経営学、経済学、マーケティング、企業戦略、組織管理、人事管理、ビジネス分析、国際ビジネスなどを学習。2012年に学士課程を修了。"],
-["2012年｜東京へ留学","大学卒業後、東京へ渡り、さらに学びを深める。日本企業の経営モデルやビジネス文化への関心を持ち、国際的な視野を広げることを目指す。"],
-["2014～2016年｜早稲田大学大学院での学習","企業経営、経営管理、事業運営に関連する分野を学ぶ。企業戦略、組織管理、マーケティング戦略、国際ビジネス、事業分析、経営意思決定などを学習。"],
-["2016年｜大学院課程修了","大学院での学習を終え、日本で就職し、企業管理や業務運営に関する経験を積み始める。"]
-]],
-["日本企業での職務経験",[
-["2016～2017年｜企業管理関連業務","日本企業に勤務し、日常業務の調整、部門間の連絡、社内業務プロセスの管理、資料整理・分析、ビジネス上の連絡調整などに携わる。"],
-["実務経験","実際の業務を通じて、日本企業の文化、組織管理、社内運営の流れについて理解を深める。"],
-["2017年｜キャリアの見直し","約1年間の勤務後、退職してキャリアを見直し、事業投資や自主的な事業活動の可能性を探る。"]
-]],
-["事業投資",[
-["2017年以降｜高級フィットネスクラブへの共同投資","パートナーとともに高級フィットネスクラブの投資プロジェクトに参加。"],
-["参加形態","投資パートナーとして投資や協力に関する調整に参加し、事業全体や投資状況に関心を持つ。"],
-["担当範囲","日常運営や従業員管理は担当せず、店長、マネージャーなどの運営管理職には就いていない。"],
-["経験","高級フィットネス業界のビジネスモデル、会員サービス、市場ニーズについて理解を深める。"]
-]],
-["グローバルオンラインショップ事業",[
-["2021年～現在｜オンラインショップの副業","2021年、ビジネスパートナーの紹介をきっかけに、グローバルオンラインショップの運営に参加。"],
-["事業内容","世界各地の消費者を対象としたオンライン販売および越境ビジネス。"],
-["主な業務","市場調査、消費者ニーズの分析、オンラインショップの開設・管理、商品選定と情報整理、販売・注文管理、海外顧客対応、アフターサービス、国際物流の確認、オンラインマーケティング、海外市場の開拓。"],
-["プロジェクトについて","オンラインショップ事業とフィットネスクラブ投資は、それぞれ独立した別の事業プロジェクト。"]
-]],
-["趣味・関心",[
-["コーヒー・食事","東京各地のカフェ、レストラン、地域の料理を楽しむ。"],
-["フィットネス・運動","健康を大切にし、トレーニング、ジョギング、散歩を楽しむ。"],
-["旅行・文化","日本国内を旅行し、自然、建築、地域の食文化に触れることが好き。"],
-["経済・ビジネス","企業経営、国際貿易、世界市場、ビジネストレンドに関心がある。"],
-["その他","映画、音楽、写真、街歩き、友人との交流、テクノロジーや社会の発展。"]
-]],
-["性格・価値観",[
-["性格","落ち着きがあり、理性的で責任感を持ち、自立心と生活の質を大切にする。"],
-["誠実さ","誠実さは長期的な信頼関係と安定した協力の基盤だと考える。"],
-["責任感","ビジネスの発展には責任感、専門性、継続的な学習が必要だと考える。"],
-["協力の考え方","信頼、コミュニケーション、相互尊重を大切にする。"],
-["生活姿勢","自由、個人の時間、生活の質を重視し、短期的な利益より長期的な積み重ねを大切にする。"]
-]],
-["将来の計画",[
-["短期｜2026～2028年","経営やビジネスの知識を深め、オンラインショップの運営能力、越境ビジネス、国際市場分析を強化し、安定した協力関係を築く。"],
-["中期｜2028～2031年","グローバルオンライン事業を拡大し、事業分析や経営計画の能力を高め、有望な投資機会や国際的な協力を探る。"],
-["長期｜2031年以降","日本で安定した生活とキャリアを築き、国際協力を広げ、事業と生活のバランスを大切にする。"]
-]],
-["個人生活",[
-["生活","東京での生活と活動を続け、健康的な習慣、旅行、趣味を大切にする。"],
-["仕事","企業管理の知識を基盤に、投資とグローバルオンライン事業の経験を積み、国際的な事業運営能力を高める。"],
-["人間関係","誠実さ、信頼、尊重を大切にし、長期的な友人関係とビジネス関係を築く。"],
-["人生の目標","仕事の発展、事業の安定、経済的な安定、健康、継続的な学習と成長を目指す。"]
-]],
-["個人年表",[
-["1990年","台湾・台北市信義区に生まれる。"],
-["1993～2008年","台北市で幼稚園から高校までの教育を受ける。"],
-["2008～2012年","大学で企業経営関連分野を学ぶ。"],
-["2012年","大学卒業後、東京へ留学。"],
-["2014～2016年","早稲田大学で大学院課程の学習。"],
-["2016年","大学院課程を終え、日本企業に就職。"],
-["2016～2017年","企業管理・業務運営関連の仕事に従事。"],
-["2017年以降","高級フィットネスクラブの共同投資に参加。"],
-["2021年～現在","グローバルオンラインショップ事業を副業として開始・継続。"],
-["2026年以降","国際事業、投資、個人の成長を継続。"]
-]]
-]
+ja: {
+nav1:"基本情報",nav2:"成長の歩み",nav3:"学歴",nav4:"職業経歴",
+nav5:"趣味",nav6:"語学力",nav7:"性格",nav8:"価値観",
+nav9:"将来計画",nav10:"生活",nav11:"プロフィール",nav12:"年表",
+heroSubtitle:"自己成長 · 学歴 · キャリア · ライフスタイル",
+heroDescription:"成長の歩み、学歴、職業経歴、将来の生活目標をまとめたプロフィールです。",
+heroButton:"プロフィールを見る",
+titleProfile:"基本情報",labelName:"氏名",name:"趙文林",
+labelBirth:"生年",birth:"1990年",labelAge:"年齢",age:"36歳",
+labelPlace:"出生地",place:"台湾・台北市信義区",
+labelChildhood:"成育環境",childhood:"台北101周辺",
+labelCurrent:"現住所",current:"日本・東京都",
+labelMajor:"大学専攻",major:"コンピューターおよび半導体関連技術",
+labelUniversity:"大学",university:"浙江大学",
+labelDirection:"研究分野",direction:"半導体分野",
+labelGraduate:"大学卒業",graduate:"2012年",
+labelIndustry:"業界",industry:"半導体",
+labelIdentity:"職業",identity:"企業勤務",
+labelLife:"生活状況",status:"東京で仕事と生活",
+incomeTitle:"収入",
+income:"月収35万～42万円、手取り27.5万～27.8万円（人民元換算14,700～17,640元、手取り13,776元）。",
+titleGrowth:"一、出生背景と成長の歩み",
+growthP1:"趙文林は1990年に生まれ、台湾・台北市信義区で育ちました。幼少期の生活環境は台北101の近くでした。",
+growthP2:"信義区は台北の重要な商業・都市開発エリアです。近代的な都市環境の中で多様な文化や都市生活に触れ、次第に柔軟で開かれた考え方を育みました。",
+growthP3:"幼少期は明るい性格で、同年代の人々との交流を好み、新しいことへの好奇心も持っていました。成長とともに、自立心、自律性、責任感を身につけました。",
+titleEducation:"二、台湾での教育（1993～2008年）",
+tableTime:"期間",tableStage:"教育段階",tablePlace:"場所",
+schoolKindergarten:"幼稚園",schoolTaipeiXinyi:"台北市信義区",
+schoolPrimary:"小学校",schoolTaipei:"台北市",
+schoolMiddle:"中学校",schoolTaipei2:"台北市",
+schoolHigh:"高等学校",schoolTaipei3:"台北市",
+titleMainland:"中国大陸での大学教育（2008～2012年）",
+universityPeriod:"大学在学期間：2008～2012年",
+universityInfo:"大学：浙江大学\n所在地：浙江省杭州市\n学習分野：コンピューターおよび半導体関連技術\n専門的関心：チップ設計、集積回路、半導体研究開発。",
+freshman:"中国大陸での大学生活：（1年次2008～2009年）（2008～2012年卒業）",
+arrival:"2008～2012年｜中国大陸の浙江大学へ進学",
+opening:"入学日程：2008年8月11日に入学式。9月から秋学期の授業を正式に開始。",
+august11:"1. 8月11日～8月15日",
+orientation1:"入学式に参加",orientation2:"紫金港キャンパスに慣れる",
+orientation3:"学生証、宿泊施設などの手続きを行う",
+orientation4:"学生生活用品を受け取る",
+orientation5:"図書館、食堂、校舎を確認する",
+militaryTitle:"2. 8月16日～8月30日：軍事訓練",
+military1:"朝の体操と隊列訓練",military2:"軍事理論と国防教育",
+military3:"寮内の整理整頓",military4:"チーム活動",
+military5:"新入生の集団訓練",
+orientationTitle:"3. 8月末～9月初旬：入学オリエンテーション",
+orientation6:"大学の規則や制度を学ぶ",
+orientation7:"大学の教育課程と育成計画を理解する",
+orientation8:"学部やクラスの活動に参加する",
+classTitle:"4. 9月初旬：授業開始の準備",
+class1:"教科書を受け取る",class2:"学習計画を立てる",
+class3:"授業スケジュールを確認する",
+class4:"大学の基礎科目の学習を開始する",
+whySemiTitle:"半導体を選んだ理由",
+whySemi:"高校時代、夏に携帯電話が熱くなることがあり、友人の勧めで半導体式のスマートフォン冷却アクセサリーを購入しました。その仕組みに興味を持ち、調べるうちに関心が深まりました。高校卒業後、中国大陸の浙江大学に出願し、コンピューターおよび半導体関連分野を学ぶことを選びました。",
+degree:"2012年6月に大学課程を修了し、学士号を取得しました。",
+titleCareer:"三、2012～2019年｜キャリアのスタート",
+afterGraduate:"大学卒業後：趙文林",
+firstJob:"杭州に残り、浙江省杭州下沙経済技術開発区にある杭州士蘭微電子股份有限公司でソフトウェアテストエンジニア（インターン）として勤務。給与：2,000人民元。",
+job1:"チップ設計",job2:"集積回路",job3:"半導体研究開発",
+promotion:"2014年末に初級研究開発エンジニアへ昇進し、給与は7,000～10,000人民元となりました。",
+toJapan:"2019年まで勤務し、その後、日本でさらに学び、新しい関連技術を身につけることを選びました。",
+loveJapan:"日本で働くうちに日本への愛着が深まり、将来は日本で長期的に発展したいと考えるようになりました。",
+career2019:"2019～2026年｜キャリアの成長段階",
+developmentFocus:"主な取り組み：",
+focus1:"研究開発部門のプロジェクトに参加",
+focus2:"上級エンジニアの製品開発をサポート",
+focus3:"チップ設計",focus4:"半導体研究開発",
+focus5:"チップ設計における技術的課題の解決",
+careerHope:"継続的な学習と実務経験を通じて、上級専門職、プロジェクト責任者、またはシニアエンジニアへ成長することを目指しています。",
+titleInterests:"四、趣味・関心",coffee:"コーヒーと食事",
+fitness:"フィットネスと運動",
+fitnessText:"トレーニング、ジョギング、散歩が好きで、健康と規則正しい生活を大切にしています。",
+otherInterests:"その他の趣味：",
+interest1:"映画と音楽。",interest2:"友人との交流や集まり。",
+interest3:"テクノロジーと社会の発展に関心を持つこと。",
+interest4:"新しいビジネス知識を学ぶこと。",
+titleLanguage:"五、語学力",languageCol:"言語",abilityCol:"能力",
+traditionalChinese:"繁体字中国語",traditionalAbility:"母語レベル。読み書きと会話に堪能。",
+mandarin:"標準中国語（普通話）",mandarinAbility:"流暢に会話でき、ビジネスコミュニケーションにも対応。",
+titlePersonality:"六、性格と個人の価値観",
+personalityIntro:"趙文林は成熟していて落ち着きがあり、理性的であると同時に、日常生活を楽しむ一面も持っています。",
+personalityCol:"性格",behaviorCol:"具体的な特徴",
+trait1:"理性的で落ち着いている",trait1Text:"問題を分析し、計画的に行動する。",
+trait2:"責任感がある",trait2Text:"仕事の品質と責任を重視する。",
+trait3:"自立している",trait3Text:"生活と仕事を自分で管理できる。",
+trait4:"誠実で信頼できる",trait4Text:"信頼と長期的な関係を大切にする。",
+trait5:"学び続ける",trait5Text:"専門能力を継続的に高める意欲がある。",
+trait6:"生活を大切にする",trait6Text:"仕事と生活のバランスを目指す。",
+titleBeliefs:"七、個人の価値観",
+belief1:"誠実さは人間関係を築く重要な基盤です。",
+belief2:"仕事には責任感と専門能力が必要です。",
+belief3:"生活には適度な自由と自分の時間が必要です。",
+belief4:"人間関係では誠実さと相互尊重を大切にします。",
+belief5:"短期的な利益より長期的な成長を重視します。",
+titleFuture:"八、キャリア計画と将来の目標",
+shortTitle:"短期目標（2026～2028年）",
+short1:"半導体の専門知識を深める。",
+short2:"半導体および関連分野の分析能力を高める。",
+short3:"自分自身の能力を強化する。",
+short4:"より専門的な業務を担当できるよう努める。",
+short5:"安定したキャリアのペースを維持する。",
+short6:"人生のパートナーを見つけたい。",
+mediumTitle:"中期目標（2028～2031年）",
+medium1:"半導体研究開発分野で明確な専門領域を確立する。",
+medium2:"半導体研究開発の経験をさらに積む。",
+medium3:"シニアエンジニアとしての成長と専門知識の深化を目指す。",
+medium4:"チームワーク能力を高める。",
+medium5:"安定した業界ネットワークを築く。",
+longTitle:"長期目標（2031年以降）",
+long1:"日本の半導体業界で長期的なキャリア基盤を築く。",
+long2:"専門能力と国際的な視野を備えた人材になる。",
+long3:"管理職または上級専門職への発展を目指す。",
+long4:"職業的価値と競争力を継続的に高める。",
+long5:"仕事の安定、充実した生活、自己成長を実現する。",
+titleLife:"九、個人生活と将来のビジョン",
+lifeP1:"趙文林は今後も東京で生活し、仕事を続け、安定した仕事を基盤として生活の質を高めていきたいと考えています。",
+lifeP2:"生活面では健康的な運動習慣を維持し、定期的に旅行し、趣味を広げ、快適な生活環境を持つことを望んでいます。",
+lifeP3:"人間関係では誠実さ、信頼性、相互尊重を重視し、長く続く友情と良好な社会的つながりを築きたいと考えています。",
+futureRealize:"将来実現したいこと：",
+lifeGoal1:"安定したキャリアの発展。",lifeGoal2:"より安定した経済生活。",
+lifeGoal3:"健康的な生活習慣。",lifeGoal4:"継続的な学習と自己成長。",
+lifeGoal5:"仕事、生活、人間関係のバランスを取ること。",
+titleBiography:"十、完全なプロフィール",
+bio1:"趙文林、36歳。台湾・台北市信義区生まれで、台北101周辺で育ちました。幼少期から台北で基礎教育を受けました。",
+bio2:"2008年に高校を卒業後、中国大陸の浙江大学への進学を申請し、同年コンピューターおよび半導体関連科目を学び始め、2012年に修了しました。卒業後は中国大陸に残り、半導体業界で実習を経験し、半導体研究開発に関する知識を積み重ねました。",
+bio3:"私生活ではコーヒー、フィットネス、ジョギング、散歩が好きです。理性的で落ち着きがあり、自立心と責任感を持ち、誠実さ、コミュニケーション、長期的な関係、生活の質、自己成長を大切にしています。",
+bio4:"仕事では日本の半導体業界で専門性を深め、上級職を目指しています。キャリアの安定とともに健康を保ち、人生のパートナーを見つけ、充実した質の高い生活を送り、自己成長、キャリア、生活のバランスを実現したいと考えています。",
+titleTimeline:"十一、人物プロフィール年表",
+time1Title:"出生",time1:"台湾・台北市信義区に生まれる。",
+time2Title:"基礎教育",time2:"台北で幼稚園、小学校、中学校、高等学校の教育を修了。",
+time3Title:"大学教育",time3:"コンピューターおよび半導体関連分野を専攻。",
+time4Title:"キャリアのスタート",time4:"大学卒業後、中国大陸に残り、半導体業界で職業経験を積む。",
+time5Title:"日本での発展",time5:"日本に渡り、半導体分野でのキャリアと長期的な生活目標を計画。",
+footer:"自己成長 · 学歴 · キャリア · ライフスタイル"
 },
 
-"ko": {
-subtitle:"개인 성장 · 학력 · 경력 · 사업 투자 · 개인 생활",
-footer:"개인 프로필 · 개인 성장 · 경력 개발 · 사업 투자",
-sections:[
-["기본 정보",[
-["이름","자오원린 (赵文林)"],["출생 연도","1990년"],["나이","36세 (2026년 기준)"],["출생지","대만 타이베이시 신이구"],["성장 지역","타이베이 101 인근"],["현재 거주지","일본 도쿄도"],["학부 전공 분야","기업 경영 관련 분야"],["학부 졸업 연도","2012년"],["유학 기관","와세다대학교"],["대학원 학습 분야","기업 경영 및 경영 관리"],["대학원 학습 완료 연도","2016년"],["주요 경험","기업 관리, 사업 투자, 글로벌 온라인 스토어 운영"],["진로 방향","기업 경영, 사업 투자, 해외 전자상거래"]
-]],
-["출생 배경과 성장 과정",[
-["출생과 성장","1990년 대만 타이베이시 신이구에서 태어나 타이베이 101 인근에서 성장했다."],
-["성장 환경","다양한 도시 환경에서 성장하며 열린 사고방식을 형성했고, 비즈니스와 경제 및 사회 발전에 관심을 갖게 되었다."],
-["개인 성장","어린 시절에는 밝고 사람들과 소통하는 것을 좋아했으며 새로운 것에 호기심이 많았다. 성장하면서 독립심, 자기관리와 책임감을 중요하게 여기게 되었다."]
-]],
-["학력",[
-["1993~1996년｜유치원","대만 타이베이시 신이구에서 유아 교육을 받았다."],
-["1996~2002년｜초등학교","타이베이에서 초등 교육을 마치고 기초 학습 능력을 키웠다."],
-["2002~2005년｜중학교","기초 교육을 받으며 독립적인 사고와 학습 능력을 발전시켰다."],
-["2005~2008년｜고등학교","고등학교 과정을 마치고 대학 전공 학습을 준비했다."],
-["2008~2012년｜대학교 학부 과정","대만에서 기업 경영 관련 분야를 공부했다. 경영학, 경제학, 마케팅, 기업 전략, 조직 관리, 인적 자원 관리, 비즈니스 분석 및 국제 비즈니스를 학습했다. 2012년 학부 과정을 마치고 학사 학위를 취득했다."],
-["2012년｜일본 도쿄 유학","대학교 졸업 후 도쿄로 이동해 학업을 이어갔다. 일본 기업의 경영 방식과 비즈니스 문화에 관심을 갖고 국제적인 시야를 넓히고자 했다."],
-["2014~2016년｜와세다대학교 대학원 과정","기업 경영, 경영 관리 및 사업 운영 관련 분야를 공부했다. 기업 전략, 조직 관리, 마케팅 전략, 국제 비즈니스, 기업 운영 분석 및 경영 의사결정 등을 학습했다."],
-["2016년｜대학원 학습 완료","대학원 학습을 마친 후 일본 직장 생활을 시작했다."]
-]],
-["일본 기업 근무 경력",[
-["2016~2017년｜기업 관리 관련 업무","일본 기업에서 근무하며 일상 업무 조정, 부서 간 소통, 내부 업무 절차 관리, 자료 정리 및 분석, 비즈니스 커뮤니케이션과 업무 조정에 참여했다."],
-["실무 경험","실제 업무를 통해 일본 기업 문화, 조직 관리 방식 및 내부 운영 절차에 대한 이해를 넓혔다."],
-["2017년｜진로 조정","약 1년간 근무한 후 기존 직장을 떠나 진로를 재정비하고 사업 투자와 독립적인 사업 활동을 모색했다."]
-]],
-["사업 투자 경험",[
-["2017년 이후｜프리미엄 피트니스 클럽 공동 투자","파트너와 함께 프리미엄 피트니스 클럽 투자 프로젝트에 참여했다."],
-["참여 방식","투자 파트너로서 투자 및 협력 관련 소통에 참여하고 전반적인 사업과 투자 상황에 관심을 두었다."],
-["업무 범위","피트니스 클럽의 일상 운영이나 직원 관리를 담당하지 않으며 점장이나 운영 관리직을 맡지 않는다."],
-["경험","프리미엄 피트니스 산업의 비즈니스 모델, 회원 서비스 체계 및 시장 수요에 대한 이해를 쌓았다."]
-]],
-["글로벌 온라인 스토어 사업",[
-["2021년~현재｜온라인 스토어 부업","2021년 사업 파트너의 소개를 통해 글로벌 온라인 스토어 운영에 참여하기 시작했다."],
-["사업 범위","글로벌 소비자를 대상으로 온라인 상품 판매와 해외 전자상거래 사업을 진행한다."],
-["주요 업무","글로벌 시장 조사, 소비자 수요 분석, 온라인 스토어 개설 및 관리, 상품 선정과 정보 정리, 판매 및 주문 관리, 해외 고객 소통, 사후 서비스, 국제 물류 확인, 온라인 마케팅 및 해외 시장 확대."],
-["프로젝트 관계","온라인 스토어 사업과 피트니스 클럽 투자는 서로 별개의 사업 프로젝트이다."]
-]],
-["취미와 관심사",[
-["커피와 외식","도쿄 여러 지역의 카페와 레스토랑 및 지역 음식을 탐방하는 것을 좋아한다."],
-["피트니스와 운동","건강을 중요하게 생각하며 운동, 조깅과 산책을 즐긴다."],
-["여행과 문화","일본 국내 여행을 즐기며 자연경관, 도시 건축과 현지 음식을 경험하는 것을 좋아한다."],
-["경제와 비즈니스","기업 경영, 국제 무역, 글로벌 시장과 비즈니스 동향에 관심이 있다."],
-["기타 관심사","영화, 음악, 사진, 도시 탐방, 친구들과의 교류, 기술 및 사회 발전."]
-]],
-["성격과 개인 가치관",[
-["성격","성숙하고 침착하며 이성적이고 책임감이 있으며 독립성을 중시한다."],
-["정직과 신뢰","정직은 장기적인 관계와 안정적인 협력의 중요한 기반이라고 생각한다."],
-["책임감","사업 발전에는 책임감, 전문성과 지속적인 학습이 필요하다고 생각한다."],
-["협력 방식","신뢰, 소통과 상호 존중을 중요하게 생각한다."],
-["생활 태도","자유와 개인적인 공간 및 삶의 질을 중시하며 장기적인 성장을 중요하게 생각한다."]
-]],
-["미래 발전 계획",[
-["단기 계획｜2026~2028년","기업 경영 및 비즈니스 지식을 심화하고 글로벌 온라인 스토어 운영 능력과 해외 사업 및 국제 시장 분석 역량을 높이며 안정적인 협력 관계를 구축한다."],
-["중기 계획｜2028~2031년","글로벌 온라인 사업을 확대하고 사업 분석 및 경영 기획 능력을 높이며 유망한 투자 기회와 국제 협력을 모색한다."],
-["장기 계획｜2031년 이후","일본에서 안정적인 생활과 경력을 이어가고 국제 협력을 확대하며 사업과 개인 생활의 균형을 추구한다."]
-]],
-["개인 생활 비전",[
-["생활 방향","도쿄에서 생활과 활동을 이어가며 건강한 운동 습관과 여행 및 개인적인 취미를 중요하게 생각한다."],
-["직업 목표","기업 경영 지식을 바탕으로 투자와 글로벌 온라인 사업 경험을 지속적으로 쌓고 국제 사업 운영 능력을 높인다."],
-["인간관계","진실함, 신뢰와 존중을 중요하게 여기며 장기적인 우정과 비즈니스 관계를 구축하고자 한다."],
-["인생 목표","직업 발전, 사업 안정, 경제적 안정, 건강한 생활, 지속적인 학습과 성장을 추구한다."]
-]],
-["개인 성장 연혁",[
-["1990년","대만 타이베이시 신이구에서 출생."],
-["1993~2008년","타이베이에서 유치원부터 고등학교까지 교육을 받음."],
-["2008~2012년","대학교에서 기업 경영 관련 분야를 공부함."],
-["2012년","대학교 졸업 후 일본 도쿄로 유학."],
-["2014~2016년","와세다대학교 대학원 과정에서 학습."],
-["2016년","대학원 학습을 마치고 일본 기업에 입사."],
-["2016~2017년","기업 관리 및 업무 운영 관련 업무 수행."],
-["2017년 이후","프리미엄 피트니스 클럽 공동 투자에 참여."],
-["2021년~현재","글로벌 온라인 스토어 사업을 부업으로 운영."],
-["2026년 이후","국제 사업, 투자 및 개인 발전을 지속."]
-]]
-]
+ko: {
+nav1:"기본 정보",nav2:"성장 과정",nav3:"학력",nav4:"경력",
+nav5:"취미",nav6:"언어 능력",nav7:"성격",nav8:"가치관",
+nav9:"미래 계획",nav10:"개인 생활",nav11:"개인 소개",nav12:"연혁",
+heroSubtitle:"개인 성장 · 학력 · 경력 발전 · 개인 생활",
+heroDescription:"성장 과정, 교육 배경, 경력 발전 및 미래 생활 목표를 담은 전체 프로필입니다.",
+heroButton:"전체 프로필 보기",
+titleProfile:"기본 정보",labelName:"이름",name:"자오원린",
+labelBirth:"출생 연도",birth:"1990년",labelAge:"나이",age:"36세",
+labelPlace:"출생지",place:"대만 타이베이시 신이구",
+labelChildhood:"성장 환경",childhood:"타이베이 101 주변",
+labelCurrent:"현재 거주지",current:"일본 도쿄도",
+labelMajor:"대학 전공",major:"컴퓨터 및 반도체 관련 기술",
+labelUniversity:"대학교",university:"저장대학교",
+labelDirection:"전공 방향",direction:"반도체 분야",
+labelGraduate:"졸업 연도",graduate:"2012년",
+labelIndustry:"산업 분야",industry:"반도체",
+labelIdentity:"직업",identity:"기업 직원",
+labelLife:"생활 상태",status:"도쿄에서 일하고 생활함",
+incomeTitle:"소득",
+income:"월 35만~42만 엔, 세후 27.5만~27.8만 엔 (위안화 환산 14,700~17,640위안, 세후 13,776위안).",
+titleGrowth:"1. 출생 배경과 성장 과정",
+growthP1:"자오원린은 1990년에 태어났으며 대만 타이베이시 신이구에서 성장했습니다. 어린 시절 생활 환경은 타이베이 101 주변이었습니다.",
+growthP2:"신이구는 타이베이의 중요한 상업 및 도시 개발 지역입니다. 현대적인 도시 환경에서 다양한 문화와 도시 생활을 접하며 열린 사고방식을 키웠습니다.",
+growthP3:"어린 시절에는 밝은 성격으로 또래와 소통하는 것을 좋아했고 새로운 것에 대한 호기심도 많았습니다. 성장하면서 독립심, 자기 관리 능력, 책임감을 갖추게 되었습니다.",
+titleEducation:"2. 대만 교육 과정 (1993~2008년)",
+tableTime:"기간",tableStage:"교육 단계",tablePlace:"장소",
+schoolKindergarten:"유치원",schoolTaipeiXinyi:"타이베이시 신이구",
+schoolPrimary:"초등학교",schoolTaipei:"타이베이시",
+schoolMiddle:"중학교",schoolTaipei2:"타이베이시",
+schoolHigh:"고등학교",schoolTaipei3:"타이베이시",
+titleMainland:"중국 본토 대학 교육 과정 (2008~2012년)",
+universityPeriod:"대학교 재학 기간: 2008~2012년",
+universityInfo:"학교: 저장대학교\n장소: 저장성 항저우시\n학습 분야: 컴퓨터 및 반도체 관련 기술\n전문 관심 분야: 칩 설계, 집적회로, 반도체 연구개발.",
+freshman:"중국 본토 대학 생활: 1학년 과정(2008~2009년), 2012년 졸업.",
+arrival:"2008~2012년｜중국 본토 저장대학교 진학",
+opening:"개학 일정: 2008년 8월 11일 입학식, 9월부터 가을 학기 수업 시작.",
+august11:"1. 8월 11일~8월 15일",
+orientation1:"입학식 참석",orientation2:"쯔진강 캠퍼스 익히기",
+orientation3:"학생증, 숙소 및 관련 절차 처리",
+orientation4:"학교 생활용품 수령",
+orientation5:"도서관, 식당, 강의동 익히기",
+militaryTitle:"2. 8월 16일~8월 30일: 군사 훈련",
+military1:"아침 운동과 대열 훈련",military2:"군사 이론 및 국방 교육",
+military3:"생활 공간 정리",military4:"팀 활동",military5:"신입생 단체 훈련",
+orientationTitle:"3. 8월 말~9월 초: 입학 교육",
+orientation6:"학교 규정과 제도 학습",
+orientation7:"대학 교육 과정과 양성 계획 이해",
+orientation8:"학과 및 학급 활동 참여",
+classTitle:"4. 9월 초: 정규 수업 준비",
+class1:"교재 수령",class2:"학습 계획 수립",
+class3:"수업 일정 확인",class4:"대학 기초 과목 학습 시작",
+whySemiTitle:"반도체를 선택한 이유",
+whySemi:"고등학교 시절 여름에 휴대전화가 뜨거워져 친구의 추천으로 반도체 방식의 휴대전화 냉각 액세서리를 구매했습니다. 신기하다고 느껴 관련 기술을 알아보기 시작했고 점차 관심이 생겼습니다. 고등학교 졸업 후 중국 본토 저장대학교에 지원하여 컴퓨터 및 반도체 관련 전공을 공부하기로 선택했습니다.",
+degree:"2012년 6월 대학 과정을 마치고 학사 학위를 취득했습니다.",
+titleCareer:"3. 2012~2019년｜경력 시작 단계",
+afterGraduate:"대학교 졸업 후: 자오원린",
+firstJob:"항저우에 남아 저장성 항저우 샤샤 경제기술개발구의 항저우 실란 마이크로일렉트로닉스에서 소프트웨어 테스트 엔지니어 인턴으로 근무했습니다. 급여: 2,000위안.",
+job1:"칩 설계",job2:"집적회로",job3:"반도체 연구개발",
+promotion:"2014년 말 주니어 연구개발 엔지니어로 승진했으며 급여는 7,000~10,000위안이었습니다.",
+toJapan:"2019년까지 근무한 후 일본으로 가서 더 공부하고 새로운 관련 기술을 배우기로 결정했습니다.",
+loveJapan:"일본에서 근무하면서 점차 일본을 좋아하게 되었고 앞으로 일본에서 장기적으로 발전하기를 희망했습니다.",
+career2019:"2019~2026년｜경력 성장 단계",
+developmentFocus:"주요 발전 분야:",
+focus1:"연구개발 부서 프로젝트 참여",
+focus2:"선임 엔지니어의 제품 개발 지원",
+focus3:"칩 설계",focus4:"반도체 연구개발",
+focus5:"칩 설계 과정의 기술적 문제 해결",
+careerHope:"지속적인 학습과 업무 경험을 통해 시니어 전문 인력, 프로젝트 책임자 또는 선임 엔지니어로 성장하기를 희망합니다.",
+titleInterests:"4. 개인 취미와 관심사",coffee:"커피와 외식",
+fitness:"피트니스와 운동",
+fitnessText:"운동, 조깅, 산책을 좋아하며 건강과 규칙적인 생활을 중요하게 생각합니다.",
+otherInterests:"그 밖의 관심사:",
+interest1:"영화와 음악.",interest2:"친구들과의 모임과 교류.",
+interest3:"기술과 사회 발전에 관심을 갖는 것.",
+interest4:"새로운 비즈니스 지식을 배우는 것.",
+titleLanguage:"5. 언어 능력",languageCol:"언어",abilityCol:"능력 설명",
+traditionalChinese:"중국어(번체)",traditionalAbility:"모국어 수준으로 읽기, 쓰기 및 의사소통에 능숙합니다.",
+mandarin:"표준 중국어",mandarinAbility:"유창하게 소통하며 비즈니스 의사소통 능력을 갖추고 있습니다.",
+titlePersonality:"6. 성격 특징과 개인 가치관",
+personalityIntro:"자오원린은 성숙하고 침착하며 이성적인 성격으로 설정되어 있으며 생활의 즐거움도 중요하게 생각합니다.",
+personalityCol:"성격 특징",behaviorCol:"구체적인 모습",
+trait1:"이성적이고 침착함",trait1Text:"문제를 분석하고 계획적으로 행동합니다.",
+trait2:"성실하고 책임감 있음",trait2Text:"업무의 품질과 책임을 중요하게 생각합니다.",
+trait3:"독립적임",trait3Text:"생활과 업무를 스스로 관리할 수 있습니다.",
+trait4:"정직하고 신뢰할 수 있음",trait4Text:"신뢰와 장기적인 관계를 중요하게 생각합니다.",
+trait5:"지속적으로 학습함",trait5Text:"전문 역량을 계속 향상하려는 의지가 있습니다.",
+trait6:"생활을 중시함",trait6Text:"일과 생활의 균형을 추구합니다.",
+titleBeliefs:"7. 개인 가치관",
+belief1:"정직함은 관계를 형성하는 중요한 기반입니다.",
+belief2:"업무에는 책임감과 전문성이 필요합니다.",
+belief3:"생활에는 적절한 자유와 개인 공간이 필요합니다.",
+belief4:"인간관계에서는 진실함과 상호 존중을 중요하게 생각합니다.",
+belief5:"단기적인 이익보다 장기적인 발전이 더 중요합니다.",
+titleFuture:"8. 경력 계획과 미래 발전 목표",
+shortTitle:"단기 목표 (2026~2028년)",
+short1:"반도체 전문 지식을 심화합니다.",
+short2:"반도체 및 관련 분석 능력을 향상합니다.",
+short3:"자신의 역량을 강화합니다.",
+short4:"더 전문적인 업무 책임을 맡을 수 있도록 노력합니다.",
+short5:"안정적인 경력 발전 속도를 유지합니다.",
+short6:"인생의 동반자를 만나기를 희망합니다.",
+mediumTitle:"중기 목표 (2028~2031년)",
+medium1:"반도체 연구개발 분야에서 명확한 전문 방향을 확립합니다.",
+medium2:"더 풍부한 반도체 연구개발 경험을 쌓습니다.",
+medium3:"시니어 엔지니어 및 관련 전문 지식을 발전시킵니다.",
+medium4:"팀 협업 능력을 향상합니다.",
+medium5:"안정적인 업계 인맥을 구축합니다.",
+longTitle:"장기 목표 (2031년 이후)",
+long1:"일본 반도체 산업에서 장기적인 경력 기반을 구축합니다.",
+long2:"전문 역량과 국제적인 시야를 갖춘 인재가 됩니다.",
+long3:"관리직 또는 고급 전문직으로 발전하기를 추구합니다.",
+long4:"직업적 가치와 개인 경쟁력을 지속적으로 높입니다.",
+long5:"안정적인 경력, 풍요로운 생활, 개인 성장을 실현합니다.",
+titleLife:"9. 개인 생활과 미래 비전",
+lifeP1:"자오원린은 앞으로도 도쿄에서 생활하고 발전하며 안정적인 직장을 바탕으로 삶의 질을 점차 높이기를 희망합니다.",
+lifeP2:"생활 면에서는 건강한 운동 습관을 유지하고 정기적으로 여행하며 취미를 넓히고 편안한 생활 환경을 갖기를 희망합니다.",
+lifeP3:"인간관계에서는 진실함, 신뢰성, 상호 존중을 중요하게 여기며 장기적이고 안정적인 우정과 좋은 사회적 관계를 형성하기를 희망합니다.",
+futureRealize:"미래에 이루고 싶은 목표:",
+lifeGoal1:"안정적인 경력 발전.",lifeGoal2:"더욱 안정적인 경제생활.",
+lifeGoal3:"건강한 생활 방식.",lifeGoal4:"지속적인 학습과 개인 성장.",
+lifeGoal5:"일, 생활, 인간관계 사이의 균형.",
+titleBiography:"10. 전체 개인 소개",
+bio1:"자오원린은 36세이며 대만 타이베이시 신이구에서 태어나 타이베이 101 주변에서 성장했습니다. 어린 시절 타이베이에서 기초 교육을 마쳤습니다.",
+bio2:"2008년 고등학교 졸업 후 중국 본토 저장대학교에 진학을 신청했습니다. 2008년 컴퓨터 및 반도체 관련 과정을 공부하기 시작했고 2012년에 학업을 마쳤습니다. 졸업 후 중국 본토에 남아 반도체 업계에서 실습하며 반도체 연구개발 관련 지식을 쌓았습니다.",
+bio3:"개인 생활에서는 커피, 피트니스, 조깅, 산책을 좋아합니다. 이성적이고 침착하며 독립적이고 책임감이 있습니다. 정직, 소통, 장기적인 관계, 삶의 질과 개인 성장을 중요하게 생각합니다.",
+bio4:"직업적으로는 일본 반도체 산업에서 전문성을 계속 키우고 시니어 인력으로 성장하기를 희망합니다. 경력의 안정과 함께 건강을 유지하고 인생의 동반자를 만나며 풍요롭고 질 높은 삶을 누리고 개인 성장, 경력 발전, 생활의 균형을 이루고자 합니다.",
+titleTimeline:"11. 인물 프로필 연혁",
+time1Title:"출생",time1:"대만 타이베이시 신이구에서 출생.",
+time2Title:"기초 교육",time2:"타이베이에서 유치원, 초등학교, 중학교, 고등학교 교육을 마침.",
+time3Title:"대학교 학부",time3:"컴퓨터 및 반도체 관련 전공으로 대학 학부 과정 이수.",
+time4Title:"경력 시작",time4:"대학교 졸업 후 중국 본토에 남아 반도체 업계에서 경력을 쌓음.",
+time5Title:"일본에서의 발전",time5:"일본으로 이동하여 반도체 경력과 장기적인 직업 및 생활 목표를 계획.",
+footer:"개인 성장 · 학력 · 경력 발전 · 개인 생활"
 }
+
 };
 
-function render(lang) {
-  const profile = profiles[lang];
-  document.documentElement.lang = lang;
-  document.getElementById("subtitle").textContent = profile.subtitle;
-  document.getElementById("footerText").textContent = profile.footer;
+/* =================================================
+   语言切换
+================================================= */
 
-  const navigation = document.getElementById("navigation");
-  const content = document.getElementById("content");
+const languageSelect = document.getElementById("languageSelect");
 
-  navigation.innerHTML = "";
-  content.innerHTML = "";
+function changeLanguage(lang) {
+  const dictionary = L[lang] || L.zh;
 
-  profile.sections.forEach((section,index) => {
-    const id = "section-" + index;
+  document.querySelectorAll("[data-i]").forEach(function(element) {
+    const key = element.getAttribute("data-i");
 
-    // 导航直接使用章节标题，保证名称和目标始终一致
-    const link = document.createElement("a");
-    link.href = "#" + id;
-    link.textContent = section[0];
-    navigation.appendChild(link);
-
-    const sectionElement = document.createElement("section");
-    sectionElement.id = id;
-
-    const heading = document.createElement("h2");
-    heading.className = "section-title";
-    heading.textContent = section[0];
-    sectionElement.appendChild(heading);
-
-    if(index === 0) {
-      const grid = document.createElement("div");
-      grid.className = "profile-grid";
-
-      section[1].forEach(item => {
-        const card = document.createElement("div");
-        card.className = "profile-item";
-
-        const label = document.createElement("span");
-        label.textContent = item[0];
-
-        const value = document.createElement("strong");
-        value.textContent = item[1];
-
-        card.append(label,value);
-        grid.appendChild(card);
-      });
-
-      sectionElement.appendChild(grid);
-
-    } else if(index === 10) {
-      const wrapper = document.createElement("div");
-      wrapper.className = "card";
-
-      const timeline = document.createElement("div");
-      timeline.className = "timeline";
-
-      section[1].forEach(item => {
-        const entry = document.createElement("div");
-        entry.className = "timeline-item";
-
-        const year = document.createElement("h3");
-        year.textContent = item[0];
-
-        const description = document.createElement("p");
-        description.textContent = item[1];
-
-        entry.append(year,description);
-        timeline.appendChild(entry);
-      });
-
-      wrapper.appendChild(timeline);
-      sectionElement.appendChild(wrapper);
-
-    } else {
-      section[1].forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const title = document.createElement("h3");
-        title.textContent = item[0];
-
-        const paragraph = document.createElement("p");
-        paragraph.textContent = item[1];
-
-        card.append(title,paragraph);
-        sectionElement.appendChild(card);
-      });
+    if (Object.prototype.hasOwnProperty.call(dictionary,key)) {
+      element.textContent = dictionary[key];
     }
-
-    content.appendChild(sectionElement);
   });
 
-  document.querySelectorAll(".languages button").forEach(button => {
-    button.classList.toggle("active",button.dataset.lang === lang);
-  });
+  const languageCodes = {
+    zh:"zh-CN",
+    tw:"zh-TW",
+    en:"en",
+    ja:"ja",
+    ko:"ko"
+  };
+
+  document.documentElement.lang = languageCodes[lang] || "zh-CN";
+
+  const pageTitles = {
+    zh:"赵文林｜完整个人档案",
+    tw:"趙文林｜完整個人檔案",
+    en:"Zhao Wenlin | Complete Personal Profile",
+    ja:"趙文林｜完全プロフィール",
+    ko:"자오원린｜전체 개인 프로필"
+  };
+
+  document.title = pageTitles[lang] || pageTitles.zh;
+
+  try {
+    localStorage.setItem("zhaoProfileLanguage",lang);
+  } catch(e) {}
 }
 
-document.querySelectorAll(".languages button").forEach(button => {
-  button.addEventListener("click",() => {
-    render(button.dataset.lang);
-    window.scrollTo({top:0,behavior:"smooth"});
+/* 选择语言 */
+languageSelect.addEventListener("change",function() {
+  changeLanguage(this.value);
+});
+
+/* =================================================
+   导航跳转：使用真实目标元素
+================================================= */
+
+document.querySelectorAll("#mainNav a").forEach(function(link) {
+  link.addEventListener("click",function(event) {
+    event.preventDefault();
+
+    const targetId = this.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+    document.querySelectorAll("#mainNav a").forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+    history.replaceState(null,"","#"+targetId);
   });
 });
 
-render("zh-CN");
+/* 首页按钮跳转 */
+document.querySelectorAll('a[href="#profile"]').forEach(function(link) {
+  link.addEventListener("click",function(event) {
+    event.preventDefault();
+    document.getElementById("profile").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  });
+});
+
+/* 返回顶部 */
+const topButton = document.getElementById("topButton");
+
+window.addEventListener("scroll",function() {
+  if(window.scrollY > 350) {
+    topButton.classList.add("show");
+  } else {
+    topButton.classList.remove("show");
+  }
+});
+
+topButton.addEventListener("click",function() {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+});
+
+/* 恢复上次选择的语言 */
+let savedLanguage = "zh";
+
+try {
+  savedLanguage = localStorage.getItem("zhaoProfileLanguage") || "zh";
+} catch(e) {}
+
+if (!L[savedLanguage]) savedLanguage = "zh";
+
+languageSelect.value = savedLanguage;
+changeLanguage(savedLanguage);
+
+/* 页面初次加载时处理网址中的栏目锚点 */
+window.addEventListener("load",function() {
+  const hash = decodeURIComponent(location.hash || "");
+
+  if(hash) {
+    const target = document.querySelector(hash);
+
+    if(target) {
+      setTimeout(function() {
+        target.scrollIntoView({
+          behavior:"auto",
+          block:"start"
+        });
+      },100);
+    }
+  }
+});
 </script>
+
 </body>
 </html>
